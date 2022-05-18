@@ -1,0 +1,47 @@
+<div id="sibarTimer">
+  <div class="ui grid" style="margin:0">
+    <div class="eight wide column pdng0 vaHack">
+      <!-- tracker btn -->
+        <a
+          id="ttracker-btn"
+          class="ttracker-container unactive disabled"
+          v-if="disabled === true && timerTicking === false">
+          <span class="ttracker-status button"></span>
+          <span class="ttracker-status-text"></span>
+        </a>
+        <a
+          id="ttracker-btn"
+          class="ttracker-container unactive"
+          v-else-if="disabled === false && timerTicking === false">
+          <span
+            class="ttracker-status button"
+            v-on:click.prevent="delayStartTimer"
+          ></span>
+          <span class="ttracker-status-text"></span>
+        </a>
+        <a
+          id="ttracker-btn"
+          class="ttracker-container active"
+          v-else
+        >
+          <span
+            class="ttracker-status button"
+            v-on:click.prevent="showTimerModal"
+          ></span>
+          <span class="ttracker-status-text"></span>
+        </a>
+    </div>
+    <div class="eight wide column pdng0 vaHack">
+      <!-- time -->
+        <a
+          class="account__soul-col--item-container"
+          id="ttracker"
+          href="/time">
+            <span
+             style="font-size: 12px;width:100%;text-align:center;display:block"
+            >{{ timeSpentUpdated }}</span>
+            <span class="ttracker-status-text"></span>
+        </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+.purpose-cont { padding-bottom: 10rem !important }
+
+.purpose-working h2 {
+  margin: 2rem 0;
+  margin-left: 2rem;
+  border-left: 30px solid #23272B;
+  padding-left: 2rem;
+}
+
+.objective {
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  border-left: 30px solid #23272B;
+
+}
+
+.key-result__container table td {
+  min-width: 125px;
+}
+
+.key-result__container {
+  border-left: 30px solid #23272B;
+    padding-left: 30px;
+}
+
+.key-result .kr-logs { padding-left: 2rem }
+.kr-logs { margin: 2rem;margin-right: 0; }
+
+.objective__title {
+  margin: 2rem 0;
+  max-width: 500px;
+}
+
+.key-result {
+  border-left: 30px solid #23272B;
+  margin-bottom: 1rem;
+}
+
+.key-result__stat {
+  border: 7px solid rgba(35, 39, 43, 0.15);
+    padding: 1rem;
+    position: relative;
+    margin-right: 10px;
+    min-width: 75px;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.key-result__stat span {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 100;
+    color: rgba(0, 0, 0, 0.33);
+    letter-spacing: 1px;
+    position: absolute;
+    top: -22px;
+    left: -7px;
+}
+
+.key-result__owner .img,
+.key-result__owner img {
+  box-shadow: 2px 2px #23272B;
+  width: 40px;
+  height: 40px;
+}
+
+.key-result__owner .img {
+  border: 1px solid rgba(35, 39, 43, 0.15);
+  padding: 5px;
+  font-size: 10px;
+}
+
+.key-result__owner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* logs */
+
+.kr-logs__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);;
+  min-height: 35px;
+  padding: 2px 4px;
+  position: relative;
+}
+
+.kr-logs__item .number {
+  position: absolute;
+  left: -20px;
+  top: calc(50% - 10px);
+  color: rgba(0, 0, 0, .35);
+}
+
+.kr-logs__item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px
+}
+
+.kr-logs__item.placeholder {
+  margin-bottom: 5px;
+  background: rgba(0, 0, 0, .025);
+  border-bottom: none;
+  min-height: 20px;
+  color:rgba(0, 0, 0, .35);
+}

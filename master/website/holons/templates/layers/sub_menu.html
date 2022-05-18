@@ -1,0 +1,101 @@
+<div id="hiding-nav" class="ui secondary menu secondary-navigation">
+
+
+
+
+    {% if request.path == '/layers/talent' %}
+      <a class="item active" href="/layers/talent">Talent</a>
+    {% else  %}
+      <a class="item" href="/layers/talent">Talent</a>
+    {% endif %}
+
+
+    {% if request.path == '/layers' %}
+      <a class="active item" href="/layers">Workspaces</a>
+    {% else  %}
+      <a class="item" href="/layers">Workspaces</a>
+    {% endif %}
+
+    {% if request.path == '/time' %}
+      <a class="item active" href="/time">Time</a>
+    {% else  %}
+      <a class="item" href="/time">Time</a>
+    {% endif %}
+
+
+
+    <a class="item disabled"><i class="clock outline icon"></i>TODOs</a>
+    <a class="item disabled"><i class="clock outline icon"></i>WIKIs</a>
+    <a class="item disabled"><i class="circle icon gold-dot"></i>Hosting &amp; Asset Management</a>
+
+    <!--<a class="item" href="/workspaces.html">
+      Health Monitoring
+    </a>
+
+    <a class="item" href="/workspaces.html">
+      NSMf
+    </a>-->
+
+
+    <div class="right menu">
+
+      {% if request.path == '/layers' %}
+      <input type="text" class="item" placeholder="search cards and workspaces"
+      style="min-width: 250px;border-bottom: 4px solid #23272B;border-radius: 0;margin-bottom: -5px">
+      {% endif %}
+
+      <!--<a class="item" href="/market/boxes/">
+        Black Boxes
+      </a>
+      <a class="item" href="/market/talent/">
+        Talent Augmentation
+      </a>-->
+    </div>
+
+
+  <!--
+
+    {% if request.path == '/layers/sops' %}
+      <a class="active item" href="/layers/sops">SOPs</a>
+    {% else  %}
+      <a class="item" href="/layers/sops">SOPs</a>
+    {% endif %}
+
+    {% if request.path == '/layers/docs-wikis' %}
+      <a class="active item" href="/layers/docs-wikis">Docs & Wikis</a>
+    {% else  %}
+      <a class="item" href="/layers/docs-wikis">Docs & Wikis</a>
+    {% endif %}
+
+    {% if request.path == '/layers/assets' %}
+      <a class="active item" href="/layers/assets">Assets</a>
+    {% else  %}
+      <a class="item" href="/layers/assets">Assets</a>
+    {% endif %}
+
+
+
+    <div class="right menu">
+      {% if request.path == '/layers/equity' %}
+        <a class="active item" href="/layers/equity">Equity &amp; Contracts</a>
+      {% else  %}
+        <a class="item" href="/layers/equity">Equity &amp; Contracts</a>
+      {% endif %}
+      {% if request.path == '/layers/audits' %}
+        <a class="active item" href="/layers/audits">Audits</a>
+      {% else  %}
+        <a class="item" href="/layers/audits">Audits</a>
+      {% endif %}
+      {% if request.path == '/layers/blackboxes' %}
+        <a class="active item" href="/layers/blackboxes">Black Boxes</a>
+      {% else  %}
+        <a class="item" href="/layers/blackboxes">Black Boxes</a>
+      {% endif %}
+      {% if request.path == '/layers/talent-augmentation-broker' %}
+        <a class="active item" href="/layers/talent-augmentation-broker">Talent Augmentation Broker</a>
+      {% else  %}
+        <a class="item" href="/layers/talent-augmentation-broker">Talent Augmentation Broker</a>
+      {% endif %}
+    </div>-->
+
+</div>

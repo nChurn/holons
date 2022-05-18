@@ -1,0 +1,23 @@
+<tr class="commitment__item"
+  onclick="$( '#commitmentBogusModal' ).addClass('active')"
+>
+
+  <td class="rel-table-row__title">
+    <span>{{ item.title }}</span>
+    <commitments-main-wrench-menu
+      v-bind:item="item"
+      v-bind:show-menu="item === $parent.activeMenu"
+      @create-invoice="createInvoice"
+    />
+  </td>
+
+  <td>{{ item.from_name }}</td>
+  <td>Amit k.</td>
+  <td>
+    soft: 14 Feb  <br>
+    hard: 21 Feb
+  </td>
+  <td><h5>$1000</h5></td>
+  <!-- <td>escrow protection</td> escrow \ virtual -->
+
+</tr>

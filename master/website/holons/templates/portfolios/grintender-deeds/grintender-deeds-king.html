@@ -1,0 +1,149 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} King The Monk Plugin {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">King The Monk</h1>
+
+						<p class="refs">
+							Giveaway plugin
+								coded for <i class="wordpress outline icon"></i>WordPress
+								by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency
+							</p>
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing</p>-->
+
+						<div class="ui grid">
+
+							<div class="eight wide column">
+								<p class="refs">
+									Product owner: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Artem K.</b> <br>
+									Coder: <b>Artem B.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+								<p>Back at the day we had
+									this <a href="/grintender/deeds/avokado-today">mentality of
+										building things first</a> and figuring out marketing afterwards.</p>
+
+								<p>So there was this other plugin called King Sumo.
+									It was ugly, limited in features and whatnot.</p>
+
+								<p>But it was built on top solid
+									<a href="http://fourhourworkweek.com/2014/07/21/harrys-prelaunchr-email/">HARRY's case study</a>
+									 </p>
+
+								<p>We decided to build one on our own and sell it through Envato.</p>
+
+
+								<p>Here is an example of custom coded giveaway:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/q6X2XLK4uD8.jpeg">
+
+								<p>Basically, it was about building some user
+									friendly giveaway setup wizard inside Wordpress admin.</p>
+
+								<h3>Early design exploration</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/OF2uUbyEZis.jpeg">
+
+								<br><br>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/VP9XopVS1wM.jpeg">
+
+								<h3>Potential layouts</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Jy2AYYEqyEQ.jpeg">
+
+								<h3>Ok, so</h3>
+
+								<p>Fast forward few hundred hours of design and development work
+									– Envato rejects the plugin from the marketpace.</p>
+
+								<p><a href="https://the.gt/wordpress-website-design-company/king-the-monk/">We self-hosted the thing</a>,
+									tried some marketing campaigns that yielded a few sales, but eventually gave up
+									and later discontinued support of new WordPress versions.</p>
+
+								<p><b>Did we learn a lesson?</b></p>
+
+								<p><a href="/grintender/deeds/plain-conversions">Not quite</a></p>
+
+								<br><br><br><br>
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-17-at-15.51.57.png">
+
+								<br><br>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-17-at-15.53.02.png">
+								<h3>sigh</h3>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/king_the_monk_8.png">
+
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

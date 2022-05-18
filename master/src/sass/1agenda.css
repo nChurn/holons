@@ -1,0 +1,68 @@
+.preview h2 {
+  margin:0;
+  line-height: calc(7vw - 30px);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 4rem;
+  font-weight: 300;
+  color: rgba(0,0,0,.65);
+}
+
+.preview .highlight {
+  color: rgba(0,0,0,.65);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.agenda-tasks--wrapper {
+    display: flex;
+    justify-content: unset;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.agenda-tasks--wrapper .tasks-card {
+    width: 200px;
+    min-height: 150px
+}
+
+.agenda-tasks--wrapper .tasks-card a { color: #23272B }
+
+.agenda-tasks--wrapper .tasks-card .badge.due-date-badge {
+    text-align: center;
+    padding: 5px;
+    height: auto;
+    line-height: auto;
+    margin-top: 10px;
+  }
+
+.agenda-tasks--wrapper .tasks-card__title {
+    display: block;
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    min-height: 60px;
+  }
+
+.agenda-tasks--wrapper .ws-card--tags span {
+    white-space: break-spaces;
+  }
+
+.agenda-tasks--wrapper .tasks-card__list-name { color: gray }
+
+.agenda-tasks--wrapper .tasks-card__workspace-name {
+    color: gray;
+    font-weight: bold;
+}
+
+#agendaPurpose .key-result {
+  border-top: 5px solid #23272B;
+  padding-top: 0px;
+}
+#agendaPurpose .key-result__container {
+  padding: 0
+}
+
+#agendaPurpose h2 {
+  text-align: center;
+    margin: 4rem 2rem;
+}

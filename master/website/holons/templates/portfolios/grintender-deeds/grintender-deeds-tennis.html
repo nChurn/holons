@@ -1,0 +1,172 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+
+{% block title %} Tennis & Running Delivery {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">tennis & running delivery</h1>
+
+						<p class="refs">
+							Directory of DIY car repair content
+								coded in <i class="python icon"></i>Python (Django)
+								and <i class="vuejs icon"></i>vue.js
+								by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency</p>
+
+						<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing
+					 </p>
+
+						<div class="ui grid">
+
+							<div class="eight wide column" >
+								<p class="refs">
+									Co-founder: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Artem K.</b> <br>
+									Front-end coder: <b>Andrey F.</b> <br>
+									Coder: <b>Dmitriy K.</b> <br>
+									Coder: <b>Artem B.</b> <br>
+									Coder: <b>Alex B.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+
+
+								<h3>design references</h3>
+								<p>On one hand we implemented different styles
+									for header and footer to match big 4 tournaments.</p>
+
+								<p>Yet we wanted to differentiate from competition w/ something classy</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/y6MEBLGEMl8.jpeg">
+
+								<h3>early cat page concept</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/tennnnis-cat.jpeg">
+
+								<h3>development</h3>
+
+								<p>Scrappers & storefront were ready in 272 hours.</p>
+
+								<p>Initially hired as vendor to build
+									the store and marketing I later became
+									a co-founder working at break even</p>
+
+								<h3>Ads</h3>
+
+								<p>So after that we launched PPC ads
+									and did initial SEO optimisation.</p>
+
+								<h3>Unit economy</h3>
+
+								<p>After a few month of sales data kicked in,
+									we figured profit margin after all expenses was only 13%.</p>
+								<p>That's depressing, huh?</p>
+
+								<p>We cloned the code base to launch
+									a sibling store for running supplies – running.delivery:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/vPdoOHX8_lo.jpeg">
+
+								<h2>ok, so</h2>
+
+								<p>13% profit margin remained a deal breaker,
+									so we tried a few things to bring it to at least 25% or so.</p>
+
+								<p>It didn't quite worked out, so we shut both stores ¯\_(ツ)_/¯</p>
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+
+
+								<h3>identity around big 4 tournaments</h3>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1tennis-concept2.jpeg">
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1tennis-concept1.jpeg">
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1tennis-concept.jpeg">
+
+								<h3>sibling store</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/header-bg.jpeg">
+
+								<h3>running.delivery home page</h3>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/TLhoJfhVkj4.jpeg">
+
+								<h3>Ugly AF, but custom CRM</h3>
+
+								<p>While we had the biggest product range in the country,
+									we had the longest delivery time as well
+									(~2 weeks + occasional delays)</p>
+
+								<p>That generated immense load on support team w/ questions
+									about order status</p>
+
+								<p>So we build a custom CRM triggering SMS notifications
+									on every order status change – that relieved close to 90% of support tickets</p>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/CRM.jpeg">
+
+
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

@@ -1,0 +1,195 @@
+<div>
+  <campaign-add v-if="showAddCampaignModal"></campaign-add>
+  <campaign-edit
+    v-if="showEditCampaignModal"
+    v-bind:title="activeCampaign.title"
+    v-bind:beneficiary="activeCampaign.beneficiary"
+  ></campaign-edit>
+  <template-add
+    v-if="showAddTemplateModal"
+    v-bind:campaign="activeCampaign"
+  ></template-add>
+
+
+  <div class="ui secondary menu secondary-navigation">
+
+    <a class="item active">Plato's Flywheel</a>
+    <!--<a href="#" class="item">Plato's ongoing</a>-->
+
+    <a class="item disabled">
+      <i class="circle icon gold-dot"></i>media buying campaigns
+    </a>
+
+    <a class="item disabled">
+      <i class="circle icon gold-dot"></i>outreach
+    </a>
+
+    <a class="item disabled">
+      <i class="circle icon gold-dot"></i>inbound
+    </a>
+
+    <a class="item disabled">
+      <i class="circle icon gold-dot"></i>affilliate
+    </a>
+
+
+    <div class="right menu">
+
+      <a class="item button"
+      v-on:click="openAddCampaignModal">+ campaign</a>
+
+    </div>
+
+  </div>
+
+  <div class="campaigns-list">
+
+    <!--<div class="ui secondary menu thread-previews--filters">
+
+      <a class="item" href="#">
+        inbound
+      </a>
+      <a class="item active" href="#">
+        plato's flywheel
+      </a>
+      <a class="item" href="#">
+        hound outreach (incl. cust dev)
+      </a>
+      <a class="item" href="#">
+        pheme
+      </a>
+      <a class="item" href="#">
+        performance
+      </a>
+      <a class="item" href="#">
+        affiliate
+      </a>
+      <a class="item" href="#">
+        +
+      </a>
+
+    </div>
+    <div class="ui secondary menu thread-previews--filters">
+
+      <a class="item active" href="#">
+        managed
+      </a>
+      <a class="item" href="#">
+        self-service //holons.gold
+      </a>
+
+    </div>-->
+    <!--<div class="ui secondary menu thread-previews--filters">
+
+      <a class="item active" href="#">
+        forms
+      </a>
+      <a class="item" href="#">
+        paid
+      </a>
+      <a class="item" href="#">
+        SEO organic
+      </a>
+      <a class="item" href="#">
+        call tracking
+      </a>
+
+    </div>-->
+
+
+
+    <table
+      class="ui very basic collapsing celled table platos-campaign-table"
+      v-for='campaign in campaigns'
+      v-key='campaign.id'
+    >
+        <thead>
+
+          <tr>
+            <td>
+             <h2>
+               <img
+               class="platos-ray__owner"
+               src="https://holons.me/usg/usg/soulspics/__a0_c2c8XI.jpg">
+               {{ campaign.title }}</h2>  <br>
+              <div
+                class="ui basic right floated small button"
+                v-on:click="openAddTemplateModal(campaign.id)">
+                + template
+              </div>
+              <div
+                class="ui icon basic right floated small button"
+                v-on:click="openCampaignSettingsModal(campaign.id)">
+                <i class="wrench icon buton"></i>
+              </div>
+            </td>
+            <td style="color:rgba(0,0,0,.35);font-weight:bold">Bids sent</td>
+            <td style="color:rgba(0,0,0,.35);font-weight:bold">Replies</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="template in campaign.templates"
+            v-key="template.id"
+          >
+            <td
+            style="position:relative"
+              v-bind:class="{'archived': template.is_archived}"
+            >
+            <!--<img
+            v-if="!template.is_archived"
+            class="platos-ray__owner"
+            style="left:-23px !important"
+            src="https://holons.me/usg/usg/soulspics/__a0_c2c8XI.jpg">-->
+            <div
+              v-if="false && !template.is_archived"
+              class="ui dropdown icon item">
+              <i class="wrench icon"></i>
+              <div class="menu" style="display: block">
+                <div class="item">archive</div>
+                <div class="item">delete</div>
+                <div class="item">edit name</div>
+              </div>
+            </div> <!-- wrench drop down ends -->
+              {{ template.title }}
+            </td>
+            <td
+              v-bind:class="{'archived': template.is_archived}"
+            >{{ template.bids }} <br>
+            <span v-if="!template.is_archived" class="color-gray">Last 7 days: {{ template.bids_this_week  }}</span>
+            <span v-if="template.is_archived" class="color-gray"> </span> <!-- that's a hack to have proper vertical alignment -->
+          </td>
+            <td
+              v-bind:class="{'archived': template.is_archived}"
+            >
+
+            <div class="flex">
+              <div>
+                {{ template.replies }} <br>
+                <span
+                  v-if="template.bids !== 0"
+                >
+                 {{ Math.floor(template.replies * 100 / template.bids) }}%
+               </span>
+               <span
+                v-else
+               >
+                0%
+               </span>
+              </div>
+              <div>
+                <span
+                  class="ui basic button"
+                  v-on:click.prevent="updateRepliesCount(template.id)">+1</span>
+
+                <!--<a class="ui basic button">archive</a>-->
+              </div>
+            </div>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="ui dropdown icon item muted">
+  <i
+    class="wrench icon"
+    @click="menuToggle"
+  ></i>
+  <div
+    class="menu"
+    style="display: block"
+    v-if="showMenu"
+  >
+
+    <div
+      class="item"
+    >
+      <a
+        v-bind:href="'/relations/invoices/' + item.id"
+        target="_blank"
+      >
+        direct link \ see invoice
+      </a>
+    </div>
+
+  </div>
+</div>

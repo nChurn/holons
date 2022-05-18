@@ -1,0 +1,415 @@
+<div class="email-display">
+      <!--<div class="ray--campaigns">
+        <select name="template" id="template">
+          <option value="">Alex</option>
+          <option value="">Kate</option>
+        </select>
+        <div>
+          <span class="primary bid-button">assign to</span>
+        </div>
+      </div> -->
+
+    <div class="flex" style="margin: 2rem 0 1rem 0">
+      <div>
+        <p class="muted">
+          from <b>@{{ mThread.messages[0].user_from }}</b>
+          to <b>@{{ mThread.messages[0].user_to }}</b></p>
+
+          <button class="ui icon button"
+            v-on:click="messageArchive()"
+          >
+            <i class="archive icon"></i>
+          </button>
+          <button class="ui icon button">
+            <i class="clock icon"></i>
+          </button>
+          <button class="ui icon button"
+            v-on:click="messageDelete()"
+          ><i style="position:relative"
+          class="trash alternate outline icon"></i>
+          </button>
+      </div>
+
+        <div style="border: 1px dashed #23272B">
+
+                    <div id="gosh"
+                      class="ui inline dropdown">
+                         <div class="text">
+                           <img class="ui avatar image" src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+                           Jenny Hess
+                         </div>
+                         <i class="dropdown icon"></i>
+                         <div class="menu">
+                           <div class="item">
+                             <img class="ui avatar image" src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+                             Jenny Hess
+                           </div>
+                           <div class="item">
+                             <img class="ui avatar image" src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+                             Elliot Fu
+                           </div>
+
+                             <p class="item muted">It's possible to (assign) people that you have a working relationship with.</p>
+                             <p class="item muted">So, you either hire them, they hire you, or you're connected
+                               through some org (e.g. have the same employer)</p>
+                           </div>
+                     </div>
+        </div>
+    </div>
+
+
+    <h1 id="thread-working-area__subject">
+      {{ mThread.messages[0].subject }}</h1>
+
+  <!-- single message starts -->
+  <div class="ray-item"
+    v-for="message in mThread.messages"
+    v-bind:key="message.id"
+    v-bind:class="{mine: myHandle == message.user_from}"
+  >
+      <div class="ray__meta">
+        <div class=""></div>
+        <div class=""></div>
+      </div>
+      <div class="ray-item__message" v-html="message.body" ></div>
+
+      <div class="ray--timing">
+        <div class="reply-button">
+          <!--<a v-if="message.pub_date != 'just now'"
+          v-on:click.prevent="messageReplyModalOpen(message.id)">Reply</a>-->
+        </div>
+        <div> {{ message.pub_date_pretty }} </div>
+      </div>
+
+
+  </div><!-- single message ends-->
+
+  <div class="ray-item">
+    <div class="ray-item__message">
+      How it it going with (key result name)? <br>
+    </div>
+  </div>
+
+  <!-- TODO: show this one instead normal reply -->
+
+  <div class="purpose-update">
+
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h5>this iteration fact</h5>
+        <textarea placeholder="status update"
+        rows="8"></textarea>
+      </div>
+      <div class="eight wide column">
+        <h5>next iteration plan</h5>
+        <textarea placeholder="status update"
+        rows="8"></textarea>
+      </div>
+    </div>
+
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h5>current key result metric</h5>
+        <p>//input</p>
+      </div>
+      <div class="eight wide column">
+        <a class="ui basic button"
+        style="width:100%">send</a>
+      </div>
+    </div>
+
+    <!-- TODO:
+    1. if manual metric
+    2. when yes\no toggled to YES, we should stop doing check-ins on it
+  -->
+
+
+
+  </div>
+
+  <!-- Write message thing -->
+  <div id="raysWriteReplyMessageBlock">
+          <div class="ui field input fluid">
+            <wysiwyg v-model="messageBody" />
+          </div>
+
+          <div style="display:flex;justify-content:space-between;margin-top:10px">
+            <div class="">
+              <button
+                class="ui basic button"
+                v-on:click.prevent="sendRaysMessage"
+              >
+                send
+              </button> <br>
+              <!--
+              v-bind:disabled="messageBody == ''"
+              <span>hit [ enter ] to send</span>-->
+            </div>
+            <div class="">
+              <button style="box-shadow:none"
+              class="ui basic button">
+              specials</button> <!--
+
+                > offer
+                > invoice
+                > yes\no thing
+
+
+
+              -->
+
+            </div>
+          </div>
+
+
+
+  </div>
+
+
+  <!--
+
+  on new thread between non-system users {
+
+  TODO
+
+  ignore = remove contact and thread for recepient user
+  shadow ban = never show this again to the recepient user
+
+-->
+  <div id="newContactControls">
+
+    <h5 style="text-align:right;margin-bottom: 1rem">
+      Looks like a new contact?</h5>
+
+    <div class="ui three column grid">
+
+       <div class="column">
+         <a style="width:100%"
+         class="ui basic button tiny">
+         ignore <br>
+         & shadow ban</a>
+
+         <br><br>
+
+         <p class="muted">
+           You won't hear from the sender ever again. <br>
+           Content will be cleared out of your rays. <br>
+           The person won't be notified.
+         </p>
+       </div>
+
+       <div class="column">
+         <!-- TODO
+         count till 2 and disable messaging to new people for X days
+       -->
+         <a style="width:100%"
+         class="ui basic button tiny">
+         report spam <br>
+         & shadow ban</a>
+
+         <br><br>
+
+         <p class="muted">
+           On two spam reports we disable
+           sending ability for the person for 400 days.
+         </p>
+       </div>
+
+       <!-- TODO
+
+       leave evryhtinng as is, and hide the dialog box forevar :D
+
+     -->
+       <div class="column">
+         <a style="width:100%"
+         class="ui basic button tiny">add connection</a>
+
+         <br><br>
+
+         <p class="muted">
+           Use this one if you want to keep the sender around.
+         </p>
+       </div>
+     </div>
+
+
+
+
+
+
+
+
+  </div>
+
+  <!-- dummy REPLY message -->
+  <div
+    v-if="false"
+    class="thread-working-area__email reply">
+
+    <div class="thread-working-area__email--content">
+      <div class="ray__meta">
+        <div class=""></div>
+        <div class="">
+          seen 15 hours ago
+        </div>
+      </div>
+      <div class="thread-working-area__email--message">
+        Sure, thing. Let me know your creds so I can do audit
+      </div>
+
+      <div class="ray--timing">
+        <div>
+          <!--<a v-if="message.pub_date != 'just now'"
+          v-on:click.prevent="messageReplyModalOpen(message.id)">Reply</a>-->
+        </div>
+        <div>sent 17 hours ago </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    v-if="false"
+    class="activity-log">@dmitrii assigns #thread to Alex on 12 Feb (14.35)</div>
+
+  <!-- dummy REPLY + OFFER message -->
+  <div
+    v-if="false"
+    class="thread-working-area__email reply">
+
+    <div class="thread-working-area__email--content">
+      <div class="ray__meta">
+        <div class=""></div>
+        <div class="">
+          seen 15 hours ago
+        </div>
+      </div>
+      <div class="thread-working-area__email--message">
+        <p>ok, so,</p>
+        <p>seems everything is fine with plugins & server.</p>
+
+        <p>Main wins to improve the speed: <br>
+        1) remove or preload fontawesome: 1 hour <br>
+        2) optimise images through Smush plugin: 1 hour</p>
+
+        <p>google web vitals:</p>
+        <p>3) Cumulative Layout Shift — seems like the issue is with image sizes not
+        speficied explicitly, but overall should take up to 2 hours to debug</p>
+
+        <p>Here is my offer then:</p>
+
+        <!-- R&D:
+        IF ( the reciever has\on holons.me) { he'll see a native box }
+        else { send link to offer }
+        -->
+        <div class="plain-offer">
+          <div class="">
+            price: 4 hours x $50 <br>
+            TAT: we can deliver this week \ Soft deadline\HArd deadline
+            <br>
+            Definition of done: core web vitals pass
+          </div>
+          <div class="">
+            <!-- if reciever
+            <button class="ui button right floated">
+              Accept offer
+            </button>-->
+          </div>
+        </div>
+      </div>
+
+      <div class="ray--timing">
+        <div></div>
+        <div> sent X hours ago </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    v-if="false"
+    class="activity-log">
+    @itay accepted offer & deposited $coin on 12 Feb (14.35) <br>
+    commitment №3234 created, <a class="hm link">assign owner</a>
+  </div>
+
+  <!--
+
+  scenario:
+
+  1. do you do speed optimisation?
+  2. sure, let me know your creds so I can do the audit
+  3. assigns to Alex
+  4. Alex does audit & sends it to client + offer
+  5. client accepts & pays
+  6. delivery
+  7. acceptance & feedback
+
+  -->
+
+  <!-- dummy X message
+  <div class="thread-working-area__email" style="margin-top: 0px;">
+
+    <div class="thread-working-area__email--content">
+      <div class="ray__meta">
+        <div class=""></div>
+        <div class=""></div>
+      </div>
+      <div class="thread-working-area__email--message">
+        All good?
+      </div>
+
+      <div class="ray--timing">
+        <div>
+          <a v-if="message.pub_date != 'just now'"
+          v-on:click.prevent="messageReplyModalOpen(message.id)">Reply</a>
+        </div>
+        <div> recieved X hours ago </div>
+      </div>
+    </div>
+
+  </div>-->
+
+
+
+    <div id="teleport-reference" style="display:none">
+
+      <div class="ui secondary menu rays--filters pdng0">
+        <a class="item">open @teleport</a>
+        <a class="item">see mail threads</a>
+        <a class="item">+ tag</a>
+        <a
+          v-on:click.prevent="openRaysProfile"
+          class="item"
+          id="raysProfileToggle"
+        >profile</a>
+      </div>
+
+      <div id="about">
+        {{ mThread.messages[0].user_from }}
+        <a href="#"
+          class="account__status"
+          v-bind:class="mThread.messages[0].user_from_account_status"
+        >
+          {{ mThread.messages[0].user_from_account_status }}
+        </a> (spqr) <br>
+        Reputation: solid
+      </div>
+
+      <img v-bind:src="mThread.messages[0].user_from_userpic" />
+
+      <div id="raysProfileModal">
+        <a
+          v-on:click.prevent="closeRaysProfile"
+          href="#"
+        >close</a>
+        1. Profiling <br>
+        2. Account own data <br>
+        3. Relations logs
+      </div>
+
+    </div>
+
+
+  <!-- /Write message modal -->
+</div>

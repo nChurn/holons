@@ -1,0 +1,76 @@
+<div id="journal-holder">
+    <h3>XXX hours @ [ date picker ]</h3>
+
+    <!--
+    //bar chart graph
+    TODO scaling to date picker
+    --> <br>
+    X hours billable and unpaid
+
+    <br><br>
+
+    <table id="trackerJournal" class="hm table">
+
+  <!-- model:
+
+    time
+    entity
+    client
+    name TODO: group entries with the same name, will ya?
+    billable \ non billable
+    paid \ pending
+    tag 1 e.g. work type: design, dev, marketing, etc
+    tag 2
+
+  -->
+
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="2">[ all entities ]</th>
+          <th colspan="2">[ all commitments ]</th>
+          <th>[ billable toggle ]</th>
+          <th>[ status filter ]</th>
+          <th>[ tag 1 selector ]</th>
+          <th>[ tag 2 selector ]</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- today -->
+        <tr
+            v-for="period in workPeriods"
+            v-bind:key="period.id"
+        > 
+          <td>{{ period.timer_start }}</td>
+          <td>{{ period.duration }}</td>
+          <td>{{ period.business_entity }}</td>
+          <td>{{ period.commitment_title }}</td>
+          <td>{{ period.comment }}</td>
+
+          <!-- ffs, what do we do here? -->
+          <td>{{ period.is_billable }}</td>
+          <td>-</td>
+          <!-- ffs ends -->
+
+          <td>-</td>
+          <td>-</td>
+          <td><div class="ui dropdown icon item">
+            <i class="wrench icon"></i>
+            <div class="menu">
+              <!--<div class="item">
+                Open conversation
+              </div>-->
+              <div class="item">
+                edit
+              </div>
+            </div>
+          </div></td>
+        </tr>
+      </tbody>
+
+
+    </table>
+    
+</div>

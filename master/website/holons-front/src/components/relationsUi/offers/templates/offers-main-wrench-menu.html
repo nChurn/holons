@@ -1,0 +1,40 @@
+<div class="ui dropdown icon ite muted">
+  <i
+    class="wrench icon"
+    @click="menuToggle"
+  ></i>
+  <div
+    class="menu"
+    style="display: block"
+    v-if="showMenu"
+  >
+    <!--<div class="item">
+      Open conversation
+    </div>-->
+
+    <div
+      class="item"
+      v-on:click="$emit('show-link')"
+    >
+      Direct link \ see offer
+    </div>
+
+    <div class="divider"></div>
+    <!--<div class="header">
+      Export
+    </div>-->
+    <div class="item">
+      Upd. follow up status w/ current date
+    </div>
+    <div
+      class="item"
+      v-on:click="$emit('withdraw')"
+    >
+      Withdraw & archive
+    </div>
+    <div class="item">
+      Withdraw &amp; edit the same draft
+    </div>
+
+  </div>
+</div>

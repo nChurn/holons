@@ -1,0 +1,53 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+{% block content_area %}
+
+
+
+<div  class="ui grid">
+
+  <div class="five wide column">
+
+  </div>
+
+  <div class="six wide column">
+
+    <div class="flex" style="margin-top:10vh;margin-bottom:5vh">
+
+      <div>
+        <h3>{{ profile_username }}</h3>
+
+        <!-- TODO provide proper links here -->
+        <a class="ui basic tiny button" style="padding: 6px 12px">ray @{{ profile_handle }}</a>
+        {% comment %}
+        <a class="ui basic tiny button" style="padding: 6px 12px">chat @teleport</a>
+        {% endcomment %}
+      </div>
+
+      <img src="{{ profile_userpic }}"
+      class="identity__img" style="margin:0; margin-right:1rem">
+    </div>
+
+    {% if profile_bio != '' %}
+      {{ profile_bio | safe }}
+    {% else %}
+    <p>
+      No bio punchlines yet
+    </p>
+    {% endif %}
+
+  </div>
+
+</div>
+
+<p id="profileFooter">
+	this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">private profile</a>
+	powered by <a href="https://holons.me/">holons.me</a>
+	– 3rd millenium private market network
+	for entrepreneurs, talent & capital.
+	<i class="circle outline icon"></i> identity, background and track record are
+  <b style="color:#23272B">unverified</b>.
+</p>
+
+
+{% endblock %}

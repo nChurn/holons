@@ -1,0 +1,24 @@
+  <div class="thread-previews__controls">
+      <div class="ui secondary menu" id="rays__threads--controls" style="overflow: hidden">
+          <a class="item"
+            v-bind:class="{'active': $parent.showOpen}"
+            v-on:click.prevent="activateOpenMessages()"
+          >Open</a>
+          <a class="item"
+            v-bind:class="{'active': $parent.showSnoozed}"
+            v-on:click.prevent="activateSnoozedMessages()"
+          >Snoozed</a>
+          <a class="item"
+            v-bind:class="{'active': $parent.showArchived}"
+            v-on:click.prevent="activateArchivedMessages()"
+          ><!--<i class="archive icon"></i>-->Archive</a>
+          <a class="item"
+            v-bind:class="{'active': $parent.showDeleted}"
+            v-on:click.prevent="activateDeletedMessages()"
+          ><!--<i class="trash alternate outline icon"></i>-->Trash</a>
+          <!--<div class="menu right">
+            <a v-on:click.prevent='$parent.$parent.writeMessage'
+            class="item">+ thread</a>
+          </div>-->
+        </div>
+    </div>

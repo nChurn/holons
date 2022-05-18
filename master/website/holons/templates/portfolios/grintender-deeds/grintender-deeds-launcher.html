@@ -1,0 +1,148 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} GRIN Launcher – outreach platform {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">GRIN launcher</h1>
+
+						<p class="refs">
+							Outreach platform to support
+							<a href="https://the.gt/" target="_blank">agency's</a> services</p>
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing</p>-->
+
+						<div class="ui grid">
+
+							<div class="eight wide column">
+								<p class="refs">
+									Product owner: <a href="/grintender">Dmitrii B.</a> <br>
+									Coder #1: <b>Dmitry K.</b> <br>
+									Coder #2: <b>Alex B.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+								<p>It started w/ link building outreach using lists in Excel
+									and some dumb automations.</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1.jpeg">
+
+								<p>Then we built the platform:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/3.jpg">
+
+								<p>At some point it was relaying ~30 domains and 200 or so mailboxes
+									– 500k emails sent monthly. Today we scaled down that outreach network.</p>
+
+								<p>At some point I realised that the system we
+									built can be used beyond link building, i.e. sales, affiliates,
+									influencers outreach.</p>
+
+								<p>And even to fetch the content supply roster :D</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/2.jpeg">
+
+								<p>Today the platform and dedicated team works on client outreach campaigns.</p>
+								<p>Tho we experienced the same pain w/ business infrastructure
+									as running the agency, so the service will be re-launched one holons.me platform released.</p>
+
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/launncher-hp.jpg">
+
+								<p>The dashboard is built w/ boilerplate design framework,
+									since it was initially developed for iternal use only:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/34.jpeg">
+
+								<h3>Explainer video for client outreach</h3>
+
+								<div class="iframe main-top__frame" id="promoVideoTop">
+									<iframe src="https://www.youtube.com/embed/c3YBFyL_8rg"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+									gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+									<!--<div class="ytLoader"><img class="cover" width="100%"
+										src="https://the.gt/wp-content/themes/the_gt01/images/yt-cover.jpg">
+										<img class="yt-playbtn"
+										src="https://the.gt/wp-content/themes/the_gt01/images/yt-playbtn.png">
+									</div>-->
+								</div>
+
+								<h3>Some marketing collateral</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Lr9kXaP2sEI.jpeg">
+
+								<br><br>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/mc.jpg">
+
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

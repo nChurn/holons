@@ -1,0 +1,1058 @@
+<div class="workspaces-template">
+  <add-work-space-modal v-bind:tokenValue="token" :parent-list-id="parentListId" />
+  <delete-work-space-modal
+    v-if="activeProject"
+    v-bind:tokenValue="token"
+    :workspace-id="activeProject.id"
+  />
+
+  <div class="ui grid" v-if="workspacesLoaded && activeProject === null">
+    <!--<div
+      v-if="selectedProjectType === undefined"
+      class="four wide column moneta-items">  </div>-->
+
+    <div class="three wide column" style="color: rgba(0,0,0,.6)">
+
+      <add-work-space-button :open-modal="openNewProjectModal" />
+
+      <p>
+        <b>tickets assigned to you</b> across all boards agregate at
+        <a href="/">agenda</a> & rays as well
+      </p>
+      <p>
+        <b>@mentions</b> get into your Rays inbox as well.
+        It seems like it's easier to manage them that way.
+      </p>
+      <p>
+        <b>due dates</b> logic can be configured
+        individually for each workspace. Here is a default setup:
+        soft dealine 1 day before hard deadline
+      </p>
+
+      <div id="odyssey-feature">
+        <h4><i class="square full icon"></i>Odyssey</h4>
+
+
+          <a href="https://odyssey.holons.me/meta/value/augmentation">
+            <i class="slack hash icon"></i>
+            augmentations</a>
+
+          <a href="https://odyssey.holons.me/meta/fordism">
+            <i class="slack hash icon"></i>
+            fordism</a>
+
+          <a href="https://odyssey.holons.me/meta/value/aint-no-middle">
+            <i class="barcode icon"></i>
+            Removing middle management</a>
+          <a href="https://odyssey.holons.me/en/meta/value/corporations">
+            <i class="barcode icon"></i>
+            Undertaking corporations</a>
+
+      </div>
+
+      <div class="roadmap-container">
+        <h4 style="color: rgba(0,0,0,.6)">
+          <i class="terminal icon"></i>
+          Roadmap</h4>
+
+        <a class="odyssey-link"
+        href="https://odyssey.holons.me/en/roadmap">
+          v001.XXX : proof of concept edition
+        </a>
+
+
+        <ul>
+          <!--<li>
+            <i class="circle outline icon" style="color:#FFCF4A"></i>
+            Killer feature
+          </li>-->
+          <li>
+            <i class="circle icon"></i>
+            Dependencies
+          </li>
+          <li>
+            <i class="circle icon"></i>
+            Gantt Chart View
+          </li>
+          <li>
+            <i class="circle outline icon"></i>
+            black boxes integration
+          </li>
+          <li>
+            <i class="circle outline icon"></i>
+            live collaboration
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="twelve wide column" style="border-left: 1px solid #e8eaed">
+
+
+      <div id="moneta-log-controls" class="ui secondary menu secondary-navigation">
+
+          <a class="item active">All</a>
+          <a class="item">Mine</a>
+          <a class="item">Shared with me</a>
+          <a class="item">
+            <i class="star outline icon"></i>
+          </a>
+
+          <select class="ui dropdown item">
+            <option value="">all issues</option>
+            <option value="1">mine</option>
+            <option value="0">my people</option>
+          </select>
+
+          <div class="right menu">
+
+            <select class="ui dropdown item">
+              <option value="">function</option>
+              <option value="1">sales</option>
+              <option value="0">production</option>
+            </select>
+
+            <select class="ui dropdown item">
+              <option value="">all entities</option>
+              <option value="1">GRIN tech</option>
+              <option value="0">Launcher</option>
+            </select>
+
+          </div>
+
+      </div>
+
+
+      <div class="ui three column grid">
+
+
+        <!-- list of workspaces -->
+        <div
+          class="column pdng0"
+          v-for="board in parentProjects"
+          v-bind:key="board.id"
+        >
+          <div class="whp__workspace" v-on:click="getBoardData(board.id)">
+            <h3
+              v-if="typeof board.name.split('__')[0] !== 'undefined'"
+              class="board_id"
+              style="margin-bottom30px">{{ board.name.split('__')[0] }}</h3>
+            <h3
+              v-else
+              class="board_id"
+              style="margin-bottom30px">{{ board.name }}</h3>
+            <!--<div class="">
+                  <i class="circle outline icon"></i>
+                  149 tickets assiged <br>
+                  <i class="circle outline icon" style="color: red"></i>
+                  14 due dates missed <br>
+                  <i class="circle outline icon" style="color: yellow"></i> 37 soft due dates missed <br>
+                  124 @mentions
+            </div>-->
+
+            <p><i class="circle outline icon"></i>149 due dates total</p>
+
+            <!--<p style="text-align:right">
+              <b>missed</b>
+            </p>-->
+            <p><i class="circle icon" style="color: red"></i>14 hard deadlines missed</p>
+            <p><i class="circle icon" style="color: yellow"></i>143 soft</p>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- main grid ends -->
+
+  </div>
+
+  <div class="ui grid" v-else-if="workspacesLoaded && activeProject !== null">
+    <sui-sidebar-pushable>
+      <sui-menu
+        is="sui-sidebar"
+        :visible="showProjDetails"
+        animation="overlay"
+        id="workspaceSidebar"
+        icon="labeled"
+        vertical
+      >
+        <sui-button class="basic workspace-delete" @click.prevent="openDeleteWorkspaceModal">Delete this workspace</sui-button>
+        <ul class="columns-list">
+          <li v-for="(column, i) in activeProjectArchive" :key="i" class="columns-list__item-wrapper">
+            <sui-input
+              v-model="column.name"
+              :key="colIndex"
+              ref="renameColumnRef"
+              class="column_name_edit"
+              type="text"
+              placeholder="Enter list name"
+              @blur="column.editable = false, renameColumn(column)"
+              @keyup.enter="$event.target.blur()"
+              transparent
+              fluid
+            />
+            <div
+              v-for="card in column.cards"
+              :key="card.id"
+              class="tasks-card item"
+              @click="openCard(card.id)"
+            >
+              {{ card.subject }}
+            </div>
+          </li>
+        </ul>
+      </sui-menu>
+      <sui-sidebar-pusher class="columns-grid ">
+        <div v-if="showProjDetails" class="close-overlay" @click="showProjDetails = false"></div>
+        <div class="column moneta-items">
+
+
+          <div class="ui grid ws-header">
+
+            <div class="ten wide column">
+
+              <div class="project-header__project-details top">
+                <sui-button
+                class="ui basic button mini"
+                style="margin-bottom:5px"
+                icon="bullseye" @click="showProjDetails = !showProjDetails">
+                  Menu
+                </sui-button>
+
+                <div class="ui breadcrumb">
+                  <a href="/layers" class="section">Fairchild Layers</a>
+                  <span
+                    v-for="breadcrumbItem in breadCrumbs"
+                    class="breadcrumbs-item"
+                    :key="breadcrumbItem.id"
+                  >
+                    <div class="divider"> / </div>
+                    <a
+                      v-if="activeProject.id != breadcrumbItem.url.split('=')[1]"
+                      class="section"
+                      v-text="breadcrumbItem.name"
+                      v-bind:href="breadcrumbItem.url"
+                    ></a>
+                    <span
+                      v-else
+                      class="section"
+                      v-text="breadcrumbItem.name"
+                    ></span>
+                  </span>
+                  <!--<div class="divider"> / </div><br>
+                  <div class="active section">
+                    <h2>{{ cropProjectName(activeProject.name) }}</h2>
+                  </div>-->
+                </div>
+
+                <br>
+
+                <div class="project-header__users-list">
+                  <div v-if="this.usersList.length" class="project-header__project-users">
+                    <user-block
+                      v-for="(user, uId) in getUserInfo(activeProject.members)"
+                      :key="uId"
+                      class="timeline-entry__user"
+                      :user="user"
+                      :with-details="true"
+                      :show-controls="false"
+                      :show-name="false"
+                    />
+                    <div class="ui basic button mini" @click="inviteModal = true">
+                      invite
+                    </div>
+                  </div>
+
+                  <div v-if="inviteModal" class="users-list close-overlay" @click="inviteModal = false"/>
+                  <div v-if="inviteModal && !inviteLink.length" class="users-list__add-new">
+                    <sui-input v-model="inviteMail" type="email" placeholder="Enter email" />
+                    <sui-dropdown
+                      placeholder="Select role"
+                      selection
+                      :options="projectsRoles"
+                      v-model="inviteRole"
+                    />
+                    <div class="add-new__spacer">
+                      <span v-if="inviteError" class="add-new__error">Please enter email and select role</span>
+                    </div>
+                    <sui-button @click="getInvite()">Get invite</sui-button>
+                  </div>
+                  <div v-else v-if="inviteModal && inviteLink.length" class="users-list__add-new">
+                    <sui-label class="segment-label" attached="top">
+                      Invite link
+                    </sui-label>
+                    <div class="ui input option-action__share">
+                      <input
+                        class="option-action__share-input"
+                        type="text"
+                        readonly
+                        autofocus
+                        v-model="inviteLink"
+                        @click="copyLink"
+                      >
+                      <sui-button
+                        positive
+                        :content="`${ linkCopied ? 'Copied!' : 'Copy'}`"
+                        @click="copyLink"
+                      />
+                      <sui-label
+                        class="option-action__share-label"
+                        :style="`opacity: ${ linkCopied ? '1' : '0'}`"
+                        pointing
+                      >Copied!</sui-label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+            <div class="six wide column">
+
+              <quick-links
+                :active-project="activeProject"
+                :send-request="sendRequest"
+                style="margin-right:0"
+              />
+
+              <div class="project-header__views">
+                <button
+                  v-for="(layout, i) in layouts"
+                  :key="i"
+                  class="ui button basic mini"
+                  @click="changeLayout(layout)"
+                >
+                  {{ layout }}
+                </button>
+
+                <button class="ui button basic mini" id="circuitDesign"
+                onclick="$( '#circuitDesignBoard' ).toggle();
+                $( '#circuitDesign' ).toggleClass( 'active' );" style="padding: 5px;margin-right:0">
+                  <img src="/static/img/layers.png" width="17px">
+                  <span>design circuit</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="circuitDesignBoard">
+
+            <div class="ui grid" style="padding:1rem">
+
+              <!--<div class="four wide column">
+                [ input > function > output ] <br>
+
+                TODO assign workspace creator by default
+                owner: [ person_assign_block ]
+                <img src="/static/img/soul-pic3.jpg">
+                <a class="hm link inverted">re-assign</a>
+                <br>
+                function tag
+              </div>-->
+              <!--<div class="four wide column">  due dates
+                    <h5>due dates statuses</h5>
+                  [ delete]  {3} days {before} { SOFT DEADLINE } <br>
+                  [ delete]  {1} days {before} { HARD DEADLINE } <br>
+                  [ delete]  {1} days {after} { DEADLINES MISSED } <br><br>
+
+                  <a onclick="$( '#statusModalDummy' ).addClass('active')"
+                  class="ui basic button inverted">+ status</a>
+
+
+              </div>-->
+
+              <div class="eight wide column pdng0"> <!-- CF -->
+                <h5>custom fields (CF)</h5>
+                <div class="ui grid">
+                  <a onclick="$( '#cfModal-userstory' ).addClass('active')"
+                  class="ui basic button inverted five wide column">+ card CF</a>
+                  <a onclick="$( '#cfModal-task' ).addClass('active')"
+                  class="ui basic button inverted five wide column">+ task CF</a>
+                  <!-- onclick="$( '#apiModalDummy' ).addClass('active')" -->
+                  <a class="ui disabled basic button inverted five wide column"><i class="clock outline icon"></i> API connector</a>
+                </div>
+              </div>
+
+              <div class="eight wide column pdng0">
+                <h5><i class="clock outline icon"></i>playbooks</h5>
+                <!-- things to save:
+                1. lists and their names, black boxes if any
+                2. tags 3. due dates and 4. CFs
+                5. automation rules -->
+                <p>Workspace wide setup record. Coming soon.</p>
+
+
+                <div class="ui grid">
+                  <div class="eight wide column pdng0">
+                    <div class="field">
+                      <select class="ui disabled fluid search dropdown"
+                      style="background: rgba(255, 255, 255, 0.06);color: #F7F8FA;text-transform: uppercase;font-size: 12px">
+                          <option value="">
+                            <i class="star outline icon"></i> load own playbook
+                          </option>
+                         <option value="">client link building campaign @launcher</option>
+                       </select>
+                    </div>
+
+
+                  </div>
+                  <div class="eight wide column pdng0" style="padding-left:10px">
+                    <a class="ui disabled basic button inverted">
+                      save current state
+                    </a>
+                    <!--<a class="hm link inverted">
+                      <i class="arrow right icon"></i>explore public playbooks
+                    </a>-->
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <h4 style="border-bottom:10px solid rgba(255,255,255,.09)">
+              <!--board wide-->
+
+              <span style="font-size:80%">avg. makespan all time: X hours | last 30 days: X hours | last 7 days: X hours</span>
+            </h4>
+            <!--<h4>per column</h4>-->
+
+            <div class="columns-list" style="height:auto">
+              <li class="columns-list__item-wrapper">
+
+
+                <textarea style="height: auto"
+                class="ui field textarea card-modal__description-textarea"
+                placeholder="program... //right now it's just notes we agregate across own projects to see what features are missing"
+                cols="30" rows="5"></textarea>
+
+
+                <p><i class="circle outline icon"></i>on average card spends X hours here</p>
+
+                <p><i class="circle outline icon"></i>when card gets here
+                assign [ person_assign_block ],
+                and set due date in X hours (and soft deadline in X hours)</p>
+
+                <!--<p>
+                  #system #notifications <span
+                  data-tooltip="if the user last seen [some time ] ago,
+                    we'll ping him w/ #sms notification">enabled</span>
+                </p>-->
+
+              </li>
+              <li class="columns-list__item-wrapper">
+                //same thing here
+              </li>
+              <li class="columns-list__item-wrapper">
+                //same thing here
+              </li>
+              <li class="columns-list__item-wrapper">
+                //same thing here
+              </li>
+            </div>
+          </div>
+
+          <div v-if="kanbanTable" class="columns-list">
+            <sui-table selectable celled striped>
+              <sui-table-header>
+                <sui-table-row>
+                  <sui-table-header-cell>Subject</sui-table-header-cell>
+                  <sui-table-header-cell>Tags</sui-table-header-cell>
+                  <sui-table-header-cell>Assigned users</sui-table-header-cell>
+                  <sui-table-header-cell>Due date</sui-table-header-cell>
+                </sui-table-row>
+              </sui-table-header>
+              <sui-table-body>
+                <sui-table-row v-for="(task, i) in workspaceTasks" :key="i" @click="openCard(task.id)">
+                  <sui-table-cell>{{ task.subject }} </sui-table-cell>
+                  <sui-table-cell>
+                    <div class="ws-card--tags">
+                      <span
+                        v-for="tag in task.tags"
+                        class="label-text"
+                        v-bind:style="{ backgroundColor: ''+ tag[1] +''}"
+                      >{{ tag[0].split('__')[0] }}</span>
+                    </div>
+                  </sui-table-cell>
+                  <sui-table-cell>
+                    <div class="ws-card-members">
+                      <span
+                        v-for="user in usersList"
+                        :key="user.id"
+                      >
+                        <span
+                          v-for="uId in task.assigned_users"
+                          :key="uId"
+                        >
+                          <span
+                            v-if="user.id === uId"
+                            class="task-extra-info__assigned-inner member"
+                            :style="`background-color:${user.color}`"
+                          >
+                            {{ user.full_name[0] }}
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </sui-table-cell>
+                  <sui-table-cell>
+                    <div class="ws-badges">
+                      <div
+                        v-if="task.due_date"
+                        class="badge due-date-badge is-due-soon"
+                      >
+                        <span class="badge-icon icon-sm icon-clock badge-due-icon"></span>
+                        <span class="badge-text js-due-date-text">
+                          {{ customDateFormatter(task.due_date, false, true) }}
+                        </span>
+                      </div>
+                  </div>
+                  </sui-table-cell>
+                </sui-table-row>
+              </sui-table-body>
+            </sui-table>
+          </div>
+
+          <ul v-else class="columns-list" :class="{ 'vertical': kanbanVertical }">
+            <draggable
+              v-model="activeProjectColumns"
+              :move="checkMove"
+              drag-class="list-dragging"
+              ghost-class="list-placeholder"
+              class="drag-column"
+              v-bind:class="{'dropzone': dragColumn}"
+              @start="startDrag($event, 'column start')"
+              @end="trackDrag($event, 'column end')"
+            >
+              <li
+                class="columns-list__item-wrapper"
+                v-for="(column, colIndex) in activeProjectColumns"
+                :class="{'hidden': column.is_archived}"
+              >
+
+                <div class="task-column__header">
+                  <sui-input
+                    v-model="column.name"
+                    :key="colIndex"
+                    ref="renameColumnRef"
+                    class="column_name_edit"
+                    type="text"
+                    placeholder="Enter list name"
+                    @blur="column.editable = false, renameColumn(column)"
+                    @keyup.enter="$event.target.blur()"
+                    transparent
+                    fluid
+                  />
+                  <sui-dropdown class="icon column_delete" icon="ellipsis horizontal" button pointing="top right">
+                    <sui-dropdown-menu>
+                      <sui-dropdown-item @click="deleteList(column.id)">
+                        <i class="trash alternate outline icon"></i>delete column</sui-dropdown-item>
+
+                      <div role="option" class="item disabled">
+                        <i class="envelope outline icon"></i>new email input //coming soon</div>
+                      <div role="option" class="item disabled">
+                        <i class="code icon"></i>new webhook input //coming soon</div>
+                      <div role="option" class="item disabled">
+                        <i class="wpforms icon"></i>new form submission input //coming soon</div>
+
+
+
+                      <!--<div style="overflow-y:scroll;max-height: 62.5vh">
+                         TODO same thing for webhook as wewll
+                        <div class="ws-input__item">
+                          <p>this column recieves cards through <br>
+                          23423423@holons.me email</p>
+
+                          <a class="ui basic button" style="width:100%">
+                            <i class="copy outline icon"></i>copy email address
+                          </a><br>
+                          <div style="text-align:right"><a class="hm link">remove</a></div>
+                        </div>
+                        TODO same thing for webhook as wewll
+                        <div class="ws-input__item">
+                          <p>this column recieves cards to <br>
+                          https://holons.me/24234233 webhook</p>
+
+                          <a class="ui basic button" style="width:100%">
+                            <i class="copy outline icon"></i>copy webhook URL
+                          </a><br>
+                          <div style="text-align:right"><a class="hm link">remove</a></div>
+                        </div>
+                        TODO same thing for webhook as wewll
+                        <div class="ws-input__item">
+                          <p>this column recieves cards through <br>
+                          form submission to <br>
+                          https://holons.me/24234233 URL</p>
+
+                          <a class="ui basic button" style="width:100%">
+                            <i class="copy outline icon"></i>copy URL
+                          </a><br>
+                          <div style="text-align:right"><a class="hm link">remove</a></div>
+                        </div>
+
+                        <div class="ws-input__item">
+                          <p>A TEST TO SEE LONG CONTENT <br>
+                          form submission to <br>
+                          https://holons.me/24234233 URL</p>
+
+                          <a class="ui basic button" style="width:100%">
+                            <i class="copy outline icon"></i>copy URL
+                          </a><br>
+                          <div style="text-align:right"><a class="hm link">remove</a></div>
+                        </div>
+
+                        <div class="ws-input__item">
+                          <p>A TEST TO SEE LONG CONTENT <br>
+                          form submission to <br>
+                          https://holons.me/24234233 URL</p>
+
+                          <a class="ui basic button" style="width:100%">
+                            <i class="copy outline icon"></i>copy URL
+                          </a><br>
+                          <div style="text-align:right"><a class="hm link">remove</a></div>
+                        </div>
+
+                      </div>-->
+
+
+
+
+                    </sui-dropdown-menu>
+                  </sui-dropdown>
+                </div>
+
+
+
+
+                <draggable
+                  v-model="column.cards"
+                  :id="'column' + column.id"
+                  :move="checkMove"
+                  :group="{ name: 'row' }"
+                  draggable=".item"
+                  ghost-class="ghost"
+                  class="tasks-column item-container drag-row"
+                  v-bind:class="{
+                    'dropzone': dragRow
+                  }"
+                  @start="startDrag($event, 'row start')"
+                  @end="trackDrag($event, 'row end')"
+                >
+
+                  <div
+                    v-for="card in column.cards"
+                    :key="card.id"
+                    class="tasks-card item"
+                    :class="{
+                      'child-holon': card.type === 'nested'
+                    }"
+                    @click="card.type === 'nested' ? getBoardData(card.id) : openCard(card.id)"
+                  >
+
+                      <div v-if="card.type !== 'nested'" class="ws-card--tags">
+                        <span
+                          v-for="tag in card.tags"
+                          class="label-text"
+                          v-bind:style="{ backgroundColor: ''+ tag[1] +''}"
+                        >{{ tag[0].split('__')[0] }}</span>
+                      </div>
+
+                    <h3>{{ getCardName(card, column) }}</h3>
+                    <p v-for="field in Object.keys(cardDisplayCF[card.id])">
+                      <b>{{cardDisplayCF[card.id][field].name}}:</b>
+                      <span style="font-weight: 200;">
+                        <i>{{cardDisplayCF[card.id][field].value}}</i>
+                      </span>
+                    </p>
+
+
+                    <div class="ws-badges">
+                        <div
+                          v-if="card.due_date"
+                          class="badge due-date-badge is-due-soon"
+                        >
+                          <span class="badge-icon icon-sm icon-clock badge-due-icon"></span>
+                          <span class="badge-text js-due-date-text">
+                            {{ customDateFormatter(card.due_date, false, true) }}
+                          </span>
+                        </div>
+                    </div>
+
+                    <div class="ws-card-members">
+                      <span
+                        v-for="user in usersList"
+                        :key="user.id"
+                      >
+                        <span
+                          v-for="uId in card.assigned_users"
+                          :key="uId"
+                        >
+                          <span
+                            v-if="user.id === uId"
+                            class="task-extra-info__assigned-inner member"
+                            :style="`background-color:${user.color}`"
+                          >
+                            {{ user.full_name[0] }}
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </draggable>
+                <div class="drag-row-footer">
+                  <input
+                    v-if="newRow && newRowColumnId == column.id"
+                    v-model="newRowName"
+                    class="add-row-input"
+                    type="text"
+                    :ref="'newRowRef' + column.id"
+                    placeholder="Enter card name"
+                    @blur="newRow = false, newRowColumnId = NaN"
+                    @keyup.enter="addRow(column)"
+                  />
+                  <button
+                    v-else
+                    type="link"
+                    class="add-row-button"
+                    @click="newRow = true, newRowColumnId = column.id"
+                  >
+                    <!--<span class="add-row-button__icon-add"></span>-->
+                    <span
+                      v-if="!!column.cards && column.cards.length"
+                      class="add-row-button__add-txt"
+                      >+ card</span
+                    >
+                    <span v-else class="add-row-button__add-txt">+ card</span>
+                  </button>
+                  <button
+                    type="link"
+                    class="add-project-button"
+                    @click="openNewProjectModal(column.id)"
+                  >
+                    <!--<span class="add-row-button__icon-add"></span>-->
+                    <span class="add-row-button__add-txt">+ workspace</span>
+                  </button>
+                </div>
+              </li>
+            </draggable>
+            <div v-if="columnsLoaded" class="columns-list__item-wrapper workspace__inner--controls"
+            style="min-width:240px">
+              <input
+                v-if="newColumn"
+                v-model="newColumnName"
+                class="add-column-input"
+                type="text"
+                ref="newColumnRef"
+                placeholder="Enter list name"
+                @blur="addList(activeProject.id)"
+                @keyup.enter="$event.target.blur()"
+              />
+              <button
+                v-else
+                type="link"
+                class="ui basic button"
+                @click="newColumn = true"
+              >
+                <span v-if="activeProjectColumns.length" class="add-column-button__add-txt">+ list</span>
+                <span v-else class="add-column-button__add-txt">+ list</span>
+              </button>
+              <button class="ui basic button disabled"
+              onclick="$( '#inputModalDummy' ).addClass('active')">
+                <span class="add-column-button__add-txt"><i class="clock outline icon"></i> input</span>
+              </button>
+              <button class="ui basic button disabled"
+              onclick="$( '#outputModalDummy' ).addClass('active')">
+                <span class="add-column-button__add-txt"><i class="clock outline icon"></i> output</span>
+              </button>
+              <button class="ui basic button disabled"
+              onclick="$( '#bbModalDummy' ).addClass('active')">
+                <span class="add-column-button__add-txt"><i class="clock outline icon"></i> black box</span>
+              </button>
+            </div>
+
+            <!--<div v-if="columnsLoaded" class="columns-list__item-wrapper bb-cutin bb-input"
+            style="min-width:240px">
+              <h4>input</h4>
+              <p>//when card gets here we sync it
+                to the corresponding black box input</p>
+
+              <h2 class="bb-cutin__title">launcher: writing</h2>
+            </div>
+            <div v-if="columnsLoaded" class="columns-list__item-wrapper bb-cutin bb-output"
+            style="min-width:240px">
+              <h4>output</h4>
+              <p>//card sync with bb output</p>
+              <p class="bb-cutin__desc">
+                this is a private
+                <a class="hm link"
+                href="https://odyssey.holons.me/en/nodes/fairchild-layers/box">#box</a>
+              </p>
+            </div>-->
+          </ul>
+
+          <div id="inputModalDummy" class="hm modal">
+            <div class="content">
+              <h2 class="title">workspace inputs</h2>
+
+              <div class="ui secondary menu secondary-navigation pdng0"
+                style="margin-bottom:2rem !important">
+
+                  <a class="item active" data-tab="new">
+                    create new
+                  </a>
+                  <a class="item" data-tab="inventory">
+                    Inventory
+                  </a>
+                  <a class="item" href="" target="_blank">
+                    <i class="square full icon"></i>the why
+                  </a>
+
+                  <div class="right menu inverted">
+
+                    <h3 class="item" style="padding-left:0">
+                      Discover</h3>
+
+                    <a class="item" data-tab="exchange">
+                      Private exchange
+                    </a>
+                    <a class="item" href="/markets/boxes" target="_blank">
+                      Black Boxes Marketplace
+                    </a>
+                    <a class="item disabled">
+                      <i class="circle outline icon gold-dot" style="color: #FFCF4A"></i>
+                      <span style="color: rgba(255,255,255,.5) !important">
+                      Public exchange</span>
+                    </a>
+                  </div>
+              </div>
+
+              <div class="ui tab active" data-tab="new">
+
+                <!--<p>input – is a way to recive cards in list</p> //who = shared to, what = brief, how = hm, where = this.board
+                <p>output – is a way to send cards to { destination }</p> //how + where + what
+                //confusion arises when my output is someone's else input and vice versa
+
+                <p>box – is a way to sync card to some other workspace and get it back</p>
+                <p>hence black box is...</p>-->
+
+                <div class="ui grid">
+                  <div class="eight wide column">
+
+                    <h4>
+                      email, <br>
+                      webhooks <br>
+                      & forms</h4>
+                    <p>use <i class="ellipsis horizontal icon"></i>list menu to add
+                    these inputs.</p>
+
+
+                    <h4>native integrations</h4>
+                    <p>
+                    you can create cards from around holons.me as well: <br>
+                    rays, teleport chat, meeting, etc</p>
+
+                    <h4>Zapier</h4>
+                    <p>//coming soon</p>
+
+                    <!--//do we feature playbooks here somehow-->
+
+                  </div>
+                  <div class="eight wide column pdng0">
+                    <h5>portal</h5>
+
+                    <p>portal - is a way to make continious integration w/ other workspaces</p>
+
+                    insider form {
+                      name,
+                      board,
+                      share to [ specific connection, network, entities ] //i.e. who can put cards in here
+                      description of output \ definition of done,
+                      transaction associated terms [ TAT, price ]
+                    }
+                  </div>
+
+                </div>
+
+
+
+              </div>
+              <div class="ui tab" data-tab="inventory">
+
+
+                own, inhouse, network\shared, vetted lists
+              </div>
+              <div class="ui tab" data-tab="discovery">
+                network suggested \ requests,
+                market
+              </div>
+
+
+            </div>
+          </div>
+
+          <div id="outputModalDummy" class="hm modal">
+            <div class="content">
+              <h2 class="title">workspace output</h2>
+
+
+              <div class="ui grid">
+                <p>(1) send card to it's origin //black box </p>
+                <p>(2) send card to [ board selector ]</p>
+
+                <h5>workflow type</h5>
+                toggle { <br>
+                  either: wait for "all good" confirmation before removing from workflow <br>
+                  or: just remove from workflow <br>
+                }
+              </div>
+
+              <h5>send outside</h5>
+              webhook, email, zapier
+
+            </div>
+          </div>
+
+          <div id="bbModalDummy" class="hm modal"> <!-- black boxes -->
+            <div class="content">
+              <h2 class="title">black box</h2>
+
+              <div class="ui grid">
+                <div class="eight wide column">
+                  <h3>owned</h3>
+                  <p>nothing here yet</p>
+
+                  <h3>private network</h3>
+                  <p>
+                    a concept to explore: <br><br>
+
+                    market utilises pre-approved vendors,
+                    but is there a way to give the same kind of tool for your
+                    own network?
+
+                  </p>
+
+                </div>
+                <div class="eight wide column">
+                  <h3>market</h3>
+                  <p>you don't have existing #commitments
+                    with any vendors yet</p>
+                  <a class="ui basic button" style="width:100%"
+                  href="/markets/boxes/">explore black boxes market</a>
+                </div>
+              </div>
+              <!--point to certain Black Box. <br>
+              Use cases tho:
+
+              1. Owned by me\us (e.g. campaign 2 writing )
+              2. Contracted through market for the 1st time
+              3. Contracted through market 2nd+ time
+              4. Own network //i.e. directly
+              5. GRID network -->
+            </div>
+          </div>
+
+          <div id="cfModal-task" class="hm modal">
+            <CfModal
+              scope="task"
+              v-bind:fields="customFields.task"
+              v-bind:createCF="createCF"
+              v-bind:updateCFList="addCF"
+              v-bind:displayFields="displayFieldsMap"
+              v-bind:deleteCF="deleteCF"
+            />
+          </div>
+          <div id="cfModal-userstory" class="hm modal">
+            <CfModal
+              scope="userstory"
+              v-bind:fields="customFields.userstory"
+              v-bind:createCF="createCF"
+              v-bind:updateCFList="addCF"
+              v-bind:displayFields="displayFieldsMap"
+              v-bind:deleteCF="deleteCF"
+            />
+          </div>
+          <!-- custom field modal ends -->
+
+          <div id="apiModalDummy" class="hm modal">
+            <div class="content">
+              <h2 class="title">add API connector</h2>
+            </div>
+
+            list of custom fields and their [ names ],
+            API key
+
+          </div>
+          <!-- custom field modal ends -->
+
+          <div id="statusModalDummy" class="hm modal">
+            <div class="content">
+              <h2 class="title">add new due date status</h2>
+
+                <div class="ui form">
+                  <div class="fields">
+                    <div class="six wide field">
+                      <label>Status name</label>
+                      <input type="text" placeholder="e.g. HARD DEADLINE">
+                    </div>
+                    <div class="two wide field">
+                      <label>Days</label>
+                      <input type="text" placeholder="3">
+                    </div>
+                    <div class="six wide field">
+                       <div class="toggle label">trigger before due date</div>
+                       <div class="ui toggle checkbox">
+                         <input name="public" type="checkbox">
+                         <label>after</label>
+                       </div>
+                    </div>
+                    <div class="two wide field">
+                      <button class="ui basic button">
+                      + ok. add</button>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div><!-- modal ends -->
+
+
+          <card-modal
+            v-if="cardToOpen != null"
+            :key="cardKey"
+            :card="cardToOpen"
+            :close-card="closeCard"
+            :get-current-list="getCurrentList"
+            :active-project="activeProject"
+            :project-columns="activeProjectColumns"
+            :project-archive="activeProjectArchive"
+            :all-projects="workspacesAvailable"
+            :auth-headers="authHeaders"
+            :save-card="saveCard"
+            :deep-copy="deepCopy"
+            :archived-col-id="archivedColId"
+            :reorder-rows="reorderRows"
+            :add-row="addRow"
+            :delete-card="deleteCard"
+            :send-request="sendRequest"
+            :users-list="usersList"
+            :user-me="userMe"
+            :current-tasks="currentTasks"
+            :timeline="timeline"
+            :show-options="showCardOptions"
+            :switch-options="switchOptions"
+            :get-user-info="getUserInfo"
+            :set-focus="setFocus"
+            :customFields="customFields"
+            :updateField="updateDisplayCF"
+          />
+        </div>
+      </sui-sidebar-pusher>
+    </sui-sidebar-pushable>
+  </div>
+</div>

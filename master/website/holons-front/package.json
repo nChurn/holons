@@ -1,0 +1,79 @@
+{
+  "name": "holons-front",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0",
+    "@fullcalendar/list": "^5.5.0",
+    "@fullcalendar/scrollgrid": "^5.5.1",
+    "@fullcalendar/timegrid": "^5.5.1",
+    "@fullcalendar/vue": "^5.5.0",
+    "@johmun/vue-tags-input": "^2.1.0",
+    "@sentry/tracing": "^6.0.2",
+    "@sentry/vue": "^6.0.2",
+    "@vue-stripe/vue-stripe": "^4.2.4",
+    "axios": "^0.21.1",
+    "bifrost-cors": "^1.0.4",
+    "core-js": "^3.6.5",
+    "cropperjs": "^1.5.11",
+    "fsevents": "^2.3.2",
+    "gsap": "^3.6.0",
+    "jquery": "^3.5.1",
+    "luxon": "^1.25.0",
+    "query-string": "^6.13.7",
+    "screenfull": "^5.1.0",
+    "semantic-ui-vue": "^0.11.0",
+    "v-autocomplete": "^1.8.2",
+    "v-hotkey": "^0.9.0",
+    "vee-validate": "^3.3.7",
+    "vue": "^2.6.11",
+    "vue-loading-overlay": "^3.3.2",
+    "vue-luxon": "^0.10.0",
+    "vue-phone-number-input": "^1.1.10",
+    "vue-shortkey": "^3.1.7",
+    "vue-textarea-autosize": "^1.1.1",
+    "vue-upload-component": "^2.8.22",
+    "vue-wysiwyg": "^1.7.2",
+    "vue2-datepicker": "^3.9.1",
+    "vuedraggable": "^2.24.0",
+    "vuejs-datepicker": "^1.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-tracker": "^0.4.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
+}

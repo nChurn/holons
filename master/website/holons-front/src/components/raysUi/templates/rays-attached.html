@@ -1,0 +1,22 @@
+<div>
+    <div v-if="rays.active">
+        <div class="item__wrapper"
+            v-for="ray in rays.active"
+            v-bind:key="ray.id" >
+          <div class="rays__contact"
+            v-bind:class="{ active: $parent.selectedRay == ray }"
+            v-on:click.prevent="switchRay(ray)" >
+            <img
+              v-if="ray.userpic != ''"
+              v-bind:src="ray.userpic"
+              alt="" class="" />
+            <div class="ray__settings"></div>
+            <span>{{ ray.short_name }}</span>
+            <span
+              v-if="ray.messages_count > 0"
+              class="notifications-count inverted"
+            >{{ ray.messages_count }}</span>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div
+  id="thread-previews"
+  style="overflow-y: scroll;"
+ >
+  <main-tools
+    v-if="mailbox.id"
+    :key='mailbox.id'
+  />
+  <div class="mailbox-messages" style="padding-top:37px">
+    <messages-threads
+      :mailbox='mailbox'
+      :key='mailbox.id' />
+    <messages
+      :mailbox='mailbox'
+      :key='mailbox.id' />
+    <shared-messages-thread
+      v-if='mailbox.shared && mailbox.shared.shared_threads'
+      :mailbox='mailbox'
+      :key='mailbox.id' />
+    <shared-messages
+      v-if='mailbox.shared && mailbox.shared.shared_messages'
+      :mailbox='mailbox'
+      :key='mailbox.id' />
+  </div>
+</div>

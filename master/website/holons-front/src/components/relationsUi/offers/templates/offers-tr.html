@@ -1,0 +1,71 @@
+<tr>
+    <td class="rel-table-row__title">
+      <span>{{ offer.title }}</span>
+      <offers-main-wrench-menu-component
+         v-bind:item="offer"
+         v-bind:show-menu="offer === $parent.activeMenu"
+         @withdraw="withdraw"
+         @show-link="showLink"
+      />
+    </td>
+
+    <!-- seller -->
+    <td>{{ offer.from_name }}</td>
+    <!--<td>launcher workspace</td>-->
+    <td>{{ offer.to_name }}</td>
+    <td>
+      sent: date <br>
+      followed up: not yet
+    </td>
+    <td><h5>$1</h5></td>
+
+  </tr>
+  <!--
+    <tr v-if="false">
+      <td>backlinks pilot campaign x 3</td>
+      <td>dmitrii b.</td>
+      <td>launcher workspace</td>
+      <td>Amit k.</td>
+      <td>
+      sent: 14 Feb <br>
+      follow up: 31 Feb
+      </td>
+      <td>
+      backlinks <br>
+      @launcher
+      </td>
+      <td>upwork</td>
+      <td>$1000</td>
+      <td>
+      <offers-main-wrench-menu-component
+      v-bind:item="item"
+      v-bind:show-menu="item === activeMenu"
+      />
+      </td>
+    </tr>
+
+    <tr class="alert" v-if="false">
+      <td>backlinks pilot campaign x 3</td>
+      <td>dmitrii b.</td>
+      <td>launcher workspace</td>
+      <td>Amit k.</td>
+      <td>
+      sent: 14 Feb <br>
+      follow up: 31 Feb
+      </td>
+      <td>
+      backlinks <br>
+      @launcher
+      </td>
+      <td>upwork</td>
+      <td>$100</td>
+      <td>
+
+      <offers-main-wrench-menu-component
+      v-bind:item="item"
+      v-bind:show-menu="item === activeMenu"
+      />
+
+      </td>
+    </tr>
+  -->

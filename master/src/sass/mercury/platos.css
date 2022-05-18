@@ -1,0 +1,90 @@
+.platos-campaign-table {
+    border-bottom: 30px solid #23272B !important;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0;
+    width: 100% !important
+}
+
+.platos-campaign-table td:nth-of-type(2),
+.platos-campaign-table td:nth-of-type(3) { width: 150px !important }
+
+.platos-campaign-table h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bolder;
+    position: relative;
+    padding-left: 30px;
+}
+
+.campaigns-list {padding-bottom: 10rem}
+
+.campaigns-list::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+.platos-ray__owner {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: -15px;
+  top: calc(50% - 15px);
+  border: 1px solid #23272B;
+  /*box-shadow: 0px 0px 1px 1px rgba(0,0,0,.35);*/
+}
+
+.platos-ray__notifications-count {
+  position: absolute;
+  right: 5px;
+  top: calc(50% - 9px);
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 9px;
+  background: transparent;
+}
+
+#thread-previews--platos {
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+  padding-left: 0px;
+  padding-top: 0px;
+  border-left: 1px solid rgb(232, 234, 237)
+}
+
+#thread-previews--platos::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+#platosPostCall {
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  box-shadow: none;
+  border: 2px solid #23272B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Rubik Mono One';
+  color: #23272B !important;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+#platosPostingModal input {
+  width: 100%;
+    font-family: 'Rubik Mono One';
+    font-size: 150%;
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
+    border: none;
+    border-bottom: 30px solid #23272B;
+    background: none;
+}
+
+#platosPostingModal .ui.button {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

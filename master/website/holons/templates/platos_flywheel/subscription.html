@@ -1,0 +1,829 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+
+{% include "platos_flywheel/partials/header.html" %}
+
+
+
+
+
+<div class="platos-subscription" id="platos-subscription">
+  <div class="platos-subscription__container block-container">
+    <h2 class="platos-subscription__title">
+      Plato's Flywheel
+    </h2>
+    <div class="platos-subscription__cards">
+
+      {% if user.platos_account_is_paid is True %}
+
+          <div class="platos-subscription__card platos-subscription-card platos-subscription-card--get">
+            <h3 class="platos-subscription-card__title">
+              demo</h3>
+
+              <!--<p class="platos-subscription-card__description">
+                30 hours delay</p>-->
+
+              <a style="width:100%"
+              class="ui basic button">cancel subscription</a>
+          </div>
+
+          <div class="platos-subscription__card platos-subscription-card  platos-subscription-card--white platos-subscription-card--diy">
+            <h3 class="platos-subscription-card__title">
+              <span>current subscription</span> <br>
+              Self-service</h3>
+            <!--<p class="platos-subscription-card__description">
+              live updates
+            </p>-->
+
+            <!--<a style="width:100%"
+            class="ui basic button">shop 2 segmets for $89 \ month</a> <br>
+
+            <a style="width:100%"
+            class="ui basic button">shop all segments for $370 \ month</a>
+            <a class="platos-subscription-card__btn modal-trigger">show me the prices</a>
+            <p class="platos-subscription-card__description">
+              price increases <br>
+              with each active subscription
+            </p>-->
+          </div>
+
+
+      {% else %}
+
+      <!-- that is if it's free account -->
+
+          <div class="platos-subscription__card platos-subscription-card  platos-subscription-card--white platos-subscription-card--diy">
+            <h3 class="platos-subscription-card__title">Self-service</h3>
+            <!--<p class="platos-subscription-card__description">
+              live updates
+            </p>-->
+
+            <a onclick="$( '#platosSubscriptionModal' ).addClass('active')"
+              style="width:100%"
+              class="ui basic button">subscribe for $49</a>
+            <!--<a class="platos-subscription-card__btn modal-trigger">show me the prices</a>
+            <p class="platos-subscription-card__description">
+              price increases <br>
+              with each active subscription
+            </p>-->
+          </div>
+
+          <div class="platos-subscription__card platos-subscription-card platos-subscription-card--get">
+            <h3 class="platos-subscription-card__title">
+              <span>current subscription</span> <br>
+              demo</h3>
+
+              <!--<p class="platos-subscription-card__description">
+                30 hours delay</p>-->
+
+              <!--<a style="width:100%"
+              class="ui basic button">try live data for 2 weeks</a>
+            <a class="platos-subscription-card__btn modal-trigger">Yes, please</a>-->
+          </div>
+
+      {% endif %}
+
+
+      <div class="platos-subscription__card platos-subscription-card platos-subscription-card--order">
+        <h3 class="platos-subscription-card__title" style="color:#F7F8FA">
+          Done for you</h3>
+        <div class="platos-subscription-card__price">
+          <!--<span class="platos-subscription-card__old-price">$56</span>
+          <span class="platos-subscription-card__new-price">$56</span>-->
+          <p class="platos-subscription-card__price-decs">
+            See if you're eligible
+          </p>
+        </div>
+
+        <br><br><br>
+        <div class="personification" style="margin:0; width:100%">
+          <img src="https://holons.me/static/img/mercury.jpg">
+          <a href="https://holons.me/platos-flywheel-done-for-you-service-wXC4">talk to mercury</a>
+        </div>
+
+        <!--<a data-target="modal6" data-bctype="bc_custom" class="platos-subscription-card__btn modal-trigger">Ok. go</a>-->
+      </div>
+    </div>
+    <!--<div class="platos-subscription-footer">
+      <p class="platos-subscription-footer__desc">If you do not like the choice of our Art Director, you can</p>
+      <a href="https://creativemarket.com/search?q=business+cards&categoryIDs=0?u=grintender"
+      rel="nofollow noreferrer" target="_blank"
+      class="platos-subscription-footer__link">look at the Creative Market 11 000 options.</a>
+    </div>-->
+  </div>
+</div>
+
+
+<!-- TODO: move this to a single component,
+coz website/holons-front/src/components/platosFlyWheelUi/templates/platos-ui.html
+uses the same modal as well -->
+
+<div id="platosSubscriptionModal" class="hm modal">
+  <div class="content">
+    <h2 class="title">subscribe to plato's flywheel</h2>
+
+    //ok, let person create a subscription here, WITHOUT sennding him anywhere else.
+    //we might have his card on file already, how cool is that?
+  </div>
+</div>
+
+
+<style media="screen">
+
+#platos-subscription {
+  box-sizing: border-box;
+}
+
+.platos-subscription {
+  background-image: url("images/platos-subscription/decor-br.png");
+  background-position: center bottom;
+  background-size: 100% 700px;
+  background-repeat: no-repeat;
+}
+
+.platos-subscription__title {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 45px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-align: center;
+  color: #23272B;
+}
+
+.platos-subscription__title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: block;
+  width: 162px;
+  height: 6px;
+  background-color: #769047;
+  transform: translateX(-50%);
+}
+
+.platos-subscription__cards {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+.platos-subscription-card {
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  width: 30%;
+  max-width: 380px;
+  min-height: 540px;
+  padding: 200px 3.6% 45px;
+  margin-bottom: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: #fff;
+  text-align: center;
+  background-color: #23272B;
+  border-radius: 10px;
+  box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.1);
+}
+
+.platos-subscription-card::before {
+  content: "";
+  position: absolute;
+  top: -88px;
+  left: 50%;
+  display: block;
+  width: 200px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  -webkit-background-size: auto;
+  background-size: auto;
+}
+
+.platos-subscription-card--get {
+  border: 1px solid #23272B;
+  background: transparent;
+  box-shadow: none;
+  color: #23272B;
+}
+
+.platos-subscription-card:nth-of-type(2){
+  margin-bottom: 100px;
+  margin-top: -50px;
+}
+
+.platos-subscription-card--diy::before {
+  margin-left: -101px;
+  background-image: url("https://the.gt/wp-content/themes/the_gt01/images/post-archive/1.png");
+}
+
+.platos-subscription-card--get::before {
+  top: -96px;
+  margin-left: -76px;
+  background-image: url("images/platos-subscription/2.png");
+}
+
+.platos-subscription-card--order::before {
+  margin-left: -80px;
+  background-image: url("https://the.gt/wp-content/themes/the_gt01/images/post-archive/2.png");
+}
+
+.platos-subscription-card--white {
+  /*margin-top: -50px;
+  margin-bottom: 100px;*/
+  color: #23272B;
+  background-color: #fff;
+}
+
+.platos-subscription-card__title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.67;
+  letter-spacing: 0.1em;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  text-transform: uppercase;
+}
+
+.platos-subscription-card__title span {font-size: 40%}
+
+.platos-subscription-card__description {
+  margin-top: 0;
+  padding: 0 23px;
+  font-size: 16px;
+  line-height: 1.875;
+}
+
+.platos-subscription-card__old-price {
+  position: relative;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 5px;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.platos-subscription-card__old-price::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: -1px;
+  background-color: #fff;
+}
+
+.platos-subscription-card__new-price {
+  display: inline-block;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  font-size: 35px;
+  line-height: 1.4;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.platos-subscription-card__price-decs {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #769047;
+}
+
+#platos-subscription .platos-subscription-card .platos-subscription-card__btn,
+.platos-subscription-card .platos-subscription-card__btn {
+  display: inline-block;
+  min-width: 220px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: auto;
+  color: #fff;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #769047;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#platos-subscription .platos-subscription-card .platos-subscription-card__btn:hover,
+.platos-subscription-card .platos-subscription-card__btn:hover {
+  color: #fff;
+  background-color: #6b8141;
+}
+
+.platos-subscription-footer {
+  padding-top: 25px;
+  padding-bottom: 60px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.86;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+.platos-subscription-footer__desc {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.platos-subscription-footer .platos-subscription-footer__link {
+  display: inline-block;
+  color: #769047;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid #769047;
+}
+
+.platos-subscription-footer .platos-subscription-footer__link:hover {
+  color: #769047;
+  border-color: transparent;
+}
+
+@media screen and (max-width: 1300px) and (min-width: 993px) {
+  .platos-subscription {
+    -webkit-background-size: 100% 53.8vw;
+    background-size: 100% 53.8vw;
+  }
+  .platos-subscription-card {
+    padding-left: 3.4vw;
+    padding-right: 3.4vw;
+    min-height: 42vw;
+  }
+  .platos-subscription-card--white .platos-subscription-card__title {
+    margin-bottom: 30px;
+  }
+  .platos-subscription-card__title {
+    font-size: 2.3vw;
+  }
+  .platos-subscription-card__description {
+    font-size: 1.23vw;
+  }
+  .platos-subscription-card__old-price {
+    font-size: 1.92vw;
+  }
+  .platos-subscription-card__new-price {
+    font-size: 2.69vw;
+  }
+  .platos-subscription-card__price-decs {
+    font-size: 1.23vw;
+  }
+  .platos-subscription-card .platos-subscription-card__btn {
+    min-width: 17vw;
+    font-size: 1.23vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .platos-subscription {
+    -webkit-background-size: auto 700px;
+    background-size: auto 700px;
+  }
+  .platos-subscription__cards {
+    justify-content: center;
+  }
+  .platos-subscription-card {
+    width: 50%;
+    padding-left: 47px;
+    padding-right: 47px;
+    margin-bottom: 100px;
+  }
+  .platos-subscription-card--white {
+    margin-top: 0;
+    margin-bottom: 50px;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 879px) {
+  .platos-subscription {
+    -webkit-background-size: auto 55%;
+    background-size: auto 55%;
+  }
+  .platos-subscription-card {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .platos-subscription-card:last-child {
+    margin-bottom: 50px;
+  }
+  .platos-subscription-card--white {
+    order: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .platos-subscription-card {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .platos-subscription-card__title {
+    font-size: 25px;
+  }
+  .platos-subscription-card--white .platos-subscription-card__title {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ytLoader {
+  cursor: pointer;
+}
+
+.yt-playbtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 67px !important;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  filter: opacity(0.95) grayscale(1);
+  transition: 0.1s;
+  z-index: 9;
+}
+
+.ytLoader:hover .yt-playbtn {
+  filter: opacity(1) grayscale(0);
+}
+
+
+/* platos-subscription-modal */
+
+.platos-subscription-popup {
+  position: relative;
+  padding: 67px 95px 80px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.platos-subscription-popup .platos-subscription-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.platos-subscription-popup .platos-subscription-popup-close::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  width: 20px;
+  height: 2px;
+  background-color: #9b9b9b;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.platos-subscription-popup .platos-subscription-popup-close::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  width: 20px;
+  height: 2px;
+  background-color: #9b9b9b;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.modal4,
+.modal5,
+.modal6 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1005;
+  display: none;
+  max-height: 100%;
+  margin-left: -275px;
+  margin-top: calc(40vh - 310px);
+  overflow-y: auto;
+}
+
+.platos-subscription-popup .platos-subscription-form {
+  width: 352px;
+  font-family: "PF Bague Sans Pro";
+}
+
+
+/* .platos-subscription-form__row {
+  padding-left: 33px;
+  padding-right: 33px;
+} */
+
+.platos-subscription-popup__title {
+  max-width: 352px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 1.22;
+  color: #23272B;
+  text-align: center;
+}
+
+.platos-subscription-popup__subtitle {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  font-family: 'Museo Sans Cyrl';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.75;
+  color: #23272B;
+  text-align: center;
+}
+
+.platos-subscription-popup__title span {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.platos-subscription-popup__title span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 162px;
+  height: 6px;
+  background-color: #769047;
+}
+
+.platos-subscription-popup input[type=text]:not(.browser-default).platos-subscription-form__control,
+.platos-subscription-popup input[type=email]:not(.browser-default).platos-subscription-form__control,
+.platos-subscription-popup .platos-subscription-form__control {
+  height: 52px;
+  padding: 0 20px;
+  margin-bottom: 25px;
+  font-family: 'Museo Sans Cyrl';
+  font-size: 16px;
+  font-weight: 700;
+  color: #23272B;
+  border: 1px solid #cacfcf;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.platos-subscription-form__control::placeholder {
+  color: #9b9b9b;
+}
+
+.platos-subscription-form__control::-webkit-input-placeholder {
+  color: #9b9b9b;
+}
+
+.platos-subscription-form__control::-moz-placeholder {
+  color: #9b9b9b;
+}
+
+.platos-subscription-form__control:-moz-placeholder {
+  color: #9b9b9b;
+}
+
+.platos-subscription-form__control:-ms-input-placeholder {
+  color: #9b9b9b;
+}
+
+input[type=email].platos-subscription-form__control:not(.browser-default):focus:not([readonly]),
+input[type=text].platos-subscription-form__control:not(.browser-default):focus:not([readonly]),
+.platos-subscription-form__control:focus {
+  border: 1px solid #23272B;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.platos-subscription-popup input[type=text]:not(.browser-default).platos-subscription-form__control.error,
+.platos-subscription-popup input[type=email]:not(.browser-default).platos-subscription-form__control.error,
+.platos-subscription-popup .platos-subscription-form__control.error {
+  border-color: #f02222;
+}
+
+.platos-subscription-form__field {
+  position: relative;
+}
+
+.platos-subscription-form__invalid-text {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  display: none;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #f02222;
+}
+
+.platos-subscription-form__control.error+.platos-subscription-form__invalid-text {
+  display: block;
+}
+
+.platos-subscription-form__btn-wrap {
+  padding-top: 14px;
+  text-align: center;
+}
+
+.platos-subscription-popup .platos-subscription-form__submit {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 4.1vw;
+  padding-left: 0.73vw;
+  padding-right: 0.73vw;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  background-color: #769047;
+  cursor: pointer;
+  transition: 0.2s;
+  min-width: 246px;
+  width: 100%;
+  height: auto;
+  padding: 19px 15px;
+  font-size: 16px;
+  line-height: 1.3;
+  border: none;
+  border-radius: 4px;
+}
+
+.platos-subscription-popup .platos-subscription-form__submit:hover {
+  background-color: #6a8440;
+}
+
+.platos-subscription-popup .platos-subscription-form__submit:active {
+  background-color: #607839;
+}
+
+@media screen and (max-width: 767px) {
+  .platos-subscription-popup .platos-subscription-form {
+    width: 420px;
+  }
+  .platos-subscription-popup {
+    padding: 50px 40px 60px;
+  }
+  .platos-subscription-popup .platos-subscription-popup-close {
+    top: 10px;
+    right: 10px;
+  }
+  .platos-subscription-popup__title {
+    max-width: 420px;
+    font-size: 35px;
+  }
+  .modal4,
+  .modal5,
+  .modal6 {
+    margin-left: -250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .platos-subscription-popup {
+    padding: 40px 30px 40px;
+  }
+  .platos-subscription-popup .platos-subscription-form {
+    width: 100%;
+  }
+  .modal4,
+  .modal5,
+  .modal6 {
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+  }
+  .platos-subscription-popup__title {
+    font-size: 30px;
+  }
+  .platos-subscription-form__row {
+    padding: 0;
+  }
+}
+
+.content-inner .content-card-wrap.col {
+  position: relative;
+  float: none;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-top: 174px;
+  padding-bottom: 60px;
+  z-index: 5;
+  max-width: 280px;
+}
+
+.content-card {
+  margin-bottom: 30px;
+}
+
+.content-card .content-card__item {
+  display: block;
+  padding: 40px 20px 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.12);
+}
+
+.content-card__item-title {
+  margin-bottom: 0;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.content-affiliate {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #23272B;
+}
+
+.content-affiliate__title {
+  margin-bottom: 30px;
+  font-family: "PF Bague Sans Pro", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.content-affiliate__item {
+  margin-top: 35px;
+}
+
+.content-affiliate .content-affiliate__btn {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+.content-affiliate .content-affiliate__btn:hover {
+  color: #23272B;
+  border-color: #23272B;
+  background-color: #fff;
+}
+
+.content-affiliate__image {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .content-card-wrap,
+  .content-menu {
+    display: none;
+  }
+}
+
+</style>
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "6543:5432"
+  web:
+    environment:
+      - DJANGO_SETTINGS_MODULE=holons.docker_settings
+    build: .
+    # command: python ./code/website/holons/manage.py runserver 0.0.0.0:8000
+    # command: bash -c "python /code/website/holons/manage.py migrate
+    #   && python /code/website/holons//manage.py collectstatic --noinput
+    #   && python /code/website/holons/manage.py runserver 0.0.0.0:8000"
+    command: bash -c '[ ! -d "/code/node_modules" ] && cd /code && npm install gulp-cli -g && npm install gulp@4.0.2 && npm install -y && npm rebuild node-sass && gulp build
+      || [ ! -d "/code/website/holons-front/node_modules" ] && cd /code/website/holons-front && npm ci -y && npm run build
+      || python /code/website/holons/manage.py migrate && python /code/website/holons//manage.py collectstatic --noinput && python /code/website/holons/manage.py runserver 0.0.0.0:8000'
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

@@ -1,0 +1,104 @@
+<div id="moneta-wrap">
+
+  <div class="ui secondary menu secondary-navigation">
+      <a
+        :class="[{active: context == activeContext} ,'item']"
+        v-for="context in contexts"
+        v-bind:key="context.id"
+        v-html="context.foreign.name"
+        v-on:click="switchContext(context)"
+        href="#">
+      </a>
+      <a class="item button muted" href="#" onclick="$( '#addNewEntityModal' ).addClass('active')"> + new entity</a>
+
+      <div class="right menu">
+        <a class="item disabled">
+          <i class="circle icon gold-dot"></i> Accounting
+        </a>
+        <a class="item disabled">
+          <i class="circle icon gold-dot"></i> Private Legal Tech
+        </a>
+        <a class="item disabled">
+          <i class="circle icon gold-dot"></i> Merchant Tools
+        </a>
+        <a class="item disabled">
+          <i class="circle icon gold-dot"></i> Capital & Commerce
+        </a>
+
+        <a href="https://odyssey.holons.me/nodes/moneta" class="item">
+          <i class="square full icon"></i> the why</a>
+      </div>
+  </div>
+
+  <add-business-entity-modal
+    v-bind:business-entity="activeEntity"
+  />
+
+  <div class="ui secondary menu secondary-navigation">
+    <a class="item"
+      v-bind:class="{'active': activeTab == 'balances'}"
+      v-on:click.prevent="activeTab='balances'"
+      href="#"
+    > Balance</a>
+
+      <a class="item"
+        v-bind:class="{'active': activerab == 'investments'}"
+        v-on:click.prevent="activeTab='investments'"
+        href="#"
+      > Revenue </a>
+
+      <a class="item"
+        v-bind:class="{'active': activeTab == 'loans-deposits'}"
+        v-on:click.prevent="activeTab='loans-deposits'"
+        href="#"
+      > Costs </a>
+
+    <div class="right menu">
+
+      <a class="item"
+        v-bind:class="{'active': activeTab == 'cash-flow'}"
+        v-on:click.prevent="activeTab='cash-flow'"
+        href="#"
+      > Cash Flow </a>
+      <a class="item"
+        v-bind:class="{'active': activeTab == 'pl'}"
+        v-on:click.prevent="activeTab='pl'"
+        href="#"> P&L </a>
+
+      <a class="item"
+        v-bind:class="{'active': activeTab == 'equity'}"
+        v-on:click.prevent="activeTab='equity'"
+        href="#"
+      > Equity </a>
+
+      <a class="item disabled">
+        <i class="circle icon gold-dot"></i> profile
+      </a>
+
+
+      <!--<a class="item">Accounts & Fees</a>-->
+    </div>
+  </div>
+
+  <br><br>
+
+    <balances-component
+      v-if="activeTab == 'balances'"
+    />
+    <cash-flow-component
+      v-if="activeTab == 'cash-flow'"
+    />
+    <equity-component
+      v-if="activeTab == 'equity'"
+    />
+    <investments-component
+      v-if="activeTab == 'investments'"
+    />
+    <loans-deposits-component
+      v-if="activeTab == 'loans-deposits'"
+    />
+    <pl-component
+      v-if="activeTab == 'pl'"
+    />
+
+</div>

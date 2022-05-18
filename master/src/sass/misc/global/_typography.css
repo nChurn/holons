@@ -1,0 +1,30 @@
+/*
+
+ok, so
+
+1. fonts
+2. colors
+
+*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color:#23272B;
+  margin: 0;
+  font-family: 'Rubik Mono One', sans-serif;
+  /*font-family: 'Poppins' !important;*/
+  letter-spacing: 0.05rem;
+  font-weight: bolder;
+}
+
+.muted { color: rgba(35,39,43,.73);font-family: inherit;}
+
+.hm.ul li {
+  list-style: inside;
+  margin-bottom: 1.7rem;
+  line-height: 1.75;
+}

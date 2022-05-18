@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" ="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- FFS-->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- FFS ends -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'joyful/css/vendor/fullcalendar-5.2.0.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'joyful/css/joyful.css' %}" />
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="32x32" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="{% static 'img/favicon.ico' %}"
+    />
+
+    <title>Holons</title>
+
+  </head>
+  <body>
+    {% csrf_token %}
+
+    <!-- containers -->
+
+    <div class="page-holder">
+      <a class="core-ctas import" id="importGlobal">import</a>
+      <a class="core-ctas" id="btInvite">invite</a>
+      <!--<a class="core-ctas discuss">meta</a>-->
+      <!--<a class="core-ctas discuss">discuss</a>-->
+      {# include "includes/soul-menu.html" #}
+      {% include "includes/popups.html" %}
+
+      <div class="page">
+        <div class="ui grid content-grid">
+          <div class="fifteen wide column main-working">
+          {% include "includes/main-header.html" %}
+            <div class="white-block">
+            {% block content_area %}{% endblock %}
+              <main role="main">
+                  {% block content %}
+                  {% endblock content %}
+              </main>
+            </div>
+        </div>
+    {% include "includes/mercury-sidebar.html" %}
+    </div>
+
+      </div>
+    </div>
+
+
+    <div class="aint-mobile">
+      <img
+        src="{% static 'img/mercury-svg-icon.svg' %}"
+        class="aint-mobile-svg"
+      />
+      <h1>Holons works on mobile only for Holons.Gold members</h1>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script>
+      (function() {
+        window.$ = jQuery
+        window.csrftoken = $('[name=csrfmiddlewaretoken]').val()
+      })();
+    </script>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/app/js/app.js' %}"></script>
+    <script src="{% static 'joyful/js/vendor/fullcalendar-5.2.0.min.js' %}"></script>
+    {% include "includes/timer.js" %}
+    {% include "includes/invite.js" %}
+
+    {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+    {% endblock %}
+
+  </body>
+</html>

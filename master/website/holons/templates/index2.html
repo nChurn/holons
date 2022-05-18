@@ -1,0 +1,426 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+<div id="hiding-nav" class="ui secondary menu secondary-navigation">
+
+    <!--<a class="item active">my agenda</a>
+    <a class="item">my people</a>
+
+    <a class="item disabled"><i class="clock outline icon"></i>WIKIs</a>
+    <a class="item disabled"><i class="circle icon gold-dot"></i>Hosting</a>-->
+
+    <div class="right menu">
+      <a class="item" href="https://odyssey.holons.me/nodes/agenda">
+      <i class="square full icon"></i>about agenda</a>
+    </div>
+
+</div>
+
+{# if not user.is_authenticated #}
+
+{% if user.is_authenticated %}
+
+
+  how the whole thing works for individual
+  individual contributor VS. manager VS. owner ?
+
+  owner would have entities and\or people employed.
+  I can work w/o entities, duh
+
+  manager would manage commitments production, huh?
+
+  IC gonna have none of those? nah, say it's VP sales\growth or smth
+
+  <!-- purpose -->
+  <div class="agenda__node">
+    <h2>what can I do towards purpose today?</h2>
+
+    if ( has items assigned or owned):
+
+
+
+      > list key results
+      >> context name > objective name > key result name + fact/plan + next check in date
+      //sort based on the next check-in date
+
+    else > node promo
+
+  </div>
+
+
+  <!-- talent payroll @layers //aint doing it here -->
+
+  <!-- workspaces @layers -->
+  <div class="agenda__node">
+
+    > due dates summary ?
+
+    > tickets assigned //sorted based on due dates
+    > tickets watched
+
+  </div>
+
+  <!-- time @layers //aint doing it here -->
+
+  <!-- schedule -->
+  <div class="agenda__node">
+
+    if ( events > X )
+    if ( has events today )
+    if ( has events this week )
+
+    if ( had at least one booking last 30 days ) > list new events booked
+  </div>
+
+  <!-- mercury -->
+  <div class="agenda__node">
+    > rays num <!-- later on we can do types summary here, e.g. invoices x 14, issues x 3, pitches x 1, etc
+    > teleport num
+    > mail num
+
+  </div>
+
+  <!-- promos -->
+  <div class="agenda__node">
+
+    > boxes
+    > talent
+    > pheme
+
+  </div>
+
+
+
+
+  <div class="ui grid">
+
+    <div class="six wide column pdng0" style="border-right: 30px solid #23272B">
+
+        <div id="agendaPurpose">
+
+
+          <div class="objective">
+
+            <h3 class="objective__title">#1. outreach working non-stop</h3>
+
+              <div class="key-result__container">
+                    <div class="key-result flex">
+                      <div class="key-result__owner">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        width="40px">
+                      </div>
+                      <h4>kr: 100,000k emails sent monthly</h4>
+
+                    </div>
+                    <div class="flex">
+                      <div class="key-result__stat">
+                        <span>fact</span>
+                        <h3>10,000</h3>
+                      </div>
+                      <div class="key-result__stat" style="margin:0">
+                        <span>plan</span>
+                        <h3>100,000</h3>
+                      </div>
+                    </div>
+              </div>
+          </div> <!-- objective ends -->
+
+          <div class="objective">
+
+            <h3 class="objective__title">#1. outreach working non-stop</h3>
+
+              <div class="key-result__container">
+                    <div class="key-result flex">
+                      <div class="key-result__owner">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        width="40px">
+                      </div>
+                      <h4>kr: 100,000k emails sent monthly</h4>
+
+                    </div>
+                    <div class="flex">
+                      <div class="key-result__stat">
+                        <span>fact</span>
+                        <h3>10,000</h3>
+                      </div>
+                      <div class="key-result__stat" style="margin:0">
+                        <span>plan</span>
+                        <h3>100,000</h3>
+                      </div>
+                    </div>
+              </div>
+              <div class="key-result__container">
+                    <div class="key-result flex">
+                      <div class="key-result__owner">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        width="40px">
+                      </div>
+                      <h4>kr: 100,000k emails sent monthly</h4>
+
+                    </div>
+                    <div class="flex">
+                      <div class="key-result__stat">
+                        <span>fact</span>
+                        <h3>10,000</h3>
+                      </div>
+                      <div class="key-result__stat" style="margin:0">
+                        <span>plan</span>
+                        <h3>100,000</h3>
+                      </div>
+                    </div>
+              </div>
+              <div class="key-result__container">
+                    <div class="key-result flex">
+                      <div class="key-result__owner">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        width="40px">
+                      </div>
+                      <h4>kr: 100,000k emails sent monthly</h4>
+
+                    </div>
+                    <div class="flex">
+                      <div class="key-result__stat">
+                        <span>fact</span>
+                        <h3>10,000</h3>
+                      </div>
+                      <div class="key-result__stat" style="margin:0">
+                        <span>plan</span>
+                        <h3>100,000</h3>
+                      </div>
+                    </div>
+              </div>
+          </div> <!-- objective ends -->
+
+          <div class="objective">
+
+            <h3 class="objective__title">#1. outreach working non-stop</h3>
+
+              <div class="key-result__container">
+                    <div class="key-result flex">
+                      <div class="key-result__owner">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        width="40px">
+                      </div>
+                      <h4>kr: 100,000k emails sent monthly</h4>
+
+                    </div>
+                    <div class="flex">
+                      <div class="key-result__stat">
+                        <span>fact</span>
+                        <h3>10,000</h3>
+                      </div>
+                      <div class="key-result__stat" style="margin:0">
+                        <span>plan</span>
+                        <h3>100,000</h3>
+                      </div>
+                    </div>
+              </div>
+          </div> <!-- objective ends -->
+        </div>
+
+    </div>
+
+    <div class="ten wide column">
+
+      {% if true %} <!-- if calendar doesn't have events THIS week -->
+
+        <h2><i class="circle outline icon" style="color:#7b8f50"></i>
+          no appointments this week, sai</h2>
+
+      {% else %} <!-- if calendar has events THIS week -->
+
+      {% endif %}
+
+      {% if true %} <!-- if calendar doesn't have events THIS week -->
+
+        <p><i class="circle outline icon" style="color:#7b8f50"></i>all good w/ due dates</p>
+        <p><i class="circle outline icon" style="color:#7b8f50"></i>no pending invoices</p>
+
+      {% else %} <!-- if there are matters -->
+
+        <h2>matters requiring your attention, sai</h2>
+        //
+
+      {% endif %}
+
+      <!--//tasks
+      //key results
+
+      //should we interlink them somehow?
+      //how do we help prioritise?
+        drag n drop (meh)
+        arrange by due date-->
+
+
+
+
+      <!--//say we feature today and tmrw + schedule link-->
+
+
+      <!--//digest feature?-->
+
+    <div id="agenda"></div>
+    <div id="calendar-agenda-ui"></div>
+
+    </div>
+
+  </div>
+
+{% else %}
+
+<h1 style="margin-top: -5px">holons core experience</h1>
+
+<p>Unlimited core experience includes, but not limited to, the following nodes:</p>
+
+<table class="hm ui fixed table subscription__table">
+  <tr>
+    <td><h4>Nodes</h4></td>
+    <td></td>
+    <td>
+      <b>inspired by</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td>relations</td>
+    <td>a different approach to sales pipeline, commitments &amp; CRM</td>
+    <td>650+ CRMs out there</td>
+  </tr>
+  <tr>
+    <td>Fairchild Layers</td>
+    <td></td>
+    <td>Trello, Jira, Asana</td>
+  </tr>
+  <tr>
+    <td>Moneta</td>
+    <td></td>
+    <td>Quickbooks, PandaDoc, Carta, Revolut, PayPal</td>
+  </tr>
+  <tr>
+    <td>Purpose</td>
+    <td colspan="2">OKR framework</td>
+  </tr>
+</table>
+
+
+<table class="hm ui fixed table subscription__table">
+  <tr>
+    <td colspan="2"><h4>Mercury Communication Nodes</h4></td>
+    <td><b>inspired by</b></td>
+  </tr>
+
+  <tr>
+    <td>mail</td>
+    <td>personal and shared inboxes</td>
+    <td>Frontapp & gmail for business</td>
+  </tr>
+  <tr>
+    <td>teleport</td>
+    <td>instant messages, voice & video calls</td>
+    <td>Slack, Telegram & Skype</td>
+  </tr>
+  <tr>
+    <td>magic1</td>
+    <td>video conferences 2 clicks away</td>
+    <td>Zoom</td>
+  </tr>
+  <tr>
+    <td>schedule</td>
+    <td>calendar</td>
+    <td>Google Calendar</td>
+  </tr>
+  <tr>
+    <td>meet</td>
+    <td>scheduling tool</td>
+    <td>Calendly</td>
+  </tr>
+  <tr>
+    <td colspan="2">time tracker</td>
+    <td>Clockify & Toggl</td>
+  </tr>
+
+  <tr>
+    <tr>
+      <td>rays</td>
+      <td colspan="2">ongoing attempt to build #better email</td>
+    </tr>
+  </tr>
+</table>
+
+<table class="hm ui fixed table subscription__table">
+  <tr>
+    <td colspan="3"><h4>coming soon</h4></td>
+  </tr>
+  <tr>
+    <td>XO</td>
+    <td colspan="2">visual feedback</td>
+  </tr>
+</table>
+
+{% endif %}
+
+<!--
+
+<div class="agenda-accordion agenda-vertical">
+        <section id="tasks">
+          <div class="preview">
+            <a href="#tasks">
+              <h2>tasks</h2>
+              <div class="highlight">soft deadline today: 5</div>
+            </a>
+          </div>
+          <div id="app"></div>
+        </section>
+
+        <section id="calendar">
+          <div class="preview">
+            <a href="#calendar">
+              <h2>calendar</h2>
+              <div class="highlight">meetings this week: 5</div>
+            </a>
+          </div>
+          <p>tasks content here</p>
+        </section>
+
+        <section id="bills">
+          <div class="preview">
+            <a href="#bills">
+              <h2>bills</h2>
+              <div class="highlight">invoices pending: 5</div>
+            </a>
+          </div>
+          <p>tasks content here</p>
+        </section>
+
+        <section id="people">
+          <div class="preview">
+            <a href="#people">
+              <h2>people</h2>
+              <div class="highlight">meetings this week: 5</div>
+            </a>
+          </div>
+          <p>tasks content here</p>
+        </section>
+        <section id="people">
+          <div class="preview">
+            <a href="#people">
+              <h2>sales</h2>
+              <div class="highlight">new conversation this month: 300</div>
+            </a>
+          </div>
+          <p>tasks content here</p>
+        </section>
+
+    </div>
+
+-->
+
+
+<style media="screen">
+  h3,h4 { color: rgba(35,39,43,.7) }
+</style>
+
+
+
+{% endblock %}

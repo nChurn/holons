@@ -1,0 +1,68 @@
+
+.hm.modal {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: rgba(35,39,43,.69);
+  backdrop-filter: blur(1px);
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.hm.modal::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.hm.modal .content {
+  position: absolute;
+  z-index: 1001;
+  background: #F7F8FA;
+  padding: 2rem;
+  width: 80%;
+  left: 10%;
+  top: 10%;
+  border-left: 30px solid #23272B;
+}
+
+.hm.modal.active { display: block }
+
+.hm.modal .content h2,
+.hm.modal .content h3,
+.hm.modal .content h4 {
+  text-transform: uppercase;
+  font-weight: bold
+}
+
+.hm.modal .content h2.title {
+  position: absolute;
+  top: -1.55rem;
+  right: 0;
+  color: #F7F8FA;
+}
+
+.hm.modal .content:after {
+  content: "X hit ESC to close";
+  color: rgba(255,255,255,.43);
+  position: absolute;
+  left: -2rem;
+  top: -2rem;
+}
+
+.hm.modal .content.big {
+  width: 92%;
+  left: 40px;
+}
+
+.hm.modal.gold {
+  display: block !important;
+  backdrop-filter: blur(30px);
+}
+
+.hm.modal.gold .content:after {
+  content: 'get holons gold somehow to close';
+}
+.hm.modal.gold .content {
+  border-color: #FFCF4A;
+}

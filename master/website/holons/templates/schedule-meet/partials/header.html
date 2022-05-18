@@ -1,0 +1,99 @@
+<div class="ui secondary menu secondary-navigation" style="margin-bottom:1rem">
+
+  <a class="item{% if request.path == '/schedule' %} active {% endif %}"
+  href="/schedule">schedule</a>
+  <a class="item{% if request.path == '/schedule/meet' %} active {% endif %}"
+  href="/schedule/meet">meet</a>
+
+
+
+    <div class="right menu">
+      <a class="item button"
+      onclick="$( '#addEventDummyModal' ).addClass('active')">+ event</a>
+
+      <!-- TODO teleport link
+      <a href="https://magic1.teleport.holons.me/"
+      class="item" target="_blank">
+        <i class="arrow right icon"></i>host instant meeting @magic1.teleport</a>-->
+
+      <a href="https://odyssey.holons.me/en/nodes/mercury/schedule"
+      class="item"><i class="square full icon"></i> the why</a>
+    </div>
+
+</div>
+
+<style media="screen">
+  #revolutionsLong {
+    position: absolute;
+    right:10px;
+    top: 10px;
+    color: rgba(0,0,0,.3);
+    max-width: 300px;
+  }
+</style>
+
+<div id="addEventDummyModal" class="hm modal">
+  <div class="content">
+    <h2 class="title">add new event to your calendar</h2>
+
+    <div class="ui form">
+      <div class="fields">
+        <div class="four wide field">
+          <label>when</label>
+          [ day \ time picker]
+        </div>
+        <div class="six wide field">
+          <label>what</label>
+          <input type="text" placeholder="call w/ Rodrigo @agency.co [WL agency]">
+        </div>
+        <div class="six wide field">
+          <label>where</label>
+          <!-- TODO redo this one to have magic1 link appended by default -->
+          <p style="color:red">redo this one to have magic1 link appended by default</p>
+          <input type="text" placeholder="physical address or comb a call link below">
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="eight wide field">
+          <label>People</label>
+          <input type="text" placeholder="Type to search your connections">
+          [ you ], [ Jack ]...
+        </div>
+        <div class="eight wide field">
+          <label>Agenda notes</label>
+          <input type="text" placeholder="discovery call to see if it's a fit to help Rodrigo w/ production">
+        </div>
+
+        <div class="sixtee wide field">
+          <button class="ui basic button" style="width:100%">
+          + ok. add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h3>Reminders</h3>
+        <p>(1) we'll send you an SMS reminder 30 mins before the call</p>
+        <p>(2) Depending on the density of your schedule and holons.me usage
+          we #might send an SMS reminder the day before as well</p>
+      </div>
+      <div class="eight wide column">
+        <h3>Meet</h3>
+        <p>You can create sharable links <a href="/schedule/meet">through Meet</a></p>
+
+        <h4>Sidenote</h4>
+        <p>Sidenote: while there are use cases of using the calendar for reminders,
+          tasks managememnt and more, holons attempt to provide #better tooling
+          for that in other nodes as <a href="#">Layers</a>
+        </p>
+        <p>//how do we handle reminders tho?</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<br>

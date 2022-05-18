@@ -1,0 +1,27 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+{% block content_area %}
+
+<div id="send-ray-app"></div>
+<script>
+  (function() {
+    window.user_is_anonymous = "{{ anonymous }}"
+    window.itemId = ""
+    window.itemTitle = ""
+    window.itemBody = ""
+    {% if item.title  %}
+    window.itemTitle = "{{ item.title | safe }}"
+    {% endif  %}
+    window.itemBody = ""
+    {% if item.body  %}
+      {% autoescape on %}
+        window.itemBody = "{{ item.body }}"
+      {% endautoescape %}
+    {% endif  %}
+    {% if item.id  %}
+    window.itemId = "{{ item.id }}"
+    {% endif  %}
+  })();
+</script>
+
+{% endblock %}

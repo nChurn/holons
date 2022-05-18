@@ -1,0 +1,30 @@
+<div id="offer" class="single-offer">
+
+        <h1>{{ offer.title }}</h1>
+
+        <p><b>{{ offer.from_name }}</b> or his representatives assign
+          tasks within a scope discussed, and <b>{{ offer.to_name }}</b>
+          does the job as good as possible, tracking time at holons.me</p>
+
+        <p style="color:crimson">
+          That time is billed to <b>{{ offer.from_name }}</b> at {{ offer.consideration }}</p>
+
+        <!--<li>{{ offer.timeframe }}</li>-->
+        <p style="color:crimson">
+          The commitment exists until canceled by either side. Invoicing is due every 4 weeks</p>
+
+        <!-- TODO: output this line IF it's true -->
+        <p>{{ offer.from_name }} pays the holons.me bill on behalf of {{ offer.to_name }}</p>
+
+
+
+      <div
+        style="width:100%;text-transform: uppercase"
+        class="ui basic button"
+        v-on:click="acceptOffer"
+      >
+        Accept & sign
+      </div>
+
+
+</div>

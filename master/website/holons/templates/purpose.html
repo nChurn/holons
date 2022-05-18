@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+
+<div class="ui secondary menu secondary-navigation">
+
+    <a class="item active">seasons</a>
+
+    <!-- gamefication for lienar people -->
+    <a class="item disabled"><i class="clock outline icon"></i></i>streaks</a>
+
+    <div class="right menu">
+      <a href="https://odyssey.holons.me/en/nodes/purpose/the-game" target="_blank"
+      class="item"><i class="square full icon"></i> the game</a>
+      <a href="https://odyssey.holons.me/en/nodes/purpose/north-star-metrics-framework"
+      target="_blank" class="item"> <i class="square full icon"></i> NSMf</a>
+      <a href="https://odyssey.holons.me/en/nodes/purpose" target="_blank"
+      class="item"><i class="square full icon"></i>framework discovery</a>
+    </div>
+
+  </div>
+
+<div id="app"></div>
+
+<script>
+  window.purposeIsActive = true;
+</script>
+{% endblock %}

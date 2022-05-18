@@ -1,0 +1,1156 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m",
+				"messages"
+			],
+			[
+				"set",
+				"selectMailbox"
+			],
+			[
+				"mail",
+				"mailboxes"
+			],
+			[
+				"se",
+				"sendButtonText"
+			],
+			[
+				"ma",
+				"mailboxes"
+			],
+			[
+				"mes",
+				"message"
+			],
+			[
+				"conv",
+				"conversation"
+			],
+			[
+				"ac",
+				"activeConversation"
+			],
+			[
+				"conversation",
+				"conversationId"
+			],
+			[
+				"ca",
+				"conversation"
+			],
+			[
+				"sh",
+				"showReplyForm"
+			],
+			[
+				"con",
+				"conversation"
+			],
+			[
+				"co",
+				"conversation"
+			],
+			[
+				"thi",
+				"this.getMailboxes"
+			],
+			[
+				"searc",
+				"searchString"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"sea",
+				"searchString"
+			],
+			[
+				"ema",
+				"emailSubject"
+			],
+			[
+				"mess",
+				"messageId"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"from",
+				"fromEmail"
+			],
+			[
+				"h",
+				"hidden\toverflow-x"
+			],
+			[
+				"padd",
+				"padding-bottom\tproperty"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"A",
+				"AddWorkplaceButton"
+			],
+			[
+				"c",
+				"config"
+			],
+			[
+				"a",
+				"apiUrl"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"fun",
+				"function〔keyword〕"
+			],
+			[
+				"s",
+				"showWorkspaces"
+			],
+			[
+				"respons",
+				"response.data"
+			],
+			[
+				"phone",
+				"phone_number"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"p",
+				"phoneNumber"
+			],
+			[
+				"12",
+				"127.0.0.1"
+			],
+			[
+				"get",
+				"getConfirmationCode"
+			],
+			[
+				"ove",
+				"overflow-x\tproperty"
+			],
+			[
+				"texta",
+				"text-align\tproperty"
+			],
+			[
+				"main-",
+				"main-heading"
+			],
+			[
+				"im",
+				"img-fluid"
+			],
+			[
+				"o",
+				"$orderDelta〔variable〕"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"described_",
+				"described_type"
+			],
+			[
+				"image",
+				"imageModel"
+			],
+			[
+				"descr",
+				"$description〔variable〕"
+			],
+			[
+				"desc",
+				"description_id"
+			],
+			[
+				"ga",
+				"$gallery〔variable〕"
+			],
+			[
+				"image_",
+				"image_id"
+			],
+			[
+				"B",
+				"BusinessGallery〔namespace〕"
+			],
+			[
+				"ha",
+				"$hashName〔variable〕"
+			],
+			[
+				"wh",
+				"where"
+			],
+			[
+				"rq",
+				"request"
+			],
+			[
+				"l",
+				"locale"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"deb",
+				"debugObject"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ul",
+				"uploadedImages"
+			],
+			[
+				"upl",
+				"uploadedImages"
+			],
+			[
+				"up",
+				"uploadedImages"
+			],
+			[
+				"b",
+				"businessGallery"
+			],
+			[
+				"Busi",
+				"BusinessGallery"
+			],
+			[
+				"bus",
+				"businessGalleries"
+			],
+			[
+				"fi",
+				"$fileName〔variable〕"
+			],
+			[
+				"Im",
+				"ImageModel"
+			],
+			[
+				"i",
+				"imageMeta"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"req",
+				"$request〔variable〕"
+			],
+			[
+				"max-",
+				"max-height\tproperty"
+			],
+			[
+				"te",
+				"templateSrc"
+			],
+			[
+				"mo",
+				"modal-form"
+			],
+			[
+				"mod",
+				"modalTerms"
+			],
+			[
+				"sho",
+				"showModal"
+			],
+			[
+				"bu",
+				"buttonText"
+			],
+			[
+				"he",
+				"headerString"
+			],
+			[
+				"L",
+				"ListsComponent"
+			],
+			[
+				"la",
+				"last_name"
+			],
+			[
+				"firs",
+				"first_name"
+			],
+			[
+				"filter",
+				"filtered"
+			],
+			[
+				"fil",
+				"filtered"
+			],
+			[
+				"conta",
+				"contacts"
+			],
+			[
+				"nam",
+				"namePatternQuery"
+			],
+			[
+				"sw",
+				"showSearchResults"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "fixes:\n1. AJAX actions\n2. apply import status\n* 5. light R&D: profile pics. If not, make a circle instead oh hue jackman\n* 7. timestamp on each mail in thread: timestamp \\ hours & days ago\n\n3. move search to 2nd column above tags\n4. move new message to 1st colum and ennable pop up\n6. show last message on thread open\n\ncollaboration:\n1. add settings icon on hover to open settings popup\n1.1. shared with [ users ]\n1.2. incoming mail by default assigned to [ user ]\n2. assign thread to [ user ]\n3. assign logs\ne.g. “thread assigned to [ user ] on { timestamp }\ne.g. “[ user ] assigned thread to [ user ] on { timestamp }\n\n\n4. folders:",
+			"settings":
+			{
+				"buffer_size": 633,
+				"line_ending": "Unix",
+				"name": "fixes:"
+			}
+		},
+		{
+			"file": "src/components/raysUi/RaysDisplay.vue",
+			"settings":
+			{
+				"buffer_size": 6641,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/raysUi/RaysMessages.vue",
+			"settings":
+			{
+				"buffer_size": 5203,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/README.md",
+			"settings":
+			{
+				"buffer_size": 864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/unan/google/auth.py",
+			"settings":
+			{
+				"buffer_size": 1550,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/unan/settings.py",
+			"settings":
+			{
+				"buffer_size": 363,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/app/settings.py",
+			"settings":
+			{
+				"buffer_size": 3487,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "1580 + 1050\n",
+			"settings":
+			{
+				"buffer_size": 12,
+				"line_ending": "Unix",
+				"name": "1580 + 1050"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"case",
+				"Convert Case: dash-case"
+			],
+			[
+				"jso",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				":s",
+				":w - Save"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				":",
+				":w - Save"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"seq",
+				"Set Syntax: SQL"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"dif",
+				"Set Syntax: Diff"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"unfo",
+				"Code Folding: Unfold All"
+			],
+			[
+				"pre",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"pret",
+				"Preferences: Pretty JSON Settings - Default"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"val",
+				"Pretty JSON: Validate"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"hml",
+				"Set Syntax: HTML"
+			],
+			[
+				"keys",
+				"Preferences: Key Bindings"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/campaignsUI",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/campaignsUI/templates",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/raysUi",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/templates",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/build",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/build/js"
+	],
+	"file_history":
+	[
+		"/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/client_secret.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailThreadDisplay.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/templates/email-ui.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailUiComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailComposeModal.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailForm.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailDisplay.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/MailboxMessages.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/campaignsUI/CampaignsUiComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/campaignsUI/templates/campaigns-ui.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/MailboxesAttached.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/MailboxDnsSettings.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/MailboxAdd.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/build/js/main.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi/EmailSettings.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/raysUi/RaysDisplay.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/build/mail.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/AddWorkSpaceButton.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/WorkSpaces.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/AddWorkSpaceModal.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/LoginForm.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/main.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/App.vue",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/components/TeamGrid.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/build/workspace.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/templates/app.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/semantic.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/vue.config.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/frontend/src/views/V2Campaigns.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/frontend/src/components/CampaignModal.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/frontend/src/components/MailboxModal.vue",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/team.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/app.js",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/bootstrap.js",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/footer.blade.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/vue.config.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/main.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/CompleteRegistrationComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/App.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons/templates/index.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/taiga-front/dist/conf.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/service_scripts/taiga.service",
+		"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/service_scripts/holons.service",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/webpack.mix.js",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/resources/views/front/includes/head.blade.php",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/resources/views/front/includes/foot.blade.php",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/resources/views/front/layouts/main.blade.php",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/resources/js/app.js",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/public/mix-manifest.json",
+		"/Users/alex/Documents/Work/alexandreev.com/v4/website/resources/views/layouts/main.blade.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/chat/matrix-react-sdk/res/themes/holons-custom/css/holons-custom.scss",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/chat/matrix-react-sdk/res/themes/holons-custom/css/_custom.scss",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/chat/holons_teleport/config.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/chat/matrix-react-sdk/res/themes/light-custom/css/_custom.scss",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/chat/holons_teleport/themes/_font-sizes.scss",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/holons-front/js/custom.js",
+		"/Users/alex/Documents/Work/varakush/varakush-web/database/migrations/2020_06_04_153402_add_business_business_gallery_table.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Business.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/database/migrations/2020_06_04_154646_make_description_id_nullable.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/routes/web.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/gallery.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/en/gallery.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/components/Stamps.vue",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/profile.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/business-settings.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/settings.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/layouts/profile.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Helpers/LangRoute.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Http/Controllers/BusinessController.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/menu/business-menu.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/includes/left-menu.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/gallery.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/en/main-navigation.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/main-navigation.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/menu/profile-menu.blade.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/Store/Modals.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/ApiSearch.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/TaskSettingsModal.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsContent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsHeader.vue",
+		"/Users/alex/Desktop/global-csv-export-1.txt",
+		"/Users/alex/Desktop/global-csv-export_.txt",
+		"/Users/alex/Desktop/global-csv-export-3.txt",
+		"/Users/alex/Desktop/global-csv-export-2.txt",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/babel.config.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/static/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/Store/Store.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/js/custom.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/package.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsFooter.vue",
+		"/Users/alex/Desktop/global-csv-export.txt",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/page.tpl.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/css/style_.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/app/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/app/css/app.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/ListsComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/index.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/ListsElements/ListsComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/lists-elements",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options.json",
+		"/Users/alex/Downloads/Docs API testing-63b8e35e689e.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/lists/google_drive/service_account.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options2.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options1.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options_php.txt",
+		"/Users/alex/Desktop/sql/NEW gt_thegt_launcher_directory_2020-05-07_20-55-18.sql",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/launcher/output-sm.txt",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/public/index.html",
+		"/Users/alex/Downloads/build/widget.html",
+		"/Users/alex/Downloads/hb-data/hb-1-2/all-companies.csv",
+		"/Users/alex/Downloads/build/js/custom.js",
+		"/Users/alex/Desktop/snippets.py",
+		"/Users/alex/Downloads/build/search-results.html",
+		"/Users/alex/Desktop/SELECT.sql",
+		"/Users/alex/Downloads/established_domains.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__bo__main/setenv.sh",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/phones.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/launcher/phones.txt",
+		"/Users/alex/Desktop/zapier-test.csv",
+		"/Users/alex/Downloads/titles_combined.txt",
+		"/Users/alex/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/tests/stubs/zen_stubs/dotucson.com_ceo.json",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/index.html",
+		"/Users/alex/Downloads/0011web.data.unityweb"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 323.0,
+		"where_history":
+		[
+			"/Users/alex/Documents/Work/z_projects/launcher/holons_main/website/holons-front/src/components/emailUi"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n",
+			"inre",
+			"vue-router",
+			"route",
+			"output",
+			"selec",
+			"form-row",
+			"5",
+			"Дима Бородин,",
+			"test mess",
+			"check",
+			"333",
+			"init",
+			"alberta",
+			"u14747349.wl100.sendgrid.net",
+			": ",
+			"tele",
+			": ",
+			"validateDNS",
+			"theme.js",
+			"eyJ1c2VyX2F1dGhlbnRpY2F0aW9uX2lkIjo2fQ",
+			"app",
+			"#app",
+			"Log ",
+			"login",
+			"logi",
+			"<style",
+			"style",
+			"' %}",
+			"{% static "
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								633,
+								633
+							]
+						],
+						"settings":
+						{
+							"auto_name": "fixes:",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/raysUi/RaysDisplay.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1913,
+								1913
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/components/raysUi/RaysMessages.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1152,
+								1152
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 244.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/unan/google/auth.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/unan/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/alex/Documents/Work/z_projects/launcher/projects/inhouse/dashboard/unan/app/app/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3408,
+								3408
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1829.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"auto_name": "1580 + 1050",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "holons-front.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Work/medcomspb.ru/v3/mcm.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

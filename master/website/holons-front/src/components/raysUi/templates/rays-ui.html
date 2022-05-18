@@ -1,0 +1,131 @@
+<div class="email">
+    <rays-write-new-modal />
+    <div id="parent" class="ui grid">
+
+      <div class="eight wide column pdng0">
+
+        <div class="ui grid pdng0">
+          <div class="eight wide column pdng0"
+          style="padding: 1rem 0 0 1rem !important">
+
+          <div id="rays--filters" class="ui secondary menu">
+            <!--<a class="item">Mine</a>
+            <a class="item">Assigned</a>
+
+            <a class="item">New</a>-->
+            <a id="platosPostCall" style="margin:0;width:auto"
+              v-on:click.prevent='writeMessage'
+              class="item ui basic button">+</a>
+
+              <div class="menu right">
+                <select name="template" class="item"
+                style="max-width: 120px">
+                  <option value="">All connections</option>
+                  <option value="">Clients</option>
+                  <option value="">Partners</option>
+                  <option value="">My people</option>
+                  <option value="">Moar long tail group naming</option>
+                  <option value="">Unsorted</option>
+                </select>
+              </div>
+
+          </div>
+
+            <div class="email-inboxes" id="email-inboxes">
+
+              <div class="item__wrapper rays__all">
+                <div class="rays__contact">
+                  <span>ALL</span>
+                  <span class="notifications-count inverted">99</span>
+                </div>
+              </div>
+
+              <rays-attached v-bind:rays="rays" />
+
+
+              <br><br><br>
+              <div id="odyssey-feature" style="margin:15px">
+                <h4><i class="square full icon"></i>the why</h4>
+
+                <a href="https://odyssey.holons.me/nodes/mercury/rays">
+                  <i class="slack hash icon"></i>rays</a>
+                <a href="https://odyssey.holons.me/nodes/mercury">
+                  <i class="slack hash icon"></i>mercury communication node</a>
+
+                <p>// use arrows to surf connections &amp; threads</p>
+                </div>
+
+
+                <div class="item__wrapper rays__assigned">
+                  <div class="rays__contact">
+                    <span>ASSIGNED</span>
+                    <span class="notifications-count inverted">99</span>
+                  </div>
+                </div>
+
+              <div id="rays--search" class="ui grid pdng0" style="margin:0">
+                  <div class="three wide column pdng0">
+                    <div class="ui basic animated fade button"
+                      onclick="$( '#identitySettings' ).addClass('active')"
+                     style="box-shadow:none;padding: 6px 14px;margin-top: 1px">
+                      <div class="visible content"><i class="address card outline icon"></i></div>
+                      <div class="hidden content">profile</div>
+                    </div>
+                  </div>
+                  <div class="three wide column pdng0">
+                    <div class="ui basic animated fade button"
+                    onclick="$( '#routingSettings' ).addClass('active')"
+                     style="box-shadow:none;padding: 6px 14px;margin-top: 1px">
+                      <div class="visible content"><i class="hdd outline icon"></i></div>
+                      <div class="hidden content button">routing</div>
+                    </div>
+                  </div>
+                  <div class="ten wide column pdng0">
+                    <input type="text" name="search"
+                    placeholder="search people & threads...">
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="eight wide column" style="padding-left:0">
+            <!-- thread previews -->
+            <rays-direct-messages
+                v-bind:ray='selectedRay'
+                v-bind:is-custom='isCustom'
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="eight wide column pdng0">
+
+          <!-- thread working area -->
+          <div class="thread-working-area" id="rays-thread-content">
+            <rays-direct-messages-display v-if="selectedThread" v-bind:m-thread="selectedThread" />
+            <div
+              v-else-if="Object.keys(selectedRay).length !== 0"
+              class="create-thread"
+            >
+            <rays-new-thread-form
+              v-bind:from="selectedRay.user_from_id"
+              v-bind:to="selectedRay.user_to_id"
+              v-bind:to-username="selectedRay.user_to"
+            />
+            </div>
+          </div>
+
+      </div>
+
+
+
+      <div id="routingSettings" class="hm modal">
+        <routing-ui />
+      </div>
+
+
+
+    </div>
+
+</div>
+<!-- /HTML-layout -->

@@ -1,0 +1,183 @@
+<div
+  v-bind:class="{ 'hm modal active' : modalOff === true  }"
+>
+
+  <div class="flex">
+    <!-- invoice body -->
+    <div>
+      <div v-if="invoice.is_paid">
+        <h2 style="color:#7b8f50">
+          <i class="check icon"></i> paid</h2>
+      </div>
+      <div id="invoiceDisplay">
+
+          <p>From: {{ invoice.from_name }}</p> <!-- TODO use a proper data here -->
+          <p>To: {{ invoice.to_name }}</p>
+
+          <h1>Invoice #1</h1> <!-- TODO add numbering
+            //based on invoices between the same parties, not system wide, dummy :D -->
+          <p><i>Based on '{{ invoice.title }}</i>' commitment</p> <!-- that's a commitment name, right? -->
+
+          <table class="hm table">
+            <thead>
+              <tr>
+                <td></td>
+                <td>Qty</td>
+                <td>Rate</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tr>
+              <td>item 1</td>
+              <td>2</td>
+              <td>$100</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <td>item 2</td>
+              <td>1</td>
+              <td>$50</td>
+              <td>$50</td>
+            </tr>
+          </table>
+
+          <h4 v-if="!invoice.is_paid"
+          style="margin: 2rem 0;text-align: right">
+            Total due: {{ invoice.amount }}
+          </h4>
+          <h4 v-if="invoice.is_paid"
+          style="margin: 2rem 0;text-align: right">
+            Paid: {{ invoice.amount }} <br>
+            Total due: 0
+          </h4>
+      </div> <!-- invoice body ends -->
+
+      <div v-if="invoice.is_paid" style="text-align:right">
+        <br>
+        <a class="hm link">download PDF invoice</a>
+      </div>
+
+      <!-- TODO: check if user has other outstandinng invoices -->
+      <div v-if="invoice.is_paid && userLoggedIn">
+        <p style="color:red">//list other outstanding invoices</p>
+      </div>
+    </div>
+    <!-- payment form starts -->
+    <div v-if="!invoice.is_paid && me != invoice.from_name.replace('@', '')" id="payInvoiceForm">
+
+        <div v-if="!userLoggedIn">
+          <div class="ui checkbox">
+            <input type="checkbox" name="example" checked> <!-- toggle the form below based onn checkbox -->
+            <label><i class="bolt icon"></i> ok, do instant account creation to keep the info on file
+              & generally enjoy the life</label>
+          </div>
+
+          > name
+
+          <!-- TODO: do validation w/ SMS right here, huh? -->
+          > phone number
+
+          <br><br>
+            <p class="muted" style="text-align:right">Already have one?
+              <a class="hm link" style="margin-left: 10px;position: relative;top: -1px;">Log in</a></p>
+
+          <br><br>
+        </div>
+
+        <div class="invoice-pay-front__subtitle">
+          bill to
+        </div>
+
+        <!-- TODO inject data to textarea IF we have that info on file -->
+
+        <textarea name="name" placeholder="your legal name + address, we'll keep that info on file for future invoices"
+        rows="8" cols="80"></textarea>
+
+
+        <div class="invoice-pay-front__subtitle">
+          payment method
+        </div>
+
+
+          <div class="form__radios">
+
+            <!--
+
+            1. TODO: what if we have non-zero balances on entities, fuck me
+            2. TODO
+            what if
+            the hm balance is not enough to cover invoice amount?
+
+            e.g. show a checkbox instead "use the balance to cover X
+            and pay the remaininng Y by card below"-->
+            <div class="form__radio">
+              <label for="visa">
+                <img style="width: auto;height: 24px;margin-left: -1px"
+                src="https://holons.me/static/img/moneta.svg">
+                <h5>$100 <span class="muted">@grintender</span></h5>
+              </label>
+              <input checked id="visa" name="payment-method" type="radio" />
+            </div>
+
+
+            <!-- TODO: list of cards on file -->
+            <div class="form__radio">
+              <label for="paypal">
+              <i class="credit card outline icon muted" style="font-size: 20px"></i>card 1594</label>
+              <input id="paypal" name="payment-method" type="radio" />
+            </div>
+
+            <div class="form__radio">
+              <label for="mastercard">
+                <i class="credit card outline icon muted" style="font-size: 20px"></i>card 6789</label>
+              <input id="mastercard" name="payment-method" type="radio" />
+            </div>
+
+          </div>
+
+          <br>
+
+          <!-- TODO renders stripe payment form -->
+          <div style="text-align:right">
+            <a class="hm link">use a new card</a>
+          </div>
+
+          <!-- TODO if there are no cards on file,
+          render form right away -->
+
+
+        <br>
+
+        <div class="ui checkbox">
+          <input type="checkbox" name="example">
+          <label>Cover 2.99% processing fee as a tip</label>
+        </div>
+
+        <br><br>
+
+        <div
+          class="hm button core" style="width:100%"
+          v-on:click="acceptInvoice">
+          Pay {{ invoice.amount }}
+        </div>
+
+    </div>
+    <!-- payment form ends -->
+  </div>
+
+<div v-if="!userLoggedIn && !invoice.is_paid">
+
+</div>
+
+
+
+
+<!-- legacy, lol
+  <br>
+
+    <div class="ui checkbox">
+      <input type="checkbox" name="example" checked>
+      <label>Create account with 2 clicks to keep the payment method on file</label>
+    </div>
+-->
+</div>

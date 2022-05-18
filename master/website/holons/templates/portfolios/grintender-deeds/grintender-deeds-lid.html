@@ -1,0 +1,116 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} Live In Design {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">Live in Design</h1>
+
+						<p class="refs">
+							Furniture ecommerce redesign
+								coded in <i class="modx icon"></i>MODX
+								by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency
+							</p>
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing
+					</p>-->
+
+						<div class="ui grid">
+
+							<div class="eight wide column" >
+								<p class="refs">
+									Art-director: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Mike G.</b> <br>
+									Front-end coder: <b>Ivan K.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+								<p>
+									<a href="https://liveindesign.ru/" target="_blank">Fairly standard redesign</a> job.</p>
+
+								<p>For agency busiess it's important to build a talent
+									roster beyond in-house people, so on most re-design
+									jobs I try new designers.</p>
+
+								<p>Sometimes it goes south :D</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/2021-06-17-15.22.47.jpg">
+
+								<p>Then, after trying a handful of people you find a right one.</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/2021-06-12-20.13.25.jpg">
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1234.jpeg">
+
+								<p>Feels good.</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/369-3693776_feelsgoodman-lucio-overwatch-feels-good-man.jpg">
+
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} AZ Billiards Redesign {% endblock %}
+
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">AZ Billiards Redesign</h1>
+
+						<p class="refs">
+							<b>AZ Billiards</b> – the biggest US billiard media (300k monthly visits) <br> redesigned
+								and migrated to <b><i class="wordpress simple icon"></i>WordPress</b>
+								by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency
+							</p>
+
+						<p  style="margin-bottom: 4rem">
+							<b style="text-transform:uppercase">The challenge:</b> continue the history of
+							<a href="https://www.azbilliards.com/about-azbilliards/"
+							target="_blank">8 succesfull redesigns since 1998</a>
+
+						</p>
+
+						<div class="ui grid">
+
+							<div class="eight wide column" >
+								<p class="refs">
+									Art-director: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Artem K.</b> <br>
+									Front-end Coder: <b>Andrey F.</b> <br>
+									Back-end Coder: <b>Mike H.</b>
+								</p>
+
+								<h2  style="text-align:right">process</h2>
+
+								<p>Initially owner wanted to customise a premium WordPress theme:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/hlLZPeFKixw.jpeg">
+
+								<p>I sugested to design and custom code a WordPress theme from scratch, so we did it:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-11-at-18.03.49.jpg">
+
+								<p>It took about 5 iterations on design:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/hiYvoKZY9ho.jpeg">
+
+								<p>As always we designed only desktop version,
+									coz with good front-end engineers responsive design doesn't require explicit directions.</p>
+
+								<p>Btw, here is one of the first concept explorations:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/tYzbz4Y3Rm4.jpeg">
+
+								<p>Front-end development was pretty straightforward.</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/b9nBFf3zR7U.jpeg">
+
+								<p>Apart from usual WordPress hook up magic, back-end iteration required
+									a data migration from custom PHP website AZ Billiards
+									used for 20 years – one day Mike H. might wrap it up in a nice story :D</p>
+
+							</div>
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+								<p><a href="https://www.azbilliards.com"
+									target="_blank">Check out live website</a>.</p>
+								<p>Here are a couple before\after seak peaks as well:</p>
+
+								<h3>Home page</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/azbilliard-redesign-sneak-peak-home-page.jpeg">
+
+								<h3>Player profile</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/azbilliards-redesign-player-profile.jpeg">
+
+								<h3>Subscription sneak peek</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/P7dlNBaQOXs.jpeg">
+
+								<h3>News story</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/gMWbdqONyQY.jpeg">
+
+							</div>
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

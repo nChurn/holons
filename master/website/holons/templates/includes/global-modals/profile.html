@@ -1,0 +1,6 @@
+{% load static %}
+
+<div id="identity-app"></div>
+{% if request.path == '/identity' or request.path == '/subscribe' %}
+  <div id="subscription-control"></div>
+{% endif %}

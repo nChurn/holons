@@ -1,0 +1,215 @@
+  <div id="identitySettings" class="hm modal">
+
+    <div class="content">
+      <h2 class="title">identity config</h2>
+
+          <div class="ui grid">
+
+
+            <div class="ten wide column">
+              <div class="ui grid">
+                <div class="six wide column">
+                  <div v-show="$refs.upload && $refs.upload.dropActive" class="drop-active">
+                    <h3>Drop files to upload</h3>
+                  </div>
+                  <div class="avatar-upload"  v-show="!edit">
+                    <div class="text-center p-2">
+                      <label for="avatar">
+                        <img
+                          :src="files.length ? files[0].url : defaultUserpic"
+                          class="rounded-circle" width="100%"
+                        />
+                      </label>
+                    </div>
+                    <div class="text-center p-2">
+                      <file-upload
+                        extensions="gif,jpg,jpeg,png,webp"
+                        accept="image/png,image/gif,image/jpeg,image/webp"
+                        name="userpic"
+                        class="ui basic button"
+                        post-action="/api/accounts/upload"
+                        :headers="{'X-CSRFToken': csrfToken}"
+                        :drop="!edit"
+                        v-model="files"
+                        @input-filter="inputFilter"
+                        @input-file="inputFile"
+                        style="width:100%"
+                        ref="upload">
+                        upload new avatar
+                      </file-upload>
+                    </div>
+                  </div>
+
+                  <div class="avatar-edit" v-show="files.length && edit">
+                    <div class="avatar-edit-image" style="height: 300px" v-if="files.length">
+                      <img ref="editImage" :src="files[0].url" />
+                    </div>
+                    <div style="text-align: center;padding: 2rem 0;background:#23272B">
+                      <button
+                        type="button"
+                        class="ui basic button inverted small"
+                        @click.prevent="$refs.upload.clear"
+                      >Cancel</button>
+                      <button
+                        type="submit"
+                        class="ui basic button inverted small"
+                        @click.prevent="editSave">Save</button>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="ten wide column pdng0" id="configFields">
+                  <br><br><br>
+                    <div class="ui field">
+                      <label for="name">name</label>
+                      <div class="ui field">
+                      <input
+                        v-model="username"
+                        class="ui field textinput"
+                        type="" />
+                      </div>
+                    </div>
+
+                    <div class="ui field">
+                      <label for="handle">@handle</label>
+                      <div class="ui field">
+                      <input
+                        v-model="handle"
+                        class="ui field textinput"
+                        type="" />
+                      </div>
+                    </div>
+
+                    <div
+                      v-if="handle != ''"
+                      class="ui field"
+                    >
+                      <label>profile link</label>
+                      <a
+                        class="hm link"
+                        v-bind:href="'https://holons.me/' +  handle"
+                        target="_blank">
+                        holons.me/{{ handle }}</a>
+                    </div>
+                    <div class="ui field">
+                      <button
+                        @click="saveProfile"
+                        class="ui button btn-sm">
+                      save
+                      </button>
+                    </div>
+                </div>
+
+                  <div class="sixteen wide column">
+
+                    <br><br>
+
+                    <div class="ui grid">
+                      <div class="six wide column">
+                        <h2>billing</h2>
+                        <b>$X \ monthly</b>
+
+                        <br><br>
+
+                        <p>
+                        your bill paid <br>
+                        by @grintender <br>
+                        till March 31</p>
+                      </div>
+
+                      <div class="ten wide column">
+                        <h2>services</h2>
+
+                        <ul>
+                          <li>plato's</li>
+                          <li>plato's</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+              </div>
+            </div>
+
+            <div class="six wide column" style="border-left: 1px solid #e8eaed">
+              <h2>privacy</h2>
+              <!--search results: platform visibility, google visibility
+              inbox-->
+              <div style="color: rgba(35,39,43,.71);">
+
+                    <div class="meet__mc--item">
+                      <h5>profile visibility</h5>
+                      <span>
+                        <i class="check icon"></i>
+                        <select class="hm legal" id="pet-select">
+                          <option value="" selected>searchable</option>
+                          <option value="">not searchable</option>
+                        </select> on platform</span>
+                      <span>
+                        <i class="check icon"></i>
+                        <select class="hm legal" id="pet-select">
+                          <option value="" selected>visible</option>
+                          <option value="">not visible</option>
+                        </select> on google</span>
+                    </div>
+
+                    <!--  <i class="clock outline icon"></i>  -->
+
+
+                    <!--<div class="meet__mc--item">
+                      <h5>inbox</h5>
+                          <i class="circle outline icon"></i>
+                          <select class="hm legal" id="pet-select">
+                            <option value="" selected>everyone w/ core or better account</option>
+                            <option value="">everyone w/ classic or better account</option>
+                          </select>can ray me through
+                        <span>
+                          <i class="circle outline icon"></i>
+                          everyone can start a teleport chat w/ me</span>
+                    </div>-->
+
+                    <!--<div class="meet__mc--item">
+                      <h5>branding</h5>
+                      <span>
+                        <i class="check icon"></i>
+                        Logo uploaded</span>
+                      <span>
+                        <i class="check icon"></i>
+                        Colors set</span>
+                    </div>
+
+
+                    <br>
+
+                    <button style="width:100%" onclick="$( '#tuneMeetingsDummyModal' ).addClass('active')" class="ui basic icon button">
+                      <i class="wrench icon"></i>
+                      tune
+                    </button>-->
+
+                    <br><br>
+
+                    <div class="sixteen wide column">
+                      <h2>also</h2>
+                      <p>For identity verification, public profile request
+                        or whatever you have in mind – talk to Mercury, please</p>
+
+                        <div class="personification">
+                          <img src="https://holons.me/static/img/mercury.jpg">
+                          <a href="https://holons.me/identity-requests-qEzr">talk to Mercury</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- right column ends -->
+
+
+          </div>
+
+    </div>
+
+  </div>

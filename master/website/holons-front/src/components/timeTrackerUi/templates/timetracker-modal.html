@@ -1,0 +1,118 @@
+<div
+  class="hm modal"
+  id="ttrackerModal"
+>
+<div id="timetracker-modal">
+<div class="content">
+
+    <h2 class="title">log time entry</h2>
+    <div id="trackerEntry">
+      <!-- TODO auto populate same values as last entry -->
+      <div class="flex">
+        <div class="vaHack">
+          <div><strong>entity</strong>
+            <select
+              class="hm legal"
+              id="name"
+              v-model="selectedEntity"
+            >
+              <option
+                v-for="item in entitiesList"
+                v-bind:key="item"
+                v-bind:value="item.id"
+              >{{ item.name }}</option>
+              <p>entities are created @moneta</p>
+            </select>
+          </div>
+        </div>
+        <div class="vaHack">
+          <div><strong>&nbsp;client \ commitment&nbsp;</strong>
+            <select
+              class="hm legal"
+              id="name"
+              v-model="selectedCommitment"
+            >
+              <option
+                v-for="item in commitmentsList"
+                v-bind:key="item"
+                v-bind:value="item.id"
+              >{{ item.title }}</option>
+              <p>the list is based on active commitments</p>
+            </select>
+          </div>
+        </div>
+        <div class="vaHack">[ tag 1 ]</div>
+        <div class="vaHack">[ tag 2 ]</div>
+      </div>
+
+      <div class="flex">
+        <div class="vaHack" style="padding-right: 10px">
+          <strong>{{ currentTaskTime }}</strong>
+        </div>
+        <div class="ui input vaHack" style="width:100%">
+          <!-- TODO it's super important to cache and live search previous entries -->
+          <input
+            class="title"
+            type="text"
+            v-model="timeEntryTitle"
+          >
+        </div>
+        <div class="vaHack" style="min-width: 120px;padding-left: 10px">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+                type="radio"
+                tabindex="0"
+                name="billable"
+                checked="checked"
+                v-bind:value="true"
+                v-model="isBillable"
+              >
+              <label>billable</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+                  type="radio" 
+                  name="billable"
+                  tabindex="0"
+                  v-bind:value="false"
+                  v-model="isBillable"
+              >
+              <label>non billable</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex" style="justify-content: flex-end">
+        <a class="ui basic button" v-on:click="doNotLogTime">nevermind. don't log this one</a>
+        <a class="ui basic positive button" id="timeTrackerSubmit"
+        v-on:click="logTime">ok. log</a>
+      </div>
+    </div>
+
+    <div class="ui secondary menu secondary-navigation" style="padding-left:0;padding-right: 0">
+        <a class="item" style="padding-left: 0 !important;margin-left:0"
+        href="/time">journal</a>
+        <a class="item">the schedule</a>
+        <!--<a class="item disabled"><i class="clock outline icon"></i> People</a>
+        <a class="item disabled"><i class="clock outline icon"></i>TODOs</a>
+        <a class="item disabled"><i class="clock outline icon"></i>WIKIs</a>-->
+
+        <div class="right menu">
+          <!--<a class="item disabled">
+            <i class="circle icon gold-dot"></i>Hosting &amp; Asset Management</a>-->
+          <a class="item" target="_blank"
+          href="https://odyssey.holons.me/en/nodes/fairchild-layers/time-tracker">
+          <i class="square full icon"></i>the why</a>
+        </div>
+    </div>
+
+    <h2>you worked {{ timeSpentTodayUpdated  }} hours today</h2>
+    <p>seems like you are ahead\behind the schedule</p>
+
+  </div>
+</div>
+</div>

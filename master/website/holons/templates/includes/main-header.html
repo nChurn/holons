@@ -1,0 +1,80 @@
+{% load static %}
+<div id="holonsHeader" class="ui menu main-header">
+
+
+
+
+<!--<a class="item{% if request.path == '/' %} active {% endif %}"
+  href="/">
+<span>Lineup</span></a>-->
+
+<a class="item{% if request.path == '/' %} active {% endif %}"
+href="/agenda"> <!-- hack coz of broken redirects, remove on production -->
+<span>Agenda</span></a>
+
+<a class="item{% if '/relations' in request.path %} active {% endif %}"
+href="/relations/offers">
+<span>Relations</span></a>
+
+<a class="item
+{% if request.path == '/layers' or request.path == '/time' or request.path == '/layers/people' %} active {% endif %}"
+href="/layers">
+<span>Layers</span></a>
+
+<a class="item{% if request.path == '/moneta' %} active {% endif %}"
+href="/moneta">
+<span>Moneta</span></a>
+
+<a class="item{% if request.path == '/purpose/' %} active {% endif %}"
+href="/purpose/">
+<span>Purpose</span></a>
+
+
+    <!--<a class="item{% if request.path == '/black-boxes' %} active {% endif %}" href="#" id="black-boxes">Black Boxes</a>
+    <a class="item{% if request.path == '/markets' %} active {% endif %}" href="#" id="markets">Broker</a>
+    <a class="item{% if request.path == '/assets' %} active {% endif %}" href="#">Assets</a>
+    <a class="item{% if request.path == '/identity-and-justice' %} active {% endif %}" href="#">Identity &amp; Justice</a>
+    <a class="item{% if request.path == '/faith' %} active {% endif %}" href="#" id="faith">Faith VC</a>-->
+
+
+    <div class="right menu">
+
+    <a class="item{% if request.path == '/identity' %} active {% endif %}"
+    href="/identity"><span>Identity</span></a>
+
+    <!-- front throug wp install -->
+    <a class="item {% if request.path == '/broker' %} active {% endif %}"
+    href="/markets"><span>Broker & Markets</span></a>
+
+    <!-- front throug wp install -->
+    <a class="item" style="padding-right:0"
+    href="/faith"><span class="faith-cv-link">Faith <span>V</span>C</span></a>
+
+    <!--<span class="item"
+    >[time tracker]</span>-->
+
+        {% if not user.is_authenticated and request.path != '/auth' and request.path != '/login' %}
+        <div class="global-auth">
+         <p>Hey,
+         <br> you can go look around (read only),
+         <br> but you need to create account to do things</p>
+         <div class="ui menu">
+           <a class="item" href="/auth">Log in</a>
+           <div class="item">
+             <div class="ui primary button" id="finish-account-setup">
+                 <a href="/auth" class="finish-account-setup">Finish account setup</a>
+             </div>
+           </div>
+         </div>
+        </div>
+        {% else %}
+        <!--<a class="item" href="/logout">Log out</a>-->
+        {% endif %}
+
+
+        <!--div class="item" style="padding:0px;margin-left: 9px;">
+          <img src="{% static 'img/mercury-svg-icon.svg' %}" class="main-logo">
+        </div>-->
+
+    </div>
+</div>

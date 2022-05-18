@@ -1,0 +1,33 @@
+<div class="ui secondary menu secondary-navigation">
+
+  <a class="item{% if request.path == '/platos-flywheel' %} active {% endif %}"
+  href="/platos-flywheel">Segments</a>
+
+  <a class="item{% if request.path == '/campaigns' %} active {% endif %}"
+  href="/campaigns">Campaigns</a>
+
+
+  <!-- Days of Past Glory & Prophecies featuring GREED graph etc -->
+  <a class="item disabled">
+    <i class="circle icon gold-dot"></i>timeline
+  </a>
+
+
+  <a href="/platos-flywheel/subscription" class="item">Subscription</a>
+
+
+  <div class="right menu">
+
+    <p class="item platos-cui">
+      This week, {{ user.platos_bids_this_week }} bids resulted in {{ user.platos_replies_this_week }} replies across all campaigns.
+    </p>
+    <!--<a href="#" class="item platos-subscription"><span>subscription:</span> demo </a>
+    <!--
+    better & bigger promo here 
+    <h5 class="item platos-heading">Plato's Flywheel <span>v0.02</span> </h5>
+    -->
+
+    <a href="https://odyssey.holons.me/nodes/mercury/platos-flywheel" class="item"><i class="square full icon"></i> the why</a>
+  </div>
+
+</div>

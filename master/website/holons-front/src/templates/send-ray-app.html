@@ -1,0 +1,137 @@
+<div class="send-ray-app">
+  <div
+        v-if="showLogin && !messageSent"
+        class="hm modal active"
+      >
+      <div class="content">
+          <form
+            class="ui form"
+            id="login-form"
+            autocomplete="off"
+          >
+
+              <label
+                for="#"
+                class="phone_field"
+                autocomplete="off"
+              >
+
+                  <input
+                    type="text"
+                    placeholder="phone number in internationnaal format w/o pllus sign :D"
+                    autocomplete="off"
+                    name="phone"
+                    v-if="!codeInputActive"
+                    v-model="phoneNumber"
+                  >
+
+              </label>
+              <label
+                for="#"
+                class="code_field"
+                autocomplete="off"
+              >
+                  <input
+                    v-if="codeInputActive"
+                    type="text"
+                    name="code"
+                    placeholder="code from SMS"
+                    v-model="confirmationCode"
+                  />
+
+              </label>
+
+              <br>
+
+              <div class="ui field">
+              <button
+                class="auth-btn btn ui basic button"
+                name="code"
+                v-if="!codeInputActive"
+                v-bind:disabled="phoneNumber == ''"
+                v-on:click.prevent="getConfirmationCode"
+              >ok.go</button>
+              </div>
+              <div class="ui field">
+              <button
+                class="auth-btn btn ui basic button"
+                name="confirm"
+                v-if="codeInputActive"
+                v-bind:disabled="confirmationCode == ''"
+                v-on:click.prevent="confirmAccount"
+              >let.me.in</button>
+              </div>
+          </form>
+      </div>
+  </div>
+  <div  class="ui grid">
+
+    <div class="five wide column">
+
+    </div>
+
+    <!--<div class="three wide column">
+      <div class="flex" style="margin-top:10vh;margin-bottom:5vh">
+        <img src="https://holons.me/static/img/soul-pic3.jpg"
+        class="identity__img" style="margin:0; margin-right:1rem">
+        <h3>dmitrii @grintender</h3>
+      </div>
+    </div>-->
+
+    <div class="six wide column" style="padding-top:10vh">
+
+      <h1 v-html="itemTitle"></h1>
+
+      <div id="cannedMessageBody" v-html="itemBody"></div>
+
+      <div
+        v-if="!messageSent"
+        class="ui field"
+      >
+        <wysiwyg v-model="message" />
+      </div>
+
+      <br>
+
+      <button
+        v-if="!messageSent && userIsLoggedin"
+        class="ui basic button"
+        v-bind:disabled="message == ''"
+        @click.prevent="postNewMessage"
+        style="width:100%"
+      >
+      Send
+      </button>
+      <button
+        v-if="!messageSent && !userIsLoggedin && !showLogin"
+        class="ui basic button"
+        v-bind:disabled="message == ''"
+        @click.prevent="showLogin = true"
+        style="width:100%"
+      >
+      Login and send
+      </button>
+
+      <div
+        v-if="messageSent"
+        class="success"
+      >
+      Your message has been sent successfully
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!--
+  <p id="profileFooter">
+    this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">private profile</a>
+    powered by <a href="https://holons.me/">holons.me</a>
+    – 3rd millenium private market network
+    for entrepreneurs, talent & capital.
+    <i class="circle outline icon"></i> identity, background and track record
+    <b style="color:#23272B">unverified</b>.
+  </p>-->
+</div>

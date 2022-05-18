@@ -1,0 +1,94 @@
+<div class="frontpage-agenda">
+
+
+    <div class="flex" style="padding: 2rem 0">
+      <h3 class="assigned_to_me vaHack">{{ assignedToMeCount }} tickets assigned to me</h3>
+      <div class="">
+        <div class="field">
+          <select multiple="" class="ui dropdown">
+            <option value="">filter by tags</option>
+            <option value="AF">Afghanistan</option>
+          </select>
+        </div>
+        <div class="field">
+          <select multiple="" class="ui dropdown">
+            <option value="" selected>sort by due dates</option>
+            <option value="AF">newly added</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div v-if="userCards.assigned_to_me" class="agenda-tasks--wrapper">
+      <div
+        class="tasks-card item"
+        v-for="card in userCards.assigned_to_me"
+        v-bind:key="card.id">
+          <a v-bind:href="'/layers?card=' + card.id + '&project=' + card.project_extra_info.id" target="_blank">
+
+          <span class="tasks-card__title">{{ card.project_extra_info.name }}</span>
+          <span class="tasks-card__title">{{ card.status_extra_info.name }}</span>
+          <span class="tasks-card__title">{{ card.subject }}</span>
+
+          <span style="font-size:12px">
+            <span class="tasks-card__list-name">some pretty long list name</span>
+            at <span class="tasks-card__workspace-name">commitments @grintender</span>
+          </span>
+
+
+          <div class="ws-card--tags">
+            <span
+              v-for="tag in card.tags"
+              class="label-text"
+              v-bind:style="{ backgroundColor: ''+ tag[1] +''}"
+            >{{ tag[0].split('__')[0] }}</span>
+          </div>
+          <!--<div class="owner">
+            {{ card.owner_extra_info.full_name_display }}
+          </div>-->
+          <div class="badge due-date-badge" v-if="card.due_date">
+            {{ customDateFormatter(card.due_date, false, true) }}
+          </div>
+          </a>
+      </div>
+    </div>
+
+
+    <div class="flex" style="padding: 2rem 0">
+      <h3 class="watched_by_me vaHack">{{ watchedByMeCount }} tickets watched by me</h3>
+      <div class="field">
+        <select multiple="" class="ui dropdown">
+          <option value="">filter by tags</option>
+          <option value="AF">Afghanistan</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div v-if="userCards.watched_by_me" class="agenda-tasks--wrapper">
+      <div
+        class="tasks-card item"
+        v-for="card in userCards.watched_by_me"
+        v-bind:key="card.id">
+         <a v-bind:href="'/layers?card=' + card.id + '&project=' + card.project_extra_info.id" target="_blank">
+          <span class="tasks-card__title">{{ card.project_extra_info.name }}</span>
+          <span class="tasks-card__title">{{ card.status_extra_info.name }}</span>
+          {{ card.subject }}
+            <div class="ws-card--tags">
+              <span
+                v-for="tag in card.tags"
+                class="label-text"
+                v-bind:style="{ backgroundColor: ''+ tag[1] +''}"
+              >{{ tag[0].split('__')[0] }}</span>
+            </div>
+            <div class="owner">
+              {{ card.owner_extra_info.full_name_display }}
+            </div>
+            <div class="deadline" v-if="card.due_date">
+              {{ customDateFormatter(card.due_date, false, true) }}
+            </div>
+          </a>
+        </div>
+    </div>
+
+  </div>
+</div>

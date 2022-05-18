@@ -1,0 +1,316 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+
+{% block title %} Dmitrii B. @grintender | Deeds {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+
+
+  <div id="hiding-nav" style="margin-bottom:5vh !important"
+  class="ui secondary menu secondary-navigation">
+
+    <div class="right menu">
+      <a class="item active" href="/grintender/deeds">highlights</a>
+      <!--<a class="item">online stores</a>
+
+      <a class="item">custom code</a>
+      <a class="item"><i class="wordpress simple icon"></i>WordPress</a>-->
+    </div>
+
+  </div>
+
+
+
+
+	<div class="ui grid">
+		<div class="five wide tablet four wide computer column">
+			<a href="https://holons.me"
+			class="s-card magnum">
+				<p class="aint s-card__status">closed alpha</p>
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">holons core experience</h3>
+				<p class="s-card__desc">Private market network for entrepreneurs,
+					talent & capital built on <b>concession #1</b></p>
+				<p class="s-card__desc">Coded in <i class="python icon"></i>python,
+					<i class="vuejs icon"></i>vue.js, <i class="wordpress simple icon"></i>WordPress
+				and <i class="react icon"></i>react</p>
+				<p class="s-card__desc">
+					<i style="color:crimson"
+					class="fire icon"></i>product\market fit</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/azb"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<p class="s-card__role">art director</p>
+				<h3 class="s-card__title">AZ Billiards Redesign</h3>
+				<p class="s-card__desc">The biggest US billiard media (300k monthly visits) redesigned
+					and migrated to <i class="wordpress simple icon"></i>WordPress</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<div
+			class="s-card tss reference">
+				<h3 class="s-card__title">50+ link building
+					outreach campaigns @launcher</h3>
+			</div>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/grin-launcher"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<p class="s-card__role">founder</p>
+					<!--<img class="s-card__img"
+					src="https://the.gt/wp-content/themes/the_gt01/images/gl-logo.png">-->
+					<h3 class="s-card__title launcher logo">GRIN Launcher</h3>
+				<p class="s-card__desc">Outreach platform to support agency's services.
+					Coded in <i class="python icon"></i>python
+					and <i class="vuejs icon"></i>vue.js</p>
+				<p class="s-card__desc">Data API and self-service version scheduled for development.</p>
+				<p class="s-card__desc">
+					<i style="color:crimson"
+					class="fire icon"></i>100M+ websites w/ meta data</p>
+			</a>
+		</div>
+
+
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/oil"
+			class="s-card archive">
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">NDA project</h3>
+				<p class="s-card__desc">Crowdinvesting platform for oil industry
+				accepting fiat, crypto & issuing own coin (ah, sweet 2017).</p>
+				<p class="s-card__desc">Coded in <i class="laravel icon"></i>Laravel (PHP)
+					and <i class="vuejs icon"></i>vue.js</p>
+			</a>
+		</div>
+
+		<div class="five wide tablet four wide computer column">
+			<a href="/grintender/deeds/avokado-today"
+			class="s-card archive">
+				<p class="s-card__role">founder</p>
+				<h3 class="s-card__title avokado logo">avokado today</h3>
+				<p class="s-card__desc">Language learning web app
+					coded in <i class="python icon"></i>python
+					and <i class="vuejs icon"></i>vue.js</p>
+				<p class="s-card__desc">
+					Core user aquisition strategy didn't play out.
+					SEO did. Paused.</p>
+
+			</a>
+		</div>
+
+
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/prime-estate"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">prime estate</h3>
+				<p class="s-card__desc">Real estate agency, directory & map layer
+					coded in <i class="laravel icon"></i>Laravel (PHP)
+					and <i class="vuejs icon"></i>vue.js</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/carpedia"
+			class="s-card archive">
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">Carpedia</h3>
+				<p class="s-card__desc">The biggest Russian DIY car repair media
+					coded in <i class="python icon"></i>python
+					and <i class="vuejs icon"></i>vue.js</p>
+				<p class="s-card__desc"><i style="color:crimson"
+				class="fire icon"></i>Scaled from 0 to 200k monthly
+					visits w/ SEO alone</p>
+
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/tennis-running-delivery"
+			class="s-card archive">
+				<p class="s-card__role">co-founder</p>
+				<h3 class="s-card__title">tennis & running delivery stores</h3>
+				<p class="s-card__desc">The biggest Russian tennis and running supplies ecommerce.
+					Coded in <i class="python icon"></i>python
+					and <i class="vuejs icon"></i>vue.js</p>
+				<p class="s-card__desc">Discontinued coz of 13% margin rate</p>
+			</a>
+		</div>
+
+
+
+		<div class="four wide column">
+			<a href="https://the.gt/buschman-store-case-study/" target="_blank"
+			class="s-card archive">
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">Buschman Store</h3>
+				<p class="s-card__desc">Redesign of Shopify store
+					for succesfull Amazon seller</p>
+				<p class="s-card__desc">Tried SEO & PPC campaigns.</p>
+				<p class="s-card__desc">Unit economy didn't work out.</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/live-in-design"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<p class="s-card__role">art director</p>
+				<h3 class="s-card__title">Live In Design</h3>
+				<p class="s-card__desc">Furniture ecommerce redesign
+					coded in <i class="modx icon"></i>MODX</p>
+			</a>
+		</div>
+
+		<div class="five wide tablet four wide computer column">
+			<a href="https://the.gt/" target="_blank"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<p class="s-card__role">founder</p>
+				<h3 class="s-card__title grintech logo">GRIN tech</h3>
+				<p class="s-card__desc">Full-service agency serving
+					clients and in-house project.</p>
+				<p class="s-card__desc">Coded in <i class="wordpress simple icon"></i>WordPress</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/king-the-monk"
+			class="s-card archive">
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">King The Monk</h3>
+				<p class="s-card__desc">
+					<i class="wordpress simple icon"></i>WordPress plugin for giveaways</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/plain-conversions"
+			class="s-card archive">
+				<p class="s-card__role">product owner</p>
+				<h3 class="s-card__title">Plain Conversions</h3>
+				<p class="s-card__desc">
+					<i class="wordpress simple icon"></i>WordPress plugin
+					for lead capturing</p>
+			</a>
+		</div>
+
+		<div class="four wide column">
+			<a href="/grintender/deeds/corinth-trade-company"
+			class="s-card archive">
+				<p class="s-card__role">art director</p>
+				<h3 class="s-card__title">Corinth Trade Company</h3>
+				<p class="s-card__desc">Website designed on Tilda
+					for UAE & Russian trade company</p>
+			</a>
+		</div>
+
+		<!--<div class="four wide column">
+			<a href="/grintender/deeds/prime-estate"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<h3 class="s-card__title">WCCO</h3>
+				<p class="s-card__desc">Real estate agency, directory & map layer
+					coded in <i class="laravel icon"></i>Laravel (PHP)
+					and <i class="vuejs icon"></i>vue.js</p>
+			</a>
+		</div>-->
+
+		<!--<div class="four wide column">
+			<div
+			class="s-card soon">
+				<p class="aint s-card__status">coming soon</p>
+				<h3 class="s-card__title">S.</h3>
+				<p class="s-card__desc">Ecommerce redesign
+					coded in <i class="opencart icon"></i>OpenCart</p>
+			</div>
+		</div>-->
+
+
+		<!--<div class="four wide column">
+			<a href="#"
+			class="s-card">
+				<p class="s-card__status">live</p>
+				<h3 class="s-card__title">Leto</h3>
+				<p class="s-card__desc">Modern Russian Dacha</p>
+				<p class="s-card__desc">Website designed on Tilda.</p>
+			</a>
+		</div>-->
+
+		<!--<div class="four wide column">
+			<a href="#"
+			class="s-card">
+				<h3 class="s-card__title">jewelerry</h3>
+				<p class="s-card__desc">UAE & Russian trade company</p>
+				<span>design concept</span>
+			</a>
+		</div>
+		<div class="four wide column">
+			<a href="#"
+			class="s-card">
+				<h3 class="s-card__title">st. vincent</h3>
+				<p class="s-card__desc">UAE & Russian trade company</p>
+				<span>design concept</span>
+			</a>
+		</div>-->
+
+
+
+		<!--<div class="four wide column">
+			<a href="#"
+			class="s-card archive">
+				<h3 class="s-card__title">Unique Place</h3>
+				<p class="s-card__desc">Website designed on Tilda
+					for fitness & yoga studio</p>
+			</a>
+		</div>-->
+
+
+	</div> <!-- tile grid endds -->
+
+</div>
+
+{% include "portfolios/layouts/badge.html" %}
+
+{% endblock %}

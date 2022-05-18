@@ -1,0 +1,185 @@
+{% load static %}
+
+
+<!--
+soul
+--->
+<div class="account__soul-col">
+
+  <a href="/identity">
+    <img src="{% static 'img/soul-pic3.jpg' %}"
+    class="identity__img">
+  </a>
+
+  <br>
+
+  <a href="/account" class="account__status gold">gold</a>
+
+  <br><br>
+
+  {% if user_timer.user %}
+
+    <!-- ticket-->
+      <a class="ttracker-container" id="ttracker-tickets" href="/time">
+          <span class="ttracker-status-text"></span>
+      </a>
+
+    <!-- tracker btn -->
+    {% if user_timer.timer.timer_active %}
+      <a
+        class="ttracker-container active"
+        id="ttracker-btn"
+        rel="{{ user_timer.user }}"
+        style="border-bottom: 1px solid rgba(255,255,255,.15);">
+        <span class="ttracker-status"></span>
+        <span class="ttracker-status-text"></span>
+      </a>
+    {% else %}
+      <a
+        class="ttracker-container unactive"
+        id="ttracker-btn"
+        rel="{{ user_timer.user }}"
+        style="border-bottom: 1px solid rgba(255,255,255,.15);">
+        <span class="ttracker-status"></span>
+        <span class="ttracker-status-text"></span>
+      </a>
+    {% endif %}
+
+    <!-- time -->
+    {% if user_timer.timer.time_spent_today > 0 %}
+      <a
+        class="account__soul-col--item"
+        style="border-top: 1px solid rgba(255,255,255,.15);border-bottom: 1px solid rgba(255,255,255,.15);"
+        id="ttracker"
+        href="/time">
+          <span
+           style="font-size: 12px;width:100%;text-align:center;"
+          >
+          {{ user_timer.timer.time_spent_today_hours }}:{{ user_timer.timer.time_spent_today_minutes }}
+          </span>
+          <span class="ttracker-status-text"></span>
+      </a>
+    {% else %}
+      <a
+        class="account__soul-col--item-container"
+        style="border-top: 1px solid rgba(255,255,255,.15);border-bottom: 1px solid rgba(255,255,255,.15);"
+        id="ttracker"
+        href="/time">
+          <span
+           style="font-size: 12px;width:100%;text-align:center;"
+          >00:00</span>
+          <span class="ttracker-status-text"></span>
+      </a>
+    {% endif %}
+  {% endif %}
+
+  <br>
+
+
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+<!--
+  <a href="fora.html">
+    <img src="{% static 'img/fora.svg' %}" id="fora"
+    width="44px;" style="margin-bottom: 3px;">
+  </a>
+
+  <a href="#">
+    <img src="{% static 'img/wnd.svg' %}"
+    height="44px" style="margin-bottom: 3px;">
+  </a>
+  <a href="#">
+    <img src="{% static 'img/wnd2.svg' %}"
+    height="44px">
+  </a>-->
+  <br><br>
+  <a href="/faith">
+    <img src="{% static 'img/faith.png' %}"
+    width="40px" height="auto" style="margin-bottom: 3px;">
+  </a>
+
+
+
+</div>
+
+
+<div class="ffs-modals" id="ttrackerModal">
+
+  <a id="closeTrackerModal">&times;</a>
+
+  {% if user_timer.user %}
+    {% if user_timer.business_entites %}
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h3>Entities</h3>
+        <ul>
+        {% for business_entity in user_timer.business_entites %}
+          <li
+            class="business-entity"
+            rel="{{ business_entity.id }}"
+          >{{ business_entity.name }}</li>
+        {% endfor %}
+        </ul>
+        <p></p>
+      </div>
+      <div class="eight wide column"></div>
+    </div>
+    {% endif %}
+  {% endif %}
+  <div class="ui grid">
+    <div class="eight wide column">
+      <h3>Workspaces</h3>
+      <p></p>
+    </div>
+    <div class="eight wide column">
+      <h3>Agenda</h3>
+      <p></p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+
+#generateCodeProgress {width: 100%; margin-bottom: 1rem}
+
+#generateCodeProgress input {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.35);
+  color: rgba(255,255,255,.35)
+}
+#generateCodeBt {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.ffs-modals p {
+  color: rgba(255,255,255,.83);
+   line-height: 1.5;
+   font-size: 14px;
+   letter-spacing: .3px;
+   margin: 1rem;
+  }
+
+.ffs-modals a {
+  color: #769047;
+  text-transform: uppercase;
+  border-bottom: 1px solid #769047;
+}
+
+.ffs-modals a:hover {border-bottom: 2px solid #769047}
+
+.ffs-modals h1,
+.ffs-modals h2,
+.ffs-modals h3 {
+text-transform: uppercase;
+    color: #fff;
+}
+
+.ffs-modals h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+</style>

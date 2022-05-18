@@ -1,0 +1,265 @@
+<div>
+
+
+
+  <div style="margin:2rem">
+
+    <div class="access flex">
+
+      <div class="flex">
+        <h5 class="muted vaHack">people @moneta</h5>
+        <p class="muted" style="margin-left:15px;line-height: 1">
+          All equity owners have read access <br>
+          to balances and books.</p>
+      </div>
+
+      <div class="flex">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <!--<a class="ui basic button">+</a>-->
+        <a class="ui basic button mrgn0" id="accessControlsBtn"
+        onclick="$( '#adBookControlsModal' ).addClass('active')">
+          manage</a>
+      </div>
+
+    </div>
+
+
+
+    <div class="ui grid" style="margin-top:2rem">
+
+      <div class="eleven wide column" style="padding-right:0">
+
+        <h2 style="text-align:right;margin: 1rem 0 2rem 0;border-bottom: 30px solid #23272B;">
+          essentials</h2>
+
+        <div class="ui grid">
+          <div class="eight wide column">
+
+
+              <!-- TODO
+              @grintender won't have cap table, but rather a portfoli, huh?
+              i.e. list of etities he owns entity into
+            -->
+              <h3>cap table</h3>
+              <p>It's <a class="hm link"
+                href="https://odyssey.holons.me/nodes/prudentia-justice/equity">
+                ownership record registry</a> i.e. who owns what.</p>
+
+              <table id="capTable" class="hm ui table">
+                <thead>
+                  <tr>
+                    <td>stakeholder</td>
+                    <td>ownership</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td><h5>Dmmitrii B.</h5></td>
+                  <td>100%</td>
+                </tr>
+              </table>
+
+              <a style="width:100%" class="ui basic button"
+              onclick="$( '#sellEquityModal' ).addClass('active')">
+              sell equity</a>
+          </div>
+
+          <div class="eight wide column">
+
+            <h3>policy</h3>
+
+
+
+                <h5 style="text-align:right;marginn:2rem 0">profit rules</h5>
+
+                <p>Keep <input class="hm input inline" style="width: 75px"
+                  type="number" name="" value="0">
+                  % of the profit on balance to fuel growth.</p>
+
+                <p>Payout <input class="hm input inline" style="width: 75px"
+                  type="number" name="" value="100">
+                  % of the profit on stakeholders.</p>
+
+                <p>Payout <input class="hm input inline" style="width: 75px"
+                  type="number" name="" value="0">
+                  % of the profit on employees.</p>
+
+
+                <h5 style="text-align:right;marginn:2rem 0">rhythm</h5>
+                <p class="muted" style="margin:1rem">
+                  i.e. how often rules are triggered</p>
+
+              <div class="form__radios">
+                <div class="form__radio">
+                  <label for="krType-1">monthly</label>
+                  <input id="krType-1" name="e-frequency" type="radio" value="">
+                </div>
+                <div class="form__radio"> <!-- V2 Moneta: entities’ profit -->
+                  <label for="krType-1">quaterly</label>
+                  <input id="krType-1" name="e-frequency" type="radio" value="">
+                </div>
+                <div class="form__radio"> <!-- V2 Moneta: entities’ profit -->
+                  <label for="krType-1">annually</label>
+                  <input id="krType-1" name="e-frequency" type="radio" value="">
+                </div>
+                <div class="form__radio"> <!-- V2 Moneta: entities’ profit -->
+                  <label for="krType-1">every season @purpose</label>
+                  <input id="krType-1" name="e-frequency" type="radio" value="">
+                </div>
+              </div>
+                <p class="muted" style="margin:1rem">While you can do whatever,
+                  we suggest using Purpose seasons timeframe here</p>
+
+
+                <h5 style="text-align:right;marginn:2rem 0">logs</h5>
+                <p class="muted"><i class="clock outline icon"></i> comming soon</p>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="five wide column">
+        <div id="equityAdvanced">
+
+          <h2 style="border-bottom: 30px solid #F7F8FA;margin-bottom:30px">Advanced</h2>
+
+          <p>Currently available only
+            to <i class="circle icon" style="color:#FFCF4A;margin-top: -7px"></i>Holons Gold.</p>
+
+          <div class="ui grid">
+            <div class="eight wide column">
+              <h3>compliance</h3>
+              <ul class="hm ul">
+                <li>409A Valuations</li>
+                <li>Form 3921</li>
+                <li>Rule 701</li>
+                <li>ASC 718</li>
+              </ul>
+
+              <h3>tools</h3>
+              <ul class="hm ul">
+                <li>Advanced cap table</li>
+                <li>Fundraising modeling</li>
+                <li>Exercise requests</li>
+                <li>Securities</li>
+              </ul>
+            </div>
+            <div class="eight wide column">
+              <h3>Consulting</h3>
+              <ul class="hm ul">
+                <li>Legal</li>
+                <li>Finance</li>
+                <li>Fundraising</li>
+                <li>Taxes</li>
+              </ul>
+
+              <h3>Also</h3>
+              <ul class="hm ul">
+                <li>Share classes</li>
+                <li>Vesting</li>
+                <li>Founders resources</li>
+                <li>Boilerplate docs</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+  <div id="sellEquityModal" class="hm modal">
+    <div class="content">
+      <h2 class="title">sell equity</h2> <!-- so, this one is just an info module then, huh? -->
+
+      <div class="ui grid">
+        <div class="ten wide column">
+          <h5>price</h5>
+          <input class="hm input inline"
+          type="number" name="" value="">
+
+          <br><br>
+
+          <h5>Equity %%</h5>
+          <input class="hm input inline"
+          type="number" name="" value="">
+        </div>
+        <div class="six wide column">
+          <p class="muted">
+            NOTE, <br><br>
+
+            that this version is not legaly binding.</p>
+
+          <p class="muted">It's more like a napkin agreement
+            to onboard stakeholders.</p>
+        </div>
+      </div>
+
+      <a width="100%"
+      class="ui basic button">comb offer & send</a>
+
+    </div>
+  </div>
+
+
+  <!-- just some notes to consider:
+
+  When you invest in a company, you sign a term sheet.
+  The terms of the investment are laid out in the term sheet.
+  What buying 10% of a company means is that you have invested enough money,
+  based on the valuation of the company at the time of investment,
+  to own 10% of the equity.
+
+  As a simple example: if an investor puts $1,000 in a company
+  that has a valuation of $1,000, then the company is now worth $2,000
+  and the investor owns half.
+
+  In a normal investment, your investment only provides you gains
+  (or losses) at the point of a liquidity event (the company
+  is either sold or goes public). Dividends are only issued
+  if they are approved by the board and would be VERY unusual
+  in most cases: investors are investing in the growth of the
+  company so that their money provides the funds to make the
+  company more profitable at sale. It makes no sense to take
+  funds out of a growing company so rarely if ever are dividends taken.
+
+  The percentage of ownership will change with every funding
+  round and you will be given the option of maintaining your
+  position by investing more money at the point of a new funding round.
+
+  Investors get preferred shares, founders get common. When
+  they company is sold, the investors are first paid back
+  their investment plus interest. Then the pie is divided
+  by the cap table. Preferred shares always get paid first,
+  so if the company does not sell for enough to both pay off
+  the investors, and give the investors their prorata share,
+   the founders can end up with nothing.
+
+
+
+
+
+  -->
+
+</div>

@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  {# include "layouts/partials/head.html" #}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" ="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- FFS-->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- FFS ends -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+    rel="stylesheet">-->
+
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/chunk-vendors.css' %}" />
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="32x32" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="{% static 'img/favicon.ico' %}"
+    />
+
+    <title>{% block title %}holons.me – private market network for entrepreneurs, talent & capital{% endblock %}</title>
+
+
+  </head>
+
+  <style media="screen">
+    .white-block { margin-top: 0 }
+  </style>
+
+  <body>
+    {% csrf_token %}
+
+
+            <div class="white-block">
+            {% block content_area %}{% endblock %}
+            </div>
+
+    <!-- footer moved here -->
+    {# include "layouts/partials/foot.html" #}
+
+    <div class="aint-mobile">
+      <!--<img
+        src="{% static 'img/mercury-svg-icon.svg' %}"
+        class="aint-mobile-svg"
+      />-->
+      <h3>Holons.me doesn't work on mobile</h3>
+      <!--<br><br><br>
+      <a class="hm link inverted" href="#">here is why</a>-->
+    </div>
+
+
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    -->
+    <script type="text/javascript">
+      (function() {
+        window.username = ""
+        {% if user_logged_in %}
+          window.user_logged_in = true
+        {% else  %}
+          window.user_logged_in = false
+        {% endif  %}
+        {% if userpic  %}
+        window.username = "{{ username }}"
+        {% endif  %}
+        {% if handle  %}
+        window.handle = "{{ handle }}"
+        {% else  %}
+        window.handle = ""
+        {% endif  %}
+        window.userpic = ""
+        {% if userpic  %}
+        window.userpic = "{{ userpic }}"
+        {% endif  %}
+        window.account_status = "classic"
+        {% if balance_data and balance_data.paid_account is True %}
+          window.paid_account = true
+        {% else  %}
+          window.paid_account = false
+        {% endif  %}
+      })();
+    </script>
+
+    {# include "includes/timer.js" #}
+    {# include "includes/invite.js" #}
+
+    <script type="text/javascript">
+      /*$(document).on('keydown', function(e) {
+        if (e.keyCode == 27)
+          $('.hm.modal.active').removeClass('active')
+      });
+
+      var modal = window.$('.hm.modal.active')
+      $(document).click(function(event) {
+        var $target = $(event.target);
+        if(!$target.closest('.hm.modal .content').length &&
+        $('.hm.modal.active').is(":visible") && !$target.hasClass('button')) {
+          $('.hm.modal.active').removeClass('active');
+        }
+      });
+
+      $(document).ready(function() {
+        $('.menu .item').tab();
+        $('.dropdown').dropdown();
+      });*/
+    </script>
+
+    <!--<script src="{% static '/js/main.js' %}"></script>-->
+    <script src="{% static '/app/js/app.js' %}"></script>
+    <script src="{% static '/app/js/chunk-vendors.js' %}"></script>
+
+    <!-- footer ends -->
+
+  </body>
+</html>

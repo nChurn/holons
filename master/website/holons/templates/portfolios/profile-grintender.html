@@ -1,0 +1,174 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} Dmitrii B. @grintender {% endblock %}
+
+{% block content_area %}
+
+<div style="padding:4rem">
+
+			<div class="profile__tabs">
+				<a href="/grintender"><h3  class="active">bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3>deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+
+
+	<div class="ui grid" style="margin:0">
+
+		<div class="five wide column" style="padding-top:2rem">
+
+			<div id="profile-holder">
+
+				<div style="border:10px solid #23272B; padding:2rem">
+					<h1 style="background: #F7F8FA;width: calc(100% + 50rem);padding: 2rem 0">Dmitrii B.<br>
+						 @grintender</h1>
+
+					<img src="https://holons.me/faith/wp-content/uploads/2021/03/xGcuErvTpjw-1.jpg"
+					id="profile-public--pic">
+
+					<img src="https://holons.me/faith/wp-content/uploads/2021/03/identity-svg.png"
+					id="zenship-stamp">
+
+					<div style="position: relative;width: calc(100% + 4rem);top: -4rem">
+						<!--<i class="check icon"></i>
+						verified identity |-->
+						<i class="circle icon" style="color:#FFCF4A"></i>holons gold
+					</div>
+
+
+						<p class="profile-description">Entrepreneur w/ <br>
+							hands-on experience <br>
+							& love for coding, design & marketing</p>
+
+
+					<div class="">
+						<i class="graduation cap icon"></i>
+						Bachelor of International Business,
+						Saimaa UAS, Finland
+					</div>
+
+					<div class="">
+						<i class="certificate icon"></i>
+						holons.me reputation: solid
+					</div>
+
+					<br>
+
+					<a class="ui basic button" style="width:100%"
+					href="https://t.me/grintender" target="_blank">chat @telegram</a>
+
+					<br>
+
+					<p class="profile-description">
+						I am open to consulting gigs & chat w/ industry people</p>
+
+					<a class="ui basic button" style="width:100%"
+					href="https://calendly.com/grintender" target="_blank">book a call</a>
+
+				</div>
+
+
+				<!--<div style="padding:5rem;background:#23272B;color: #fff">
+					<h2>open to opportunnities</h2>
+					<p>[ fame 2 opportunities block #2 --bigger ]</p>
+				</div>-->
+			</div>
+		</div> <!-- column ends -->
+
+		<div class="eleven wide column" style="padding-top:20rem">
+
+			<!--<h2 style="border-bottom: 30px solid #23272B;text-align:right">Deeds</h2>-->
+
+
+			<div class="deeds__single">
+				<div class="deed__header">
+					<div>
+						<h3>Product Owner & Designer @holons.me</h3>
+						<h4 style="margin:0">June 2020 - present</h4>
+						<p>Core Experience design and development </p>
+							<!-- #concession #1 -->
+					</div>
+					<div style="width:60px;height:60px;background:#23272B"></div>
+				</div>
+			</div>
+
+			<div class="deeds__single">
+
+						<div class="deed__header">
+							<div>
+								<h3>Founder @the.gt</h3>
+								<h4 style="margin:0">Dec 2017 - present</h4>
+								<p>Full service agency serving client and in-house projects</p>
+							</div>
+							<img src="https://holons.me/faith/wp-content/uploads/2021/03/gt-1.png"
+							width="60px" height="60px">
+						</div>
+
+						<!--<a class="ui basic button" style="width:100%"
+						href="https://dribbble.com/GRINtech">see portfolio
+						& client highlights on Dribbble</a>-->
+
+						<!--<div class="deeds__header" style="display:flex;justify-content:space-between">
+							<div>
+								<h3>Launcher</h3>
+								<p>outreach platform, agency inhouse project, productised service</p>
+							</div>
+							<img src="https://the.gt/wp-content/themes/the_gt01/images/gl-logo.png"
+							width="60px" height="60px">
+						</div>-->
+
+
+						 <!--<img src="https://holons.me/faith/wp-content/uploads/2021/03/gt.png"
+			 			width="80px">-->
+
+			</div> <!-- gt item ends -->
+
+			<div class="milestone-feature minor">
+					<h3>freelance gigs, 2016 - 2017</h3>
+			</div>
+
+			<div class="milestone-feature minor">
+					<h3>Program Coordinator @ Selina Hostels, Panama</h3>
+			</div>
+			<div class="milestone-feature minor">
+					<h3>Semester abroad @ Karlstad Univercity, Sweden</h3>
+			</div>
+			<div class="milestone-feature minor">
+					<h3>Internship @ Casa Gracia, Barcelona</h3>
+			</div>
+
+			<h2>video intro</h2>
+
+
+			<div class="iframe main-top__frame" id="promoVideoTop">
+				<iframe src="https://www.youtube.com/embed/T7AA5WmEtTY"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+				gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				<!--<div class="ytLoader"><img class="cover" width="100%"
+					src="https://the.gt/wp-content/themes/the_gt01/images/yt-cover.jpg">
+					<img class="yt-playbtn"
+					src="https://the.gt/wp-content/themes/the_gt01/images/yt-playbtn.png">
+				</div>-->
+			</div>
+
+
+
+		</div> <!-- right column ends -->
+
+
+
+  </div> <!-- grid ends -->
+
+
+
+</div>
+
+{% include "portfolios/layouts/badge.html" %}
+
+
+{% endblock %}

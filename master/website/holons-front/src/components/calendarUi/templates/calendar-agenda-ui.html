@@ -1,0 +1,16 @@
+<div class="agenda-calendar-ui">
+
+    <h2 style="padding:2rem 0">your schedule for today, sir //and week?</h2>
+
+      <div id="calendarWrap">
+        <FullCalendar
+                class='app-calendar'
+                :options='calendarOptions'
+              >
+                <template v-slot:eventContent='arg'>
+                  <b>{{ arg.timeText }}</b>
+                  <i>{{ arg.event.title }}</i>
+                </template>
+        </FullCalendar>
+      </div>
+</div>

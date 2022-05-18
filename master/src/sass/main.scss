@@ -1,0 +1,43 @@
+//@import "oil-financials.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+//@import "misc/grid.css";
+@import "misc/global.css";
+@import "misc/auth.css";
+
+//style.css is a legacy to be refaftored:
+@import "style.css";
+//@import "transitions.css";
+
+//top menu:
+@import "1agenda.css";
+@import "2relations.css";
+@import "3layers.css";
+@import "4moneta.css";
+@import "5purpose.css";
+@import "6identity.css";
+//broker //external
+//faith vc //external
+
+//mercury communication sibar items:
+@import "mercury/rays.css";
+//teleport
+@import "mercury/mail.css";
+@import "mercury/meet.css";
+//XO
+@import "mercury/platos.css";
+//outreach
+//dial
+//digest
+//hearsay
+
+@import "misc/profile.css";
+
+//dunno, legacy?
+@import "time-tracker.css";

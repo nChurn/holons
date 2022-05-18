@@ -1,0 +1,49 @@
+<div class="ui dropdown icon item muted">
+  <i
+    class="wrench icon"
+    @click="menuToggle"
+  ></i>
+  <div
+    class="menu"
+    style="display: block"
+    v-if="showMenu"
+  >
+    <!--<div class="item">
+      Open conversation
+    </div>-->
+    <div
+      @click="$parent.openEditModal(item)"
+      class="item button"
+    >
+      <span class="button">edit</span>
+    </div>
+    <div class="item button">
+      set as default profile route
+    </div>
+    <div
+      class="item button"
+      @click="$parent.deleteTemplate(item.id)"
+    >
+      delete
+    </div>
+    <!--div class="item">
+      Edit terms
+    </div>
+
+    <div class="item">
+      Direct link \ see offer
+    </div>
+
+    <div class="divider"></div>
+    <div class="header">
+      Export
+    </div>
+    <div class="item">
+      Update follow up date
+    </div>
+    <div class="item">
+      Withdraw
+    </div>-->
+
+  </div>
+</div>

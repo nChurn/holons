@@ -1,0 +1,109 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} Plain Conversios Plugin {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">Plain Conversions</h1>
+
+						<p class="refs">
+							Lead capturing plugin
+								coded for <i class="wordpress outline icon"></i>WordPress
+								by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency
+							</p>
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing</p>-->
+
+						<div class="ui grid">
+
+							<div class="eight wide column">
+								<p class="refs">
+									Product owner: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Artem K.</b> <br>
+									Coder: <b>Avishay G.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+								<p>
+									<a href="/grintender/deeds/king-the-monk">I could learn faster</a>,
+									but I had a vision for an empire built on top of 'plain'
+									plugins and other stock items.
+								</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-17-at-16.17.14.png">
+
+								<p>And so it went down <a href="/grintender/deeds/king-the-monk">the same road</a></p>
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-17-at-16.12.17.png">
+								<br><br>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/Screen-Shot-2021-06-17-at-16.13.29.png">
+
+								<p>and integrate some service like CRM, MailChimp or whatnot</p>
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

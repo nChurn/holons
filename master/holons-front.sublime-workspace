@@ -1,0 +1,663 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"o",
+				"$orderDelta〔variable〕"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"described_",
+				"described_type"
+			],
+			[
+				"image",
+				"imageModel"
+			],
+			[
+				"descr",
+				"$description〔variable〕"
+			],
+			[
+				"desc",
+				"description_id"
+			],
+			[
+				"ga",
+				"$gallery〔variable〕"
+			],
+			[
+				"image_",
+				"image_id"
+			],
+			[
+				"B",
+				"BusinessGallery〔namespace〕"
+			],
+			[
+				"ha",
+				"$hashName〔variable〕"
+			],
+			[
+				"wh",
+				"where"
+			],
+			[
+				"rq",
+				"request"
+			],
+			[
+				"l",
+				"locale"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"deb",
+				"debugObject"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ul",
+				"uploadedImages"
+			],
+			[
+				"upl",
+				"uploadedImages"
+			],
+			[
+				"up",
+				"uploadedImages"
+			],
+			[
+				"b",
+				"businessGallery"
+			],
+			[
+				"Busi",
+				"BusinessGallery"
+			],
+			[
+				"bus",
+				"businessGalleries"
+			],
+			[
+				"fi",
+				"$fileName〔variable〕"
+			],
+			[
+				"Im",
+				"ImageModel"
+			],
+			[
+				"i",
+				"imageMeta"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"im",
+				"imageDescription"
+			],
+			[
+				"req",
+				"$request〔variable〕"
+			],
+			[
+				"max-",
+				"max-height\tproperty"
+			],
+			[
+				"m",
+				"modalHeader"
+			],
+			[
+				"te",
+				"templateSrc"
+			],
+			[
+				"mo",
+				"modal-form"
+			],
+			[
+				"mod",
+				"modalTerms"
+			],
+			[
+				"sho",
+				"showModal"
+			],
+			[
+				"bu",
+				"buttonText"
+			],
+			[
+				"he",
+				"headerString"
+			],
+			[
+				"c",
+				"class"
+			],
+			[
+				"L",
+				"ListsComponent"
+			],
+			[
+				"s",
+				"string_tolog"
+			],
+			[
+				"la",
+				"last_name"
+			],
+			[
+				"firs",
+				"first_name"
+			],
+			[
+				"filter",
+				"filtered"
+			],
+			[
+				"re",
+				"record"
+			],
+			[
+				"fil",
+				"filtered"
+			],
+			[
+				"conta",
+				"contacts"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"nam",
+				"namePatternQuery"
+			],
+			[
+				"sea",
+				"searchResults"
+			],
+			[
+				"sw",
+				"showSearchResults"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				":",
+				":w - Save"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"seq",
+				"Set Syntax: SQL"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"dif",
+				"Set Syntax: Diff"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"unfo",
+				"Code Folding: Unfold All"
+			],
+			[
+				"pre",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"pret",
+				"Preferences: Pretty JSON Settings - Default"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"val",
+				"Pretty JSON: Validate"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"hml",
+				"Set Syntax: HTML"
+			],
+			[
+				"keys",
+				"Preferences: Key Bindings"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/alex/Documents/Work/z_projects/launcher/html/holons-front"
+	],
+	"file_history":
+	[
+		"/Users/alex/Documents/Work/varakush/varakush-web/database/migrations/2020_06_04_153402_add_business_business_gallery_table.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Business.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/database/migrations/2020_06_04_154646_make_description_id_nullable.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/app.js",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/components/TeamGrid.vue",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/bootstrap.js",
+		"/Users/alex/Documents/Work/varakush/varakush-web/routes/web.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/gallery.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/en/gallery.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/assets/js/components/Stamps.vue",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/profile.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/business-settings.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/settings.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/layouts/profile.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Helpers/LangRoute.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/app/Http/Controllers/BusinessController.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/menu/business-menu.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/includes/left-menu.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/business/gallery.blade.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/en/main-navigation.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/lang/ru/main-navigation.php",
+		"/Users/alex/Documents/Work/varakush/varakush-web/resources/views/profile/menu/profile-menu.blade.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/Store/Modals.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/ApiSearch.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/TaskSettingsModal.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsContent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsHeader.vue",
+		"/Users/alex/Desktop/global-csv-export-1.txt",
+		"/Users/alex/Desktop/global-csv-export_.txt",
+		"/Users/alex/Desktop/global-csv-export-3.txt",
+		"/Users/alex/Desktop/global-csv-export-2.txt",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/main.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/App.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/babel.config.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/static/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/Store/Store.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/js/custom.js",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/package.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/UI/ListsFooter.vue",
+		"/Users/alex/Desktop/global-csv-export.txt",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/page.tpl.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/css/style_.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/app/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/static/app/css/app.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/css/style.css",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/Lists/ListsComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/html/lists/index.html",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/ListsElements/ListsComponent.vue",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/src/components/lists-elements",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options.json",
+		"/Users/alex/Downloads/Docs API testing-63b8e35e689e.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/lists/google_drive/service_account.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options2.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options1.php",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/wp_options_php.txt",
+		"/Users/alex/Desktop/sql/NEW gt_thegt_launcher_directory_2020-05-07_20-55-18.sql",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/launcher/output-sm.txt",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/public/index.html",
+		"/Users/alex/Downloads/build/widget.html",
+		"/Users/alex/Downloads/hb-data/hb-1-2/all-companies.csv",
+		"/Users/alex/Downloads/build/js/custom.js",
+		"/Users/alex/Desktop/snippets.py",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/frontend/gt-frontline/vue.config.js",
+		"/Users/alex/Downloads/build/search-results.html",
+		"/Users/alex/Desktop/SELECT.sql",
+		"/Users/alex/Downloads/established_domains.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__bo__main/setenv.sh",
+		"/Users/alex/Documents/Work/z_projects/launcher/tmp/phones.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/launcher/phones.txt",
+		"/Users/alex/Desktop/zapier-test.csv",
+		"/Users/alex/Downloads/titles_combined.txt",
+		"/Users/alex/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__db__main_/tests/stubs/zen_stubs/dotucson.com_ceo.json",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/index.html",
+		"/Users/alex/Downloads/0011web.data.unityweb",
+		"/Users/alex/Documents/Work/z_projects/launcher/launcher__front-line-services/v2/snippets/views.py",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#3/footer.blade.php",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/index-2-0.blade.php",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#1/master.blade.php",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#2/master-map.blade.php",
+		"/Users/alex/Downloads/build4.1/index.html",
+		"/Users/alex/Downloads/build 3/build 2/signup.html",
+		"/Users/alex/Downloads/build 3/build 2/signin.html",
+		"/Users/alex/Dropbox/mine/writing/my_woman.txt",
+		"/Users/alex/Desktop/Referring domains.txt",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/service_scripts/gunicorn.service",
+		"/Users/alex/Documents/Work/hakka-generation.ru/html-upgrades/04-stub/index.php",
+		"/Users/alex/Documents/Work/hakka-generation.ru/html-upgrades/04-stub/index1.php",
+		"/Users/alex/Documents/Work/imperial/v2_imp_prod.sql",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/server_backup/etc/nginx/sites-available/static_sites",
+		"/Users/alex/Desktop/mail_log1.txt",
+		"/Users/alex/Downloads/walrus_dev/sales.metadata.json",
+		"/Users/alex/Downloads/Scott, ✌️I'd love to contribute a guest post.eml",
+		"/Users/alex/Downloads/data-1580754825435.csv",
+		"/Users/alex/Downloads/data-1580745740128.csv",
+		"/Users/alex/Desktop/alexb.local_test_2020-01-30_20-54-47",
+		"/Users/alex/Documents/Work/z_projects/launcher/docs/dict/positions.csv",
+		"/Users/alex/Downloads/contacts_priorities.csv",
+		"/Users/alex/Downloads/data-1580133880326.csv",
+		"/Users/alex/Downloads/data-1580133735520.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_autoqueue_flat_1.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/json2csv.py",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_autoqueue_flat_1.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/02a-roles.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_autoqueue_flat.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_autoqueue.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/pause_recipients/recipients_xao.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_autoqueue.json\r",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/domains_csv2.sh",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_csv2.json\r",
+		"/Users/alex/Downloads/Telegram Desktop/1112.csv",
+		"/Users/alex/Downloads/Telegram Desktop/1111.csv",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_csv1.json\r",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/domains_csv1.json",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/domains_autoqueue.sh",
+		"/Users/alex/Documents/Work/z_projects/launcher/gt_launcher/tmp/hunter/results/test1.txt",
+		"/Users/alex/Documents/Work/hakka-generation.ru/html-upgrades/01/hkg2/css/style.min.css",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#1/style.min.css",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/style.min.css",
+		"/Users/alex/Library/Caches/com.binarynights.ForkLift2/#0/tasks.py",
+		"/Users/alex/Desktop/sql/invalid.sql",
+		"/Users/alex/Desktop/sql/safe_to_send.sql",
+		"/Users/alex/Desktop/sql/risky.sql",
+		"/Users/alex/Desktop/sql/unknown.sql",
+		"/Users/alex/Desktop/sql/paused_emails.sql"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 323.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "holons-front.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Work/medcomspb.ru/v3/mcm.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

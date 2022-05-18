@@ -1,0 +1,28 @@
+<div class="invoices-wrap">
+
+  <invoices-heading />
+  <invoices-tabs />
+
+    <table class="ui hm table grand" >
+        <invoices-main-thead />
+        <tbody>
+
+         <invoices-tr
+          v-for="item in invoicesList"
+          v-bind:key="item.id"
+          v-bind:item="item"
+         />
+
+        </tbody>
+    </table>
+
+    <!-- TODO pull in the access module -->
+
+  
+
+    <invoices-display
+      v-if="selectedInvoice"
+      v-bind:invoice="selectedInvoice"
+      @accept-invoice="acceptInvoice"
+    />
+</div>

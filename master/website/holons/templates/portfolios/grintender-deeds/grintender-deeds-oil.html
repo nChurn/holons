@@ -1,0 +1,86 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} NDA project {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing</p>-->
+
+						<div style="max-width:800px;margin:0 auto">
+
+
+							<h1 class="one">NDA project</h1>
+
+							<p class="refs">
+								Crowdinvesting platform for oil industry accepting fiat, crypto & issuing own crypto coin. <br>
+								Coded in <i class="laravel icon"></i>Laravel (PHP) and <i class="vuejs icon"></i>vue.js</p>
+
+
+							<p>We signed NDA agreement, but client allowed to provide
+								some scarce, vague and very high level overview for the portfollio ¯\_(ツ)_/¯</p>
+
+							<img src="https://holons.me/markets/wp-content/uploads/2021/06/presentation-oil-first-screen-7-6.png">
+						</div>
+
+
+
+			  </div>
+			</div>
+
+	</article>
+
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

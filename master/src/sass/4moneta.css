@@ -1,0 +1,92 @@
+.pdng0 {padding: 0 !important}
+.moneta-main {padding: 0 2rem}
+
+#moneta-logs-table {
+  border:none;
+  background: none;
+}
+
+.balance-card {
+  zoom: 70% !important;
+  position: initial !important;
+}
+
+#moneta-log-controls {
+  position: fixed;
+  bottom: 20px;
+  background: #fff;
+  border: 1px solid #23272B !important;
+  min-width: 73%;
+}
+
+#holderDecoration {
+  width: 100%;
+  border-bottom: 30px solid #23272B;
+  margin-left: 200px;
+  position: relative;
+  top: 30px;
+}
+
+#balanceHolder {
+  border-bottom: 30px solid #23272B;
+  border-top: 30px solid transparent;
+  padding: 25px;
+  height: 170px;
+  margin-left: 0;
+  margin-right: 6rem;
+}
+
+#balanceHolder .card {
+  padding: 30px;
+  border-radius: 5px;
+  border:1px solid #23272B;
+  width: 300px;
+  height: 187.5px;
+  position: relative;
+  top: -65px;
+  left: 25px;
+  background: #F7F8FA;
+  box-shadow: -1px -1px 1px 1px #fff,
+  0px 0px 1px 1px #23272b;
+}
+
+
+/* equity */
+
+#equityAdvanced {
+  background: #23272B;
+  padding: 1rem;
+  color: #F7F8FA;
+  border-radius: 2px;
+}
+
+#equityAdvanced h3 {
+  color: #F7F8FA;
+  font-family: 'Poppins' !important;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 2rem 0;
+  border-bottom: 1px solid #F7F7Fa;
+}
+
+#equityAdvanced h2,
+#equityAdvanced .hm.ul li { color: #F7F8FA }
+
+.hm.input.inline {
+  border: none;
+  border-bottom: 3px solid #23272B;
+  padding: 0px 12px;
+  background: transparent;
+  height: 30px;
+  line-height: 30px;
+}
+
+#capTable {
+  border: 2px solid #23272B;
+  margin: 2rem 0;
+}
+
+#capTable thead td {
+  text-transform: uppercase;
+}

@@ -1,0 +1,110 @@
+<div id="purposeWrap">
+  <div class="ui grid">
+    <div class="three wide column hosting-items pdng0">
+      <h1 style="padding-left:1rem;text-align:center">
+        purpose</h1>
+
+      <a class="item" href="#">
+        <h3>all mine</h3>
+        <span>key results I own</span>
+      </a>
+      <a class="item" href="#">
+        <h3>personal</h3>
+      </a>
+      <a class="item">
+        <h3>@{{ me }}</h3>
+      </a>
+      <a class="item active">
+        <h3>holons.me</h3>
+      </a>
+      <a class="item">
+        <h3>[ entities ]</h3>
+      </a>
+    </div>
+
+    <div class="thirteen wide column hosting-working purpose-working">
+      <div class="ui secondary menu secondary-navigation">
+
+        <a class="item">current season</a>
+
+        <div class="right menu">
+          <a class="item active">next season draft</a>
+          <a class="item">days of past glory</a>
+        </div>
+
+      </div>
+
+
+      <div class="purpose-working__container">
+
+        <h1 style="color:gray;text-align:right">draft</h1>
+
+        <div class="flex">
+          <h2 style="margin:0">purpose:</h2>
+          <input style="width:100%" class="hm field big" type="text" placeholder="$10k+ monthly revenue">
+        </div>
+
+        <br><br>
+
+        <p>recommendation: up to 5 objectives x 3-4 results each</p>
+
+        <br><br>
+
+        <a onclick="$( '#addObjectiveModal' ).addClass('active')" class="ui basic button" style="width:100%">+
+          objective</a>
+
+        <br><br>
+
+        <div class="objective">
+
+          <h3 class="objective__title">#1. outreach working non-stop </h3>
+
+          <a onclick="$( '#addKRModal' ).addClass('active')" class="ui basic button" style="width:100%">+ key result</a>
+
+
+        </div>
+      </div><!-- right column endds -->
+    </div>
+
+
+    <!-- new modal -->
+
+    <div id="addObjectiveModal" class="hm modal">
+      <div class="content">
+        <h2 class="title">add new objective</h2>
+
+        <input type="text" class="hm field big" v-model="newItem.title" placeholder="outreach working non-stop"
+          id="todo_title">
+
+        <button v-on:click.prevent="createPurposeItem()" class="button ui black" v-bind:disabled="newItem.title == ''">
+          Save
+        </button>
+        <button v-on:click.prevent="closeAddModal()" class="button ui">
+          Cancel
+        </button>
+
+      </div>
+    </div>
+
+
+    <div id="addKRModal" class="hm modal">
+      <div class="content">
+        <h2 class="title">add new key result</h2>
+
+        <input type="text" class="hm field big" v-model="newItem.title" placeholder="outreach working non-stop"
+          id="todo_title">
+
+        <button v-on:click.prevent="createPurposeItem()" class="button ui black" v-bind:disabled="newItem.title == ''">
+          Save
+        </button>
+        <button v-on:click.prevent="closeAddModal()" class="button ui">
+          Cancel
+        </button>
+
+      </div>
+    </div>
+
+
+
+
+  </div>

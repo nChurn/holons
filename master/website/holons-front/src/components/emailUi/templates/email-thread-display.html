@@ -1,0 +1,101 @@
+  <div class="email-display">
+
+    <div class="muted" style="text-align: right;margin-bottom: 2rem;border-bottom: 1px solid #e8eaed;">
+        <span>from <b>sender @sender.com</b> to <b>mailbox @mailbox.com</b>, asigned to </span>
+
+        <select
+          name="owner"
+          id="assignee"
+          v-model="selectedUser"
+          v-on:change="setUsers()"
+        >
+          <option v-for="user in users" v-bind:key="user.id">{{ user.username }}</option>
+        </select>
+    </div>
+
+    <div id="rays-working-area__controls">
+
+      <div>
+        <button class="ui icon button"
+          v-on:click="messageArchive()"
+        >
+          <i class="archive icon"></i>
+        </button> <br>
+        <button class="ui icon button">
+          <i class="clock icon"></i>
+        </button> <br>
+        <button class="ui icon button"
+          v-on:click="messageDelete()"
+        ><i class="trash alternate outline icon"></i>
+        </button>
+      </div>
+
+      <h3 class="thread-working-area__subject">{{ conversation[0].subject }}</h3>
+
+
+    </div>
+
+
+
+
+
+      <div class="message-thread">
+
+        <div class="thread-working-area__email" style="margin-top: 0px;"
+          v-for="message in conversation"
+          v-bind:key="message.id"
+        >
+          <div class="thread-working-area__email--header">
+
+              <div class="thread-working-area__email--pic">
+                &nbsp;
+              </div>
+
+              <div class="dudes" v-if="message.outgoing">{{ message.from_address[0] }} <br> <strong>to</strong> {{ message.to_address[0] }} </div>
+              <div class="dudes" v-else> {{ message.from_address[0] }} <br> <strong>to</strong> <!-- {{ $parent.selectedMailbox.alias }}@{{ $parent.selectedMailbox.domain }} -->
+                {{ message.to_address[0] }}
+              </div>
+
+              <div class="thread-working-area__email--controls">
+                <!-- <div class="thread-working-area__email--opened-status">seen</div> -->
+                <div class="thread-working-area__email--time-ago">{{ message.processed | luxonRelative }} <small>({{ message.processed | luxon }})</small></div>
+              </div>
+            </div>
+
+          <div class="thread-working-area__email--content">
+
+            <div class="thread-working-area__email--message"
+              v-html="message.html.replace('\ufffd', '')"
+            ></div>
+
+            <button class="ui icon button thread-working-area__email__extras-two">
+              <i class="icon ellipsis horizontal"></i>
+            </button>
+
+            <div
+              class="thread-control thread-working-area__email__extras"
+              v-if="!isPaused"
+              v-on:click.prevent="showReplyForm(message)"
+            >
+              Reply
+            </div>
+            <email-move-thread />
+          </div>
+        </div>
+
+        <!-- <div class="activity-log" v-if="ownerUser"> -->
+          <!--  Assigned to @{{ selectedUser }} by @{{ ownerUser }} -->
+        <!-- </div> -->
+      </div>
+      <email-form
+        v-bind:mailboxEmail="fromEmail"
+        v-bind:toEmail="toEmail"
+        v-bind:emailSubject="emailSubject"
+        v-bind:mailboxAlias="$parent.selectedMailbox.name"
+        v-bind:conversationId="conversation[0].conversation"
+        v-bind:inReplyToId="inReplyToId"
+        v-bind:quotedBody="quotedBody"
+        v-bind:conversation="conversation"
+        v-if="showEmailForm"
+      />
+  </div>

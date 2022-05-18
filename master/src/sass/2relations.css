@@ -1,0 +1,256 @@
+.commitments-wrap,
+.invoices-wrap,
+.offers-wrap {
+  margin: 1rem 5rem;
+}
+
+.offers-wrpa .hm-base-btn {
+  text-transform: uppercase;
+  float: right;
+}
+
+.offers-stats {font-weight: 400}
+
+.offers-main-table {background: transparent}
+
+.offers-main-table tr { background: #F7F8FA }
+
+.offers-main-table tr:hover { background: #fff }
+
+.offers-main-table tr.alert {
+  background: linear-gradient(to left,
+    rgba(255, 255, 255, 0), rgba(174, 52, 54, 0.15));
+}
+
+.offers-main-table thead th{
+  background: #F7F8FA !important;
+  text-transform: uppercase !important;
+}
+
+.offers-main-table thead th span{
+  color: rgba(0,0,0,.43);
+  font-weight: 100;
+  text-transform: lowercase;
+}
+
+
+
+.relations-previews__controls {
+  margin: 5px 0 14px;
+}
+
+.relations-previews__item {
+  height: auto;
+  padding: 0.4rem 0.2rem;
+}
+
+
+
+.contract h5 {
+  color: rgba(0,0,0,.54);
+  border-bottom: 15px solid rgba(0,0,0,.54);
+  margin-bottom: 15px;
+}
+
+.extras {
+  color: rgba(0,0,0,.54);
+  position: relative;
+  margin-bottom: 15px;
+}
+.extras i {
+  position: absolute;
+  left:-1.5rem;
+  display: none !important
+}
+
+.extras:hover {
+  cursor: pointer;
+  color: #23272B;
+}
+.extras:hover i { display: inline !important }
+
+
+
+#combOffer {
+  padding: 3rem;
+  box-shadow: 0 0 3px 5px rgba(0,0,0,.05);
+}
+
+#combOffer input.title {
+  width: 100%;
+  font-family: 'Rubik Mono One';
+  margin-bottom: 2rem;
+  text-align: center;
+  border: none;
+  background: none;
+  padding: 10px 0;
+}
+
+#combOffer p {
+  margin-bottom: 2rem;
+  line-height: 2;
+  position: relative;
+}
+
+#combOffer p:last-child { margin: 0 }
+
+#combOffer p:not(:last-child):before {
+  content: "¶";
+  position: absolute;
+  left:-1rem;
+  top:0;
+  font-weight: bold
+}
+
+#combOffer input:not(.disabled):not(.title),
+#combOffer select:not(.disabled) {
+  border: none;
+border-bottom: 3px solid #23272B;
+padding: 0px 12px;
+background: transparent;
+height: 30px;
+line-height: 30px;
+}
+
+#combOffer input[type=number] { max-width: 120px }
+
+.commitment__item i.deco { display: none }
+
+.commitment__item:hover i.deco {
+  display: block;
+  position: absolute;
+  left:-20px;
+  top:50%
+}
+
+.commitment__item:hover { cursor: pointer }
+
+
+/* offer template */
+#offer {
+  max-width: 620px;
+  margin:0 auto;
+}
+#offer h1 {
+  border-bottom: 30px solid #23272B;
+  margin-bottom: 30px;
+}
+
+#offer p {
+  font-family: 'Julius Sans One', sans-serif !important;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+
+#invoiceCreate,
+#invoiceDisplay table {
+  text-align: right;
+}
+
+#invoiceCreate td:first-child,
+#invoiceDisplay table td:first-child {
+  text-align: left;
+}
+#invoiceCreate tr,
+#invoiceDisplay table tr {
+  border-bottom: 1px dashed rgba(35,39,43,.3);
+}
+
+.rel-table-row__title {
+  position:relative;
+  padding-left:0 !important
+}
+
+.rel-table-row__title span {
+  text-transform:uppercase;
+  letter-spacing:.3px
+}
+
+.rel-table-row__title .ui.dropdown {
+  position: absolute;
+  left: -30px;
+  top: calc(50% - 10px)
+}
+
+.rel-table-row__title .ui.dropdown:hover { color: #23272B }
+
+#invoiceDisplay {
+  min-width: 400px;
+  min-height: 20vh;
+  box-shadow: -10px 0 50px 1px rgba(0,0,0,0.21);
+  padding: 15px;
+  border-radius: 2px 0 0 2px;
+  min-height: 600px;
+}
+
+
+  #payInvoiceForm {
+    width: 400px;
+    padding: 15px;
+    /* margin-left: 15px; */
+    margin: 15px 0;
+    border: 1px solid #e8eaed;
+    background: rgba(255,255,255,.4);
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+  }
+
+
+
+.invoice-pay-front__subtitle {
+  margin: 15px 0;
+  text-align: right;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+
+/* payment methods radios */
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+
+.form__radios {
+  display: grid;
+  grid-gap: 1em;
+  gap: 1em;
+}
+
+.form__radio {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+          box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+}
+
+.form__radio.disabled {
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid #e8eaed;
+}
+
+.form__radio label {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  grid-gap: 1em;
+  gap: 1em;
+}

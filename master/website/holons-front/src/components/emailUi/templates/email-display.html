@@ -1,0 +1,111 @@
+  <div class="email-display">
+    <div class="thread-working-area__controls">
+        <button class="ui icon button"
+          v-on:click="messageArchive()"
+        >
+          <i class="archive icon"></i>
+        </button>
+        <button class="ui icon button"><i class="clock outline icon"></i></button>
+        <button class="ui icon button"
+          v-on:click="messageDelete()"
+        ><i class="trash alternate outline icon"></i>
+        </button>
+        <button class="ui icon button">
+          <i class="linkify icon"></i>
+        </button>
+          <!-- <select
+            name="owner"
+            id="owner"
+            v-model="selectedUser"
+            v-on:change="setUsers()"
+          >
+            <option v-for="user in users" v-bind:key="user.id">{{ user.username }}</option>
+          </select> -->
+      </div>
+
+      <div class="single-message">
+        <h3 class="thread-working-area__subject">
+          <span
+            class="paused"
+            v-if="$parent.selectedMailbox.is_paused"
+          >
+            this mailbox is paused
+          </span>
+          Message: {{ message.subject }}
+        </h3>
+
+        <div class="thread-working-area__email" style="margin-top: 0px;">
+          <div class="thread-working-area__email--header" v-if="message.outgoing">
+
+              <div class="thread-working-area__email--pic">
+                &nbsp;
+              </div>
+
+              <div class="dudes">{{ message.from_address[0] }} <br> <strong>to</strong> {{ message.to_address[0] }} </div>
+
+              <div class="thread-working-area__email--controls">
+                <!-- <div class="thread-working-area__email--opened-status">seen</div> -->
+                <div class="thread-working-area__email--time-ago">{{ message.processed | luxonRelative }} <small>({{ message.processed | luxon }})</small></div>
+              </div>
+          </div>
+          <div class="thread-working-area__email--header" v-else>
+
+              <div class="thread-working-area__email--pic">
+                &nbsp;
+              </div>
+
+              <div
+                class="dudes"
+                v-if="$parent.selectedMailbox.alias != 'all new folder'"
+              >{{ message.from_address[0] }} <br>
+                <strong>to</strong> {{ $parent.selectedMailbox.alias }}@{{ $parent.selectedMailbox.domain }}
+              </div>
+              <div
+                class="dudes"
+                v-else
+              >{{ message.from_address[0] }} <br>
+                <strong>to</strong> {{ toEmail[0] }}
+              </div>
+
+              <div class="thread-working-area__email--controls">
+                <!-- <div class="thread-working-area__email--opened-status">seen</div> -->
+                <div class="thread-working-area__email--time-ago">{{ message.processed | luxonRelative }} <small>({{ message.processed | luxon }})</small></div>
+              </div>
+          </div>
+
+          <div class="thread-working-area__email--content">
+
+            <div class="thread-working-area__email--message"
+              v-html="message.html"
+            ></div>
+
+            <button class="ui icon button thread-working-area__email__extras-two">
+              <i class="icon ellipsis horizontal"></i>
+            </button>
+
+            <div
+              class="thread-control thread-working-area__email__extras"
+              v-if="!isPaused"
+              v-on:click.prevent="showReplyForm(message)"
+            >
+              Reply
+            </div>
+
+            <email-move-thread v-bind:message="message"/>
+          </div>
+        </div>
+
+        <div class="activity-log" v-if="ownerUser">
+          Assigned to @{{ selectedUser }} by @{{ ownerUser }}
+        </div>
+      </div>
+      <email-form
+        v-bind:mailboxEmail="fromEmail"
+        v-bind:toEmail="toEmail"
+        v-bind:emailSubject="emailSubject"
+        v-bind:mailboxAlias="$parent.selectedMailbox.name"
+        v-bind:inReplyToId="inReplyToId"
+        v-bind:quotedBody="quotedBody"
+        v-if="showEmailForm"
+      />
+  </div>

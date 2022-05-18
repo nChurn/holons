@@ -1,0 +1,180 @@
+.container {
+width: 100%;
+height: 100vh;
+background: #EEEEEE;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.container .box {
+width: 100%;
+max-width: 400px;
+height: 550px;
+border-radius: 10px;
+background: #eee;
+box-shadow: -5px -5px 10px #f6f6f6, 5px 5px 10px rgba(0, 0, 0, 0.16);
+flex-direction: column;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px 0px;
+position: relative;
+}
+.container .box .error, .container .box .errorName {
+display: none;
+width: 100%;
+max-width: 400px;
+bottom: -65px;
+position: absolute;
+font-size: 12px;
+letter-spacing: 1px;
+text-transform: uppercase;
+z-index: 10;
+background: #EEEEEE;
+padding: 10px;
+border-radius: 5px;
+box-shadow: -5px -5px 10px #f6f6f6, 5px 5px 10px rgba(0, 0, 0, 0.16);
+text-align: center;
+justify-content: center;
+}
+.container .box .title {
+width: 80%;
+height: 50%;
+flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.container .box .title h1 {
+color: #707070;
+font-size: 40px;
+font-weight: 700;
+margin-bottom: 25px;
+}
+.container .box .title p {
+text-align: center;
+font-size: 14px;
+opacity: 0.5;
+}
+.container .box form {
+width: 85%;
+height: 50%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+overflow: inherit;
+}
+.container .box form .innactive {
+display: none;
+}
+.container .box form .active {
+pointer-events: all;
+display: flex;
+opacity: 0;
+flex-direction: column;
+animation: wow ease-in-out 320ms forwards;
+}
+@keyframes wow {
+0% {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+}
+}
+.container .box form label.email_field, .container .box form label.password_field {
+width: 100%;
+height: 100%;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.container .box form span {
+width: fit-content;
+font-size: 12px;
+margin-bottom: 10px;
+margin-left: 5px;
+letter-spacing: 1px;
+background: #EEEEEE;
+position: absolute;
+top: -8px;
+padding: 0px 10px;
+text-transform: uppercase;
+left: 10px;
+z-index: 10;
+color: rgba(112, 112, 112, 0.5);
+}
+.container .box form input {
+width: 100%;
+border: 2px solid #e4e4e4;
+border-radius: 10px;
+padding: 20px 10px 15px 23px;
+font-size: 14px;
+background: transparent;
+transition: ease-in-out 400ms;
+color: rgba(112, 112, 112, 0.8);
+}
+.container .box form input:focus {
+box-shadow: -2px -2px 10px #f6f6f6, 2px 2px 10px rgba(0, 0, 0, 0.16);
+}
+.container .box form .auth-btn {
+display: flex;
+justify-content: center;
+width: 100%;
+border: none;
+padding: 18px 0px;
+border-radius: 10px;
+background: #eee;
+margin-top: 50px;
+box-shadow: -5px -5px 10px #f6f6f6, 5px 5px 10px rgba(0, 0, 0, 0.16);
+cursor: pointer;
+text-transform: uppercase;
+font-family: 'Poppins';
+}
+
+.container .box form .auth-btn:hover {
+box-shadow: -3px -3px 5px #f6f6f6, 3px 3px 5px rgba(0, 0, 0, 0.16);
+}
+
+
+/* style phone number input */
+
+#MazPhoneNumberInput {
+  width: 100%;
+    padding: 0 2rem;
+    border-radius: 2px;
+}
+
+.country-selector__toggle { top: 80% !important }
+.country-selector__list__item.selected { background-color: #23272B !important }
+
+#MazPhoneNumberInput .country-selector__label,
+#MazPhoneNumberInput .input-tel.sm .input-tel__label { font-size: 14px }
+
+#MazPhoneNumberInput .country-selector__input,
+#MazPhoneNumberInput .input-tel__input {
+  height: 70px;
+  background-color: transparent;
+  font-size: 18px;
+  font-family: 'Poppins';
+}
+#MazPhoneNumberInput .country-selector__label,
+.input-tel.is-focused .input-tel__label { color: #23272B !important }
+
+.input-tel.is-focused .input-tel__input {
+  border-color: #23272B !important;
+  box-shadow: none !important;
+}
+
+#MazPhoneNumberInput .input-tel.is-focused .input-tel__input,
+#MazPhoneNumberInput .input-tel.is-valid .input-tel__input {
+  box-shadow: none;
+  border-color: #7b8f50 !important
+}
+#MazPhoneNumberInput .input-tel.is-valid .country-selector__label,
+#MazPhoneNumberInput .input-tel.is-valid .input-tel__label { color: #7b8f50 !important }
+
+.input-tel__input:hover { border-color: #23272B !important }

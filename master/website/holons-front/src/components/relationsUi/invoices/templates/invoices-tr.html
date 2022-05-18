@@ -1,0 +1,14 @@
+<tr>
+  <td class="rel-table-row__title">
+    <span>{{ item.title }}</span>
+    <invoices-main-wrench-menu
+        v-bind:item="item"
+        v-bind:show-menu="item === $parent.activeMenu"
+    />
+  </td>
+  <td>{{ item.from_name }}</td>
+  <td>{{ item.to_name }}</td>
+  <td>sent</td> <!-- sent, paid, overdue -->
+  <td><h5>{{ item.amount }}</h5></td>
+
+</tr>

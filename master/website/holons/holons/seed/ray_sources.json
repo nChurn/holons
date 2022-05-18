@@ -1,0 +1,217 @@
+[
+{
+    "model": "rays.RaySource",
+    "pk": 108,
+    "fields": {
+      "title": "Test Master ray",
+      "link": "https://www.upwork.com/ab/feed/jobs/rss?paging=0%3B50&sort=recency&api_params=1&q=&securityToken=e6e81189f93733e4e3b492f3c013e520037fb7e293c50f42e54079583ec4406d05617db8af47e5bb8ffb9beca841118e0c79d81abcb988c0444622b312df1842&userUid=817728960578125824&orgUid=817728960578125826",
+      "stop_words": "stop_word example, india, pakistan, nigeria, thailand, kuwait, zambia, malaysia, argentina, ghana, panama, hong kong, croatia, poland, italy, slovakia, qatar, france, poland, bulgaria, romania, United Arab Emirates, estonia, latvia, saudi arabia, brazil, morocco, dropshipping, drop shipping, simple, dropshipping, drop shipping, simplebubble, bubble.io, t shirt, t shirts, t-shirts, tshirt, Tunisia, Germany, Bahrain, Webflow, Portugal, Singapore, Spain, Kenya, Vietnam, Austria, Jamaica, Egypt, Ukraine, Vietnam, Philippines, China, Honduras, Montenegro, Hungary, Puerto Rico, Albania, wix, mexico, bangladesh, squarespace, Ecuador, Elementor, Gibraltar, Greece, Uganda, Moldova, Slovenia, Taiwan, Sri Lanka",
+      "title_filter": "",
+      "skills_filter": "",
+      "category_filter": "",
+      "is_active": true,
+      "is_budget_empty_ok": true,
+      "budget_rate": 0,
+      "budget_fixed": 0,
+      "provider": "upwork"
+    }
+},
+  { "model": "rays.RaySource",
+    "pk": 184,
+    "fields": {
+      "title": "[dev] Java",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "Java",
+      "title_filter": "Java",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": "belarus, canada, estonia, finland, france, germany, hong kong, ireland, israel, japan, latvia, lithuania, luxembourg, netherlands, new zealand, norway, russia, south africa, spain, sweden, united kingdom, united states"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk": 711,
+    "fields": {
+    "title": "AAB. Full Stack //TEAR DOWN",
+    "link": "#",
+    "stop_words": null,
+    "is_active": true,
+    "category_filter": "Full Stack Development, Database Development",
+    "skills_filter": "",
+    "title_filter": "",
+    "budget_fixed": 100,
+    "budget_rate": 20,
+    "is_budget_empty_ok": true,
+    "provider": "upwork",
+    "key_words": "belarus, canada, estonia, finland, france, germany, hong kong, ireland, israel, japan, latvia, lithuania, luxembourg, netherlands, new zealand, norway, russia, south africa, spain, sweden, united kingdom, united states"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk": 712,
+    "fields": {
+      "title": "AOC. Video Editing/Post-Production [content] (19)",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "",
+      "title_filter": "",
+      "budget_fixed": 100,
+      "budget_rate": 10,
+      "is_budget_empty_ok": true,
+      "provider": "upwork",
+      "key_words": "belarus, canada, estonia, finland, france, germany, hong kong, ireland, israel, japan, latvia, lithuania, luxembourg, netherlands, new zealand, norway, russia, south africa, spain, sweden, united kingdom, united states"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  719,
+    "fields": {
+      "title": "[dev] Ruby on Rails",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "Ruby, Ruby on Rails",
+      "title_filter": "Ruby on Rails",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": true,
+      "provider": "upwork",
+      "key_words": "belarus, canada, estonia, finland, france, germany, hong kong, ireland, israel, japan, latvia, lithuania, luxembourg, netherlands, new zealand, norway, russia, south africa, spain, sweden, united kingdom, united states"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] country USA",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": "united states, wonderland"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] category Full Stack",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "full stack development",
+      "skills_filter": "",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": ""
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] skill ROR",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "Ruby on rails",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": ""
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] title Wordpress",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "",
+      "skills_filter": "",
+      "title_filter": "Wordpress",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": ""
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] category",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "front-end development",
+      "skills_filter": "",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": ""
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] country category",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "front-end development",
+      "skills_filter": "",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": "united states"
+    }
+  },
+  {
+    "model": "rays.RaySource",
+    "pk":  null,
+    "fields": {
+      "title": "[test] country category and skill",
+      "link": "#",
+      "stop_words": "bubble.io, drop shipping, drop shipping, dropshipping, dropshipping, t shirt, t shirts, t-shirts, tshirt, wix",
+      "is_active": true,
+      "category_filter": "front-end development",
+      "skills_filter": "figma",
+      "title_filter": "",
+      "budget_fixed": 0,
+      "budget_rate": 0,
+      "is_budget_empty_ok": false,
+      "provider": "upwork",
+      "key_words": "united states"
+    }
+  }
+
+]

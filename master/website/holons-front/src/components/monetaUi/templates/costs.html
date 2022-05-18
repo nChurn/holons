@@ -1,0 +1,173 @@
+<div style="margin:2rem">
+
+
+  <div class="ui grid">
+    <div class="eight wide column">
+
+      <h2>payroll</h2>
+
+      <p class="muted">these are read-only stats used in cash flow and P&L.
+        Use <a class="hm link" href="/people">people</a> to actually manage payroll</p>
+
+      <p><b>last month total: $XXX,XXX</b></p>
+      <p><b>this month:</b></p>
+
+        <!--
+          what types can we have here?
+          1. salary
+          2. hourly
+          3. fixed variables (e.g. Warren logging $5 per 1k words) -->
+
+      <div style="padding-left:2rem;border-bottom:30px solid #23272B">
+
+        <table class="hm table">
+          <tr>
+            <td>Salaries due:</td>
+            <td>$XXX,XXX</td>
+          </tr>
+          <tr>
+            <td>Hourly commitments so far:</td>
+            <td>$XXX,XXX</td>
+          </tr>
+          <tr>
+            <td>Fixed price commitments so far:</td>
+            <td>$XXX,XXX</td>
+          </tr>
+          <tr>
+            <td>Per unit commitments so far:</td>
+            <td>$XXX,XXX</td>
+          </tr>
+
+          <br><br>
+
+          <tr>
+            <td>subtotal</td>
+            <td>$XXX,XXX</td>
+          </tr>
+        </table>
+
+      </div>
+
+
+
+            <!--1. marketing budgets
+            2. one-off expenses
+            ?? should we just log it manually now to appear on cashflow balance?
+
+            sup w/ one-off expenses?
+            well, manual entries are dummed to failure, untill it's
+            charged on the account directly.
+
+            for that we need card issuing, huh?
+          -->
+    </div>
+    <div class="eight wide column">
+
+      <h2>variable costs – May 2021</h2>
+
+      <a style="width:100%" onclick="$( '#vcostModal' ).addClass('active')"
+      class="ui basic button">+ log new entry</a>
+
+      <table class="hm table">
+        <!-- what - payment date - amount - tag -->
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="ui dropdown icon item">
+                  <i class="wrench icon"></i>
+                  <div class="menu">
+                    <div class="item">
+                      delete
+                    </div>
+                  </div>
+              </div>
+            </td>
+            <td>google ads budget</td>
+            <td>$470</td>
+            <td>(ads budget)</td>
+            <td>05.05.2021</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>fixed costs</h2>
+      <p>monthly reccuring costs</p>
+
+      <a style="width:100%" onclick="$( '#fcostModal' ).addClass('active')"
+      class="ui basic button">+ log new entry</a>
+
+      <table class="hm table">
+        <!-- what - payment date - amount - tag -->
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="ui dropdown icon item">
+                  <i class="wrench icon"></i>
+                  <div class="menu">
+                    <!--<div class="item">
+                      edit
+                    </div>-->
+                    <div class="item">
+                      delete = stop logging from now on
+                    </div>
+                  </div>
+              </div>
+            </td>
+            <td>hetzner server</td>
+            <td>€47</td>
+            <td>(tech stack)</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="ui dropdown icon item">
+                  <i class="wrench icon"></i>
+                  <div class="menu">
+                    <!--<div class="item">
+                      edit
+                    </div>-->
+                    <div class="item">
+                      delete = stop logging from now on
+                    </div>
+                  </div>
+              </div>
+            </td>
+            <td>grammarly</td>
+            <td>$25</td>
+            <td>(tools)</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+  <div id="fcostModal" class="hm modal">
+    <div class="content">
+      <h2 class="title">log new fixed cost</h2> <!-- so, this one is just an info module then, huh? -->
+      <input type="text" name="" value="" placeholder="name">
+      <input type="number" name="" value="amount, $$" min="0">
+      <input type="text" name="" value="" placeholder="tag //as plain text for now">
+
+      <a class="ui basic button">ok. log</a>
+    </div>
+  </div>
+
+  <div id="fcostModal" class="hm modal">
+    <div class="content">
+      <h2 class="title">log new variable cost</h2> <!-- so, this one is just an info module then, huh? -->
+      <input type="text" name="" value="" placeholder="name">
+      <input type="number" name="" value="amount, $$" min="0">
+      <input type="text" name="" value="" placeholder="tag //as plain text for now">
+
+      <a class="ui basic button">ok. log</a>
+    </div>
+  </div>
+
+
+
+</div>

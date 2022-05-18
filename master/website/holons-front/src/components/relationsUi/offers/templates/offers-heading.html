@@ -1,0 +1,64 @@
+<div>
+
+
+        <!-- TODO same btn as in telent @layers -->
+        <a class="ui basic button"
+        v-on:click.prevent="$parent.offerType = 'employment'">+ employment offer</a>
+
+
+        <span style="text-align:right">
+          <a class="ui basic button"
+            v-on:click.prevent="$parent.offerType = 'fixed'">
+            +fixed budget</a>
+          <a class="ui basic button"
+            v-on:click.prevent="$parent.offerType = 'time'">
+            + time &amp; materials</a>
+          <a class="ui basic button"
+            v-on:click.prevent="$parent.offerType = 'recurring'">
+            + recurring</a>
+        </span>
+
+      <h5 class="offers-stats" style="margin:5rem 0">
+        [This week] X offers resulted in X commitments.
+        <!--Over 90 days X offers resulted in $10,000 invoices paid-->
+      </h5>
+      <!--<a class="ui basic ui button" style="color:red"
+        v-html="'&plus; employment offer'"
+        v-on:click.prevent="$parent.offerType = 'employment'"
+      ></a>-->
+
+
+
+
+      <!--<a class="ui basic ui button" style="color:red"
+        v-html="'&plus; generic offer'"
+        v-on:click.prevent="$parent.offerType = 'generic'"
+      ></a>-->
+
+
+    <!--<div class="eight wide column">
+
+      <div
+        v-if="true"
+      >
+        <a class="ui basic ui button"
+          v-html="'&plus; employment offer'"
+          v-on:click.prevent="$parent.offerType = 'employment'"
+        ></a>
+        <a class="ui basic ui button"
+          v-html="'&plus; buy offer'"
+          v-on:click.prevent="$parent.offerType = 'buy'"
+        ></a>
+        <a class="ui basic ui button"
+          v-html="'&plus; sell offer'"
+          v-on:click.prevent="$parent.offerType = 'sell'"
+        ></a>
+      </div>
+      <a class="ui basic ui button"
+        v-html="'&plus; generic offer'"
+        v-on:click.prevent="$parent.offerType = 'generic'"
+      ></a>
+
+    </div>-->
+
+</div>

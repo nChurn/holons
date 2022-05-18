@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+
+{% include "layers/sub_menu.html" %}
+
+
+<div class="ui secondary menu secondary-navigation">
+
+    <a class="item disabled"><i class="clock outline icon"></i>jobs to be filled</a>
+    <a class="item disabled"><i class="clock outline icon"></i>address book</a>
+    <a class="item active">my people</a>
+    <a class="item" href="/layers/people/payroll">payroll</a>
+
+    <!--<a class="item disabled"><i class="clock outline icon"></i> People</a>
+    <a class="item disabled"><i class="clock outline icon"></i>TODOs</a>
+    <a class="item disabled"><i class="clock outline icon"></i>WIKIs</a>-->
+
+    <div class="right menu">
+      <!--<a class="item disabled">
+        <i class="circle icon gold-dot"></i>Hosting &amp; Asset Management</a>-->
+      <!--<a class="item" target="_blank"
+      href="https://odyssey.holons.me/en/nodes/fairchild-layers/time-tracker">
+      <i class="square full icon"></i>the why</a>-->
+    </div>
+
+</div>
+
+<div style="margin:2rem">
+
+
+
+
+  <div id="layersPeople">
+    <div class="outer">
+      <div class="inner">
+        <table class="ui hm table fixed">
+          <thead>
+            <tr>
+              <td rowspan="2">
+                list of people you have employment contract with <br><br>
+
+                <a class="ui basic button">+ offer</a>
+              </td>
+              <td colspan="4">
+                access controls
+              </td>
+              <td rowspan="2">commitment</td>
+              <td rowspan="2">function</td>
+            </tr>
+            <tr>
+
+              <td>relations</td>
+              <td>workspaces</td>
+              <td>moneta</td>
+              <td>can hire others</td>
+              <!-- access controls ends -->
+
+            </tr>
+          </thead>
+            <tr>
+              <td>
+                <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                width="40px">
+                <h5 class="vaHack">Alex B.</h5>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <!-- access controls ends -->
+
+              <td>hourly contract #1</td>
+
+
+              <td>dev</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

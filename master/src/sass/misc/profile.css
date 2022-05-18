@@ -1,0 +1,333 @@
+
+#profile-holder {
+	/*background: #F7F8FA;*/
+	background: #F7F8FA ;
+	padding: 2rem
+}
+
+#profile-public--pic {
+	border: 10px solid #FFCF4A;
+  margin-left: calc(-2rem - 20px);
+  width: calc(100% + 4rem + 40px);
+	margin-top: -2rem;
+}
+
+#zenship-stamp {
+	position: relative;
+    top: -4rem;
+    right: 4rem;
+    width: 50px;
+}
+
+.profile-description {
+	line-height: 1.6;
+	font-size: 14px
+}
+
+.feature {padding: 5rem}
+
+.milestone-feature {
+	display: flex;
+	justify-content: space-between;
+	border-left: 5px solid rgba(0,0,0,.15);
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.milestone-feature.minor {
+	flex-direction: column;
+	justify-content: center;
+	min-height: 75px;
+	color: rgba(0,0,0,.63);
+}
+
+
+.yt-playbtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 67px !important;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    filter: opacity(0.95) grayscale(1);
+    transition: 0.1s;
+    z-index: 9;
+}
+
+.deeds__single {
+	border-bottom: 4px solid #23272B;
+	padding: 2rem 0;
+	margin-bottom: 2rem
+}
+
+.deeds__single .deed__header {
+	display:flex;justify-content:space-between
+}
+
+#profileFooter {
+	background: #F7F8FA;
+text-align: center;
+line-height: 1.5;
+color: rgba(0, 0, 0, 0.53);
+font-size: 14px;
+margin: 0;
+position: fixed;
+bottom: 0px;
+		padding: 5px;
+		width: 100%;
+		box-shadow: 0 -1px 1px 1px rgba(0,0,0,.06);
+}
+
+#profileFooter a {
+color: #23272B;
+font-weight: bold;
+border-bottom: 1px dashed #23272B; }
+
+#profileFooter a:hover {
+border-bottom: 2px dashed #23272B; }
+
+
+#placePromoHolder {
+	border:30px solid #23272B;
+	border-bottom: none;
+	margin: 30px;
+	margin-bottom: 0;
+	width: 100%;
+	min-height: 50vh
+}
+
+.iframe {
+	position: relative;
+	width: 100%;
+    padding-bottom: 56.25%;
+    /* margin-top: -30px; */
+    /* margin-left: auto; */
+    box-shadow: 0px 10px 30px 0px rgba(0,0,0,.12);
+}
+.iframe iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.profile__tabs { text-align: right }
+.profile__tabs h3 {
+	display: inline-block;
+	color: rgba(0,0,0,.5);
+	margin:0;
+	border-bottom: 4px solid transparent;
+}
+.profile__tabs span { padding: 0 1rem }
+.profile__tabs h3:hover { border-color: #23272B }
+.profile__tabs h3.active { color: #23272B }
+
+.p-desc--core {
+ font-size: 14px;
+ line-height: 1.4
+}
+
+.s-card {
+  display: block;
+  min-height: 220px;
+  padding: 3rem 2rem;
+  border-radius: 4px;
+  /*background-color: #fff;*/
+  box-shadow: 0px 10px 30px 0px rgba(0,0,0,.12);
+  transition: .3s;
+	color: #23272B;
+	margin-bottom: 30px;
+	min-height: 300px;
+}
+
+.s-card.reference {
+	background-color: transparent;
+	border-left: 10px solid #23272B;
+	box-shadow: none;
+	border-radius: 0;
+	padding-left: 30px
+}
+
+.s-card.magnum {
+	background: #23272B;
+	color: #F7F8FA
+}
+
+.s-card.magnum h3,
+.s-card.magnum .s-card__desc { color: #F7F8FA}
+.s-card.magnum .s-card__role { color: #23272B}
+
+.s-card.magnum:before {
+	content: 'magnum opus';
+    position: absolute;
+    transform: rotate(-90deg);
+    color: #23272B;
+    left: -8.9rem;
+    top: 11rem;
+    font-size: 2rem;
+    font-family: 'Rubik Mono One';
+}
+.s-card.soon,
+.s-card.archive {
+	box-shadow: none;
+	border:1px solid rgba(0,0,0,.25);
+}
+
+.s-card:not(.tss):hover {
+	color: #23272B;
+  box-shadow: 0px 10px 30px 0px rgba(0,0,0,.26);
+  transition: .3s;
+	border-color: transparent
+}
+
+.s-card.soon:hover { cursor: default }
+
+.s-card__status {
+	position: absolute;
+	left: 25px;
+  top: -5px;
+  text-transform: uppercase;
+  font-size: 10px;
+	color: rgba(0,0,0,.47);
+	letter-spacing: 1px
+}
+
+.s-card__status:before {
+	content:'';
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #7b8f50;
+	position: absolute;
+	left: -10px;
+	top:3px;
+}
+
+.gold.s-card__status:before { background: #FFCF4A }
+
+.aint.s-card__status { left:15px}
+.aint.s-card__status:before { display: none}
+
+.s-card__role {
+	position: absolute;
+	right: 15px;
+  top: -10px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.s-card__title {
+	margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.38;
+  font-weight: 900;
+  text-transform: none;
+  color: #23272B;
+}
+
+.s-card__title.logo {  padding-left: 35px;}
+.s-card__title.logo:before {
+	content: "";
+	position: absolute;
+	top: calc(3rem + 13px);
+	left:-20px;
+	left: 3rem;
+	display: block;
+	width: 26px;
+	height: 26px;
+	background-color: #23272B;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+.s-card__title.launcher:before {
+
+	background-image: url('https://the.gt/wp-content/themes/the_gt01/images/gl-logo.png');
+}
+
+.s-card__img {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+.s-card__desc {
+	font-size: 14px;
+	line-height: 1.5;
+  color: rgba(0,0,0,.55);
+}
+
+.s-card__tech {
+  font-size: 14px;
+  color: rgba(0,0,0,.67);
+}
+
+/* tags hacks */
+.s-card span {
+	display: inline-block;
+	border: 1px dashed #23272B;
+	padding: 4px 8px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+}
+
+
+.portfolio-deed #profileFooter {
+	position:initial;
+	background: transparent;
+	box-shadow: none;
+	text-align: left;
+	padding: 0
+}
+
+.refs {
+	color: rgba(0,0,0,.5);
+}
+
+.deed-content {
+	max-width: 1200px;
+	margin:0 auto;
+}
+
+.deed-content a,
+.refs a {
+color: #23272B;
+font-weight: bold;
+border-bottom: 1px dashed #23272B; }
+
+.deed-content a:hover,
+.refs a:hover {
+border-bottom: 2px dashed #23272B; }
+
+.refs b { color: #23272B }
+
+.deed-content h1 { max-width: 620px }
+.deed-content img {
+	width: 100%;
+	border: 1px solid #23272B;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,.25);
+}
+
+.deed-content p {
+	margin:16px;
+	line-height: 1.65;
+  font-size: 16px;
+}
+
+#portfoliosPromo {
+	padding: 2rem;
+	border-top: 30px solid #23272B
+}
+
+.s-card__title.grintech:before {
+	background-image: url('https://holons.me/markets/wp-content/uploads/2021/06/gt.png');
+}
+
+.s-card__title.avokado:before {
+	background: #73a574;
+	border-radius: 50%;
+}

@@ -1,0 +1,53 @@
+/*
+
+there are two following table versions and modifications:
+
+thead: solid v. plain
+tbody: table v. items
+
+*/
+
+
+.hm.table {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-collapse: collapse !important;
+}
+
+.hm.table thead th { background: transparent }
+.hm.table th { text-align: left }
+.hm.table tr td { height: 40px }
+
+.hm.table tbody tr:hover {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9));
+}
+
+/* weird bug on tr:hover dirty fix */
+.hm.table tbody { padding-top: 4px }
+
+.hm.table.grand thead {
+  border-bottom: 5px solid #23272B;
+  border-top: 5px solid #23272B;
+}
+
+.hm.table.grand thead td {
+  vertical-align: middle;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ui.table tr td {
+  border-top: 1px solid rgba(34,36,38,.1);
+  overflow: inherit;
+}
+
+/* legacy below */
+
+
+.ui.fixed.table td,
+.ui.fixed.table th { overflow: auto }

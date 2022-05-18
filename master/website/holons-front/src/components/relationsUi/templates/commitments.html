@@ -1,0 +1,23 @@
+<div class="commitments-wrap">
+    <commitments-create-invoice
+      v-if="createInvoice"
+      v-bind:item="selectedCommitment"
+    />
+    <commitments-heading />
+    <commitments-tabs />
+    <table class="ui hm table grand">
+        <commitments-main-thead />
+        <tbody>
+         <commitments-tr
+            v-for="item in commitmentsList"
+            v-bind:key="item.id"
+            v-bind:item="item"
+            @show-create-invoice-modal="showCreateInvoiceModal"
+         />
+        </tbody>
+    </table>
+
+    <!-- TODO pull in the access module -->
+
+    
+</div>

@@ -1,0 +1,43 @@
+<div class="new-thread-form">
+  <form
+    v-if="!$parent.messageSent"
+    class="ui form"
+  >
+
+  <h1>
+    Start new thread <br>
+    with {{toUsername}}</h1>
+
+
+      <div class="ui field input fluid">
+        <input
+          type="text"
+          val=""
+          placeholder="Subject matter"
+          v-model="messageSubject"
+          style="margin-bottom: 2rem;background: transparent"
+        />
+      </div>
+
+      <div class="ui field input fluid"
+      style="margin-bottom: 2rem">
+        <wysiwyg
+          v-model="messageBody"
+          placeholder="What is it?"
+        />
+      </div>
+
+      <button style="width:100%;text-transform: uppercase;'"
+        class="ui basic button"
+        v-bind:disabled="messageBody == '' || messageSubject == ''"
+        v-on:click.prevent="sendRaysMessage"
+      > Send
+      </button>
+
+  </form>
+  <div
+    v-else
+    class="success">
+    <h4>Message to {{toUsername}} sent</h4>
+  </div>
+</div>

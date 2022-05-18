@@ -1,0 +1,24 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+<div class="ui grid" style="width:100%">
+    <div class="fifteen wide column main-working">
+        <div class="white-block">
+            <div id="parent" class="ui grid">
+                <div class="one wide column">
+                </div>
+                <div style="padding: 3em;">
+                    <h1>Login</h1>
+                    <form action="/api/accounts/teleport-login" method="POST" id="login" class="ui form">
+                        {% csrf_token %}
+                        <div class="field">
+                            <div class="row ui field"><input class="ui button" type="submit" value="Login to Teleport"/></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "includes/mercury-sidebar.html" %}
+</div>
+{% endblock %}

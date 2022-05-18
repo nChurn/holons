@@ -1,0 +1,40 @@
+<div
+  class="thread-previews eight wide column"
+  id="thread-previews" style="overflow-y: scroll;"
+>
+  <thread-controls />
+  <div class="mailbox-messages">
+    <div class="message-wrap"
+        v-for="mThread in ray.message_threads"
+        v-bind:key="mThread.id"
+    >
+      <div class="thread-previews__item"
+        v-on:click="$parent.selectedThread = mThread"
+        v-if="showOpen && !mThread.is_archived && !mThread.is_deleted"
+        v-bind:class="{active: $parent.selectedThread == mThread}"
+      >
+        <div class="thread-previews__item--name">
+          <span v-html="mThread.messages[0].subject"></span>
+        </div>
+      </div>
+      <div class="thread-previews__item"
+        v-on:click="$parent.selectedThread = mThread"
+        v-if="showArchived && mThread.is_archived && !mThread.is_deleted"
+        v-bind:class="{active: $parent.selectedThread == mThread}"
+      >
+        <div class="thread-previews__item--name">
+          <span v-html="mThread.messages[0].subject"></span>
+        </div>
+      </div>
+      <div class="thread-previews__item"
+        v-on:click="$parent.selectedThread = mThread"
+        v-if="showDeleted && !mThread.is_archived && mThread.is_deleted"
+        v-bind:class="{active: $parent.selectedThread == mThread}"
+      >
+        <div class="thread-previews__item--name">
+          <span v-html="mThread.messages[0].subject"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

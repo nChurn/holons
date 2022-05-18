@@ -1,0 +1,8 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+    {% include "pages/timer.html" %}
+    <script>
+      window.timeTrackerUiIsActive = true
+    </script>
+{% endblock %}

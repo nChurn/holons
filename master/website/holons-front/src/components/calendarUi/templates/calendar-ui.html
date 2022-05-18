@@ -1,0 +1,12 @@
+<div id="calendarWrap">
+
+  <FullCalendar
+          class='app-calendar'
+          :options='calendarOptions'
+        >
+          <template v-slot:eventContent='arg'>
+            <b>{{ arg.timeText }}</b>
+            <i>{{ arg.event.title }}</i>
+          </template>
+  </FullCalendar>
+</div>

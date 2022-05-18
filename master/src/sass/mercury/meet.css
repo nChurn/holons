@@ -1,0 +1,149 @@
+#calendarWrap { padding: 0 1rem }
+
+.fc .fc-daygrid-day-number,
+.fc .fc-col-header-cell-cushion{
+  color: #23272B }
+
+.fc .fc-toolbar-title {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background: #fff !important;
+  border-left: 4px solid #23272B;
+}
+
+.fc .fc-button { border-radius: 2px }
+
+.fc .fc-button-primary {
+  background: transparent !important;
+  color: #23272B !important;
+}
+
+.fc .fc-button-primary:hover {
+  background: #fff;
+  color: #23272B;
+  cursor: pointer;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background: #fff !important;
+  box-shadow: 1px 1px 1px 0px #23272b;
+  font-weight: bold;
+}
+
+.fc .fc-button-primary:disabled {
+  background: rgba(0,0,0,.09);
+}
+
+/* meet meet styles */
+
+
+.meet__mc--item h5 {
+  text-align: right;
+  text-transform: uppercase;
+  color: rgba(35,39,43,.71);
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 1.5rem 0;
+}
+.meet__mc--item span {
+  /*margin: 0.5rem 0 0.5rem 1rem;*/
+  display: block;
+}
+
+.meet__mc--item b { padding-right: 1rem }
+
+.meet__mc--item span i {
+  font-size: 10px
+}
+
+/* meeting book widget styling */
+
+#meet__widget {
+  background: #fff;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.08);
+  min-height: 55vh;
+}
+
+#meet__widget .title {
+  margin-bottom: 2rem;
+  text-align: right;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.63);
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: -4rem;
+  right: 0;
+  font-size: 14px
+}
+
+#meet__widget .subtitle {
+  text-transform: uppercase;
+    color: rgba(0,0,0,.63);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    line-height: 36px;
+}
+
+#meet__widget table td {
+  padding: 15px 10px;
+  text-align: center;
+}
+#meet__widget table thead th {
+  padding: 15px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#meet__widget label:not(.open),
+#meet__widget label.past { color: rgba(0,0,0,.43) }
+
+#meet__widget label.open {
+  font-weight: bold;
+  /*background: rgba(0,0,0,.04) */
+}
+
+#meet__widget label.open:hover {
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.05);
+  cursor: pointer;
+}
+
+#meet__widget label.today { color: #7b8f50}
+
+#meet__widget label.today:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin-top: 13px;
+    background-color: gray;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meet__widget--timeslot {
+  height: 30px;
+  margin-bottom: 10px
+}
+.meet__widget--timeslot label {
+  line-height: 30px;
+}
+
+.meet__widget--timeslot button {
+  text-transform: uppercase !important;
+    font-size: 12px !important;
+    letter-spacing: 1px;
+    padding: 0 12px !important;
+}
+
+.fc .fc-scroller-liquid-absolute::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

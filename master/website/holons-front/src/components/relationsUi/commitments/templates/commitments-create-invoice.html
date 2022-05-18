@@ -1,0 +1,132 @@
+<div class="hm modal big active">
+  <div class="content">
+
+      <h2 class="title">Create invoice</h2>
+
+      <div class="ui grid">
+
+        <div class="six wide column">
+            <h3 class="muted">bill from</h3>
+
+            <!-- if it's the first invoice: show textarea, otherwise just prev logged info -->
+            <textarea name="name" rows="5"></textarea>
+            <p class="muted" style="padding: 0.3rem 0">
+              We'll ask the person paying the invoice to fill out "bill to" with proper info, no worries.</p>
+
+
+            <!-- show after the first item is added -->
+            <div style="margin: 2rem 0;border-top: 10px solid #23272B;padding-top: 30px;">
+
+                  <h3 class="muted">Due date</h3>
+
+                  <input type="date" placeholder="Due date">
+
+                  <div class="field vaHack">
+                    <div>
+                      <input style="width: 20px;height: 20px;margin-right: 10px"
+                          type="checkbox" class="hidden" checked>
+                          <label>Don't accept payment after due date</label>
+                    </div>
+                  </div>
+            </div> <!-- due date ends -->
+        </div>
+
+        <div class="ten wide column">
+          <h3 class="muted">what</h3>
+
+          <!--<div class="ui secondary menu secondary-navigation pdng0"
+          style="padding: 2rem 0 !important;border-top: 10px solid rgb(35, 39, 43);margin-top:2rem !important">
+            <div class="right menu">
+              <a href="#" class="item active">Plain</a>
+              <a href="#" class="item">Time & Materials</a>
+              <a href="#" class="item disabled"><i class="clock outline icon"></i>Subscription</a>
+              <a href="#" class="item disabled"><i class="clock outline icon"></i>Products & Services</a>
+            </div>
+          </div>-->
+
+          <!-- this table illustrates how to showcase added items
+          i.e. it's not visible initially-->
+
+
+          <table id="invoiceCreate" class="hm table" style="margin:2rem 0">
+            <tr>
+              <td>
+                example item 1 \ <a class="hm link">delete this item</a>
+              </td>
+              <td>1</td>
+              <td>$100</td>
+            </tr>
+            <!--<tr>
+              <td colspan="3" style="text-align:right"><a class="hm link">add tax</a></td>
+            </tr>-->
+            <tr>
+              <td colspan="3" style="text-align:right">total: $XXX,XXX</td>
+            </tr>
+          </table>
+
+          <form class="ui form">
+            <div class="fields">
+              <div class="seven wide field">
+                <input type="text" placeholder="Item name">
+              </div>
+              <div class="two wide field">
+                <input type="number" placeholder="Qty">
+              </div>
+              <div class="two wide field">
+                  <select class="ui fluid dropdown">
+                    <option value="" selected>$$ US</option>
+                  </select>
+              </div>
+              <div class="three wide field">
+                <input type="number" placeholder="Rate">
+              </div>
+              <div class="two wide field">
+                <a class="ui basic button">+</a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <form>
+
+
+          <button
+            class="hm button core" style="width:100%;padding: 1rem"
+            v-on:click.prevent="storeInvoice"
+          >Create invoice</button>
+
+          <div class="row field ui">
+            <input placeholder="quick hack for staging" type="number" v-model="item.invoice_amount"/>
+          </div>
+      </form>
+
+      <!--<h2>memo</h2>
+
+      <textarea name="name" rows="8" cols="80"></textarea>-->
+
+
+      <!-- ok, so later on we'll feature email, SMS as well,
+      but to save time let's do just direct link now -->
+
+      <!--<ul>
+        <li
+          v-for="el in item"
+          v-bind:key="el"
+        >
+          <strong>{{ Object.keys(item).find(key => item[key] === el) }}:</strong> {{ el }}
+        </li>
+      </ul>-->
+
+  </div>
+</div>

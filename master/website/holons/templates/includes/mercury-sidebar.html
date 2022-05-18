@@ -1,0 +1,207 @@
+{% load static %}
+{% load imagefit %}
+<div class="one wide column sidebar right-sidebar">
+
+
+{% if impersonate_menu_enabled %}
+  <div id="personificationsHandle" class="ui dropdown icon item">
+    <i class="user circle outline icon"></i>
+    <div class="menu">
+      <!--<div class="item">
+        Open conversation
+      </div>-->
+      {% for item in impersonate_accounts %}
+      <div class="item">
+        <a href="/profile/impersonate/{{ item.phone_number }}?redirect_to={{ request.path }}">
+        {{ item.username }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+    <a href="/identity">
+      <img src="{{ userpic | resize:'100x100' }}" class="identity__img" />
+    </a>
+
+    <a href="/identity" class="account__status {{ account_status }}">
+      {{ account_status }}
+    </a>
+
+    <ul class="tab-vertical">
+
+     <li class="inboxe-tabs {% if request.path == '/rays' %} active {% endif %}"
+     style="border-top: 1px solid rgba(255, 255, 255, 0.19);">
+            <span class="hot-key">1</span>
+            <div class="notifications-count">99</div>
+
+            <a href="/rays">rays</a></li>
+
+
+         <li class="inboxe-tabs">
+          <span class="hot-key">2</span>
+          <div class="notifications-count">99</div>
+            <a href="https://teleport.holons.me/auth/">teleport</a></li>
+
+      <li class="inboxe-tabs {% if request.path == '/email' %} active {% endif %}">
+                <span class="hot-key">3</span>
+                <div class="notifications-count">99</div>
+
+                <a href="/email">mail</a></li>
+
+  <li class="inboxe-tabs {% if request.path == '/schedule' or request.path == '/schedule/meet' %} active {% endif %}">
+          <span class="hot-key">4</span>
+
+          <a href="/schedule">schedule</a></li>
+
+
+          <li class="inboxe-tabs">
+                  <span class="hot-key">5</span>
+
+                  <a id="magic1_start_link" href="https://magic1.teleport.holons.me/">magic1</a></li>
+
+        <li class="inboxe-tabs {% if request.path == '/xo' %} active {% endif %}">
+          <!--<span class="hot-key">5</span>-->
+
+          <a href="/xo">
+            <i class="clock outline icon"></i>
+            XO</a></li>
+
+          <br>
+
+
+
+          <li class="inboxe-tabs {% if request.path == '/platos-flywheel' or request.path == '/campaigns' or request.path == '/platos-flywheel/subscription' %} active {% endif %}"
+          style="border-top: 1px solid rgba(255, 255, 255, 0.19);">
+        <span class="hot-key">6</span>
+
+        <a href="/platos-flywheel">plato's</a></li>
+
+
+        <li class="inboxe-tabs {% if request.path == '/outreach' %} active {% endif %}">
+          <!--<span class="hot-key">7</span>-->
+
+          <a href="/outreach">
+            <i class="circle outline icon gold-dot"></i>
+            outreach</a></li>
+
+        <li class="inboxe-tabs {% if request.path == '/dial' %} active {% endif %}">
+          <!--<span class="hot-key">8</span>-->
+
+          <a href="/dial">
+            <i class="circle outline icon gold-dot"></i>
+            dial</a></li>
+
+        <br>
+
+        <li class="inboxe-tabs {% if request.path == '/digest' %} active {% endif %}"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.19);">
+          <!--<span class="hot-key">9</span>-->
+          <!--<div class="notifications-count">99</div>-->
+
+          <a href="/digest">
+            <i class="circle outline icon gold-dot"></i>
+            digest</a></li>
+
+          <li class="inboxe-tabs {% if request.path == '/hearsay' %} active {% endif %}">
+        <!--<span class="hot-key">0</span>-->
+
+        <a href="/hearsay">
+          <i class="circle outline icon gold-dot"></i>
+          hearsay</a></li>
+
+        <!--<li class="inboxe-tabs">
+          <span class="hot-key">9</span>
+          <div class="notifications-count">99</div>
+
+          <a href="#">ads</a></li>
+
+        <li class="inboxe-tabs">
+          <span class="hot-key">0</span>
+          <div class="notifications-count">99</div>
+
+          <a href="#">offline</a></li>-->
+
+
+
+          <!--<li class="inboxe-tabs"><span class="hot-key">F3</span>
+            <div class="notifications-count">99</div>
+            <a href="legacy.html">legacy</a></li>
+
+        <li class="sibader-mini-heading">
+
+        </li>
+
+        <li class="todo-tabs"><span class="hot-key">F4</span>
+          <div class="notifications-count">99</div>
+          <a href="workspace.html">
+          <img src="img/gt.png"
+          height="44px"></a></li>
+
+        <li class="todo-tabs"><span class="hot-key">F5</span>
+          <div class="notifications-count">99</div>
+          <a href="#">
+          <img src="img/gt.png"
+          height="44px"></a></li>
+
+        <li class="todo-tabs"><span class="hot-key">F6</span>
+          <div class="notifications-count">99</div>
+          <a href="#">
+          <img src="img/gt.png"
+          height="44px"></a></li>
+-->
+
+
+    </ul>
+
+    <br>
+
+
+      <a class="sidebarAlso button" style="border-top: 1px dashed rgba(255,255,255,.25)"
+      onclick="$( '#hotkeysModal' ).addClass('active')">hotkeys</a>
+
+      <a class="sidebarAlso button" id="importGlobal"
+        onclick="$( '#hotkeysModal' ).addClass('active')">import</a>
+      <a class="sidebarAlso button" id="btInvite">invite</a>
+      <a class="sidebarAlso button" id="btInvite"
+        onclick="$( '#supportModal' ).addClass('active')">support</a>
+
+        <a class="sidebarAlso button" id="voiceHeadless"
+        onclick="$( '#voiceModal' ).addClass('active')">
+          <i class="microphone icon"></i>voice
+        </a>
+
+      <!--<br>
+      <i class="circle outline icon"></i> press [F] <br>
+      to toggle full screen-->
+
+
+      <div id="timetracker-sidebar"></div>
+
+        
+
+      <!-- https://odyssey.holons.me/en/style-guide/headless -->
+
+
+
+    <!--<a href="/faith">
+      <img src="{% static 'img/faith.png' %}"
+      width="40px" height="auto" style="margin-bottom: 3px;">
+    </a>-->
+
+    <!--<div class="version">
+      <a>
+      v0.01 <br>
+      proof of concept <br>
+      edition</a>
+
+      <br><br>
+
+      built by
+      <br> <a>GRIN tech</a>
+      <br> <a href="https://odyssey.holons.me/en/meta/concession">
+        #concession №1</a>
+    </div>00> -->
+
+</div>

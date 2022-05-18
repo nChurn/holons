@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  {# include "layouts/partials/head.html" #}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" ="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- FFS-->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- FFS ends -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/chunk-vendors.css' %}" />
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="32x32" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="{% static 'img/favicon.ico' %}"
+    />
+
+    <title>{% block title %}holons.me – private market network for entrepreneurs, talent & capital{% endblock %}</title>
+
+
+  </head>
+
+  <body>
+    {% csrf_token %}
+
+    <!-- containers -->
+
+    <div class="page-holder">
+
+        {% comment %}
+          {# include "includes/soul-menu.html" #}
+        {% endcomment %}
+
+        {% include "includes/modals.html" %}
+
+        <div class="page">
+          <div class="ui grid content-grid">
+            <div class="fifteen wide column main-working">
+            {% include "includes/main-header.html" %}
+              <div class="white-block">
+              {% block content_area %}{% endblock %}
+              </div>
+            </div>
+            {% include "includes/mercury-sidebar.html" %}
+          </div>
+        </div>
+    </div>
+
+
+    <!-- footer moved here -->
+
+
+    <div class="aint-mobile">
+      <!--<img
+        src="{% static 'img/mercury-svg-icon.svg' %}"
+        class="aint-mobile-svg"
+      />-->
+      <h3>Holons.me doesn't work on mobile</h3>
+      <!--<br><br><br>
+      <a class="hm link inverted" href="#">here is why</a>-->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+        window.$ = jQuery
+        window.csrftoken = $('[name=csrfmiddlewaretoken]').val()
+        {% if request.user.is_authenticated  %}window.user_id = "{{ request.user.id }}" {% else %}window.user_id = false {% endif  %}
+        {% if username  %}window.username = "{{ username }}" {% else %}window.username = "" {% endif  %}
+        {% if handle  %}window.handle = "{{ handle }}" {% else  %}window.handle = "" {% endif  %}
+        {% if userpic  %}window.userpic = "{{ userpic }}"{% else  %}window.userpic = "" {% endif  %}
+        window.account_status = "classic"
+        {% if balance_data and balance_data.paid_account is True %}window.paid_account = true{% else  %}window.paid_account = false {% endif  %}
+        {% if user.platos_bids %}window.platos_bids = {{ user.platos_bids }}{% else  %}window.platos_bids = 0 {% endif  %}
+        {% if user.platos_account_is_paid is True %}window.plato_account_is_paid = true{% else  %}window.plato_account_is_paid = false {% endif  %}
+        {% if user_timer.timer.timer_active %}window.timer_active = true{% else %}window.timer_active = false {% endif %}
+        {% if user_timer.timer.timer_active %}window.timer_current_time = "{{ user_timer.timer.time_current }}"{% else %}window.timer_current_time = '00:00' {% endif %}
+        {% if user_timer.timer.time_spent_today > 0 %}window.user_timer = "{{ user_timer.timer.time_spent_today_hours }}:{{ user_timer.timer.time_spent_today_minutes }}" {% else %}window.user_timer = "00:00" {% endif %}
+        {% if user_timer.timer.time_entry_title %}window.time_entry_title  = "{{ user_timer.timer.time_entry_title }}"{% else %}window.time_entry_title  = "" {% endif %}
+      })();
+
+      $(document).on('keydown', function(e) {
+        if (e.keyCode == 27)
+          $('.hm.modal.active').removeClass('active')
+      });
+
+      var modal = window.$('.hm.modal.active')
+      $(document).click(function(event) {
+        var $target = $(event.target);
+        if(!$target.closest('.hm.modal .content').length &&
+        $('.hm.modal.active').is(":visible") && !$target.hasClass('button')) {
+          $('.hm.modal.active').removeClass('active');
+        }
+      });
+
+      $(document).ready(function() {
+        $('.menu .item').tab();
+        $('.dropdown').dropdown();
+      });
+    </script>
+
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/app/js/app.js' %}"></script>
+    <script src="{% static '/app/js/chunk-vendors.js' %}"></script>
+    {% if 'subscribe' in request.path or 'identity' in request.path %}
+    <script src="https://js.stripe.com/v3/"></script>
+    {% endif %}
+
+    <!-- footer ends -->
+
+  </body>
+</html>

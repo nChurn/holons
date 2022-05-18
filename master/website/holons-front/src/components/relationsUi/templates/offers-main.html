@@ -1,0 +1,102 @@
+<div
+  v-if="!selectedOffer"
+  class="offers-wrap"
+>
+
+    <offers-heading />
+    <!--<offers-tabs />-->
+
+    <table class="ui hm table grand">
+        <offers-main-thead />
+        <tbody>
+          <offers-tr
+            v-for="offer in offersList"
+            v-bind:key="offer.id"
+            v-bind:offer="offer"
+            v-bind:show-menu="showMenu"
+            @refresh-offers="refreshOffers"
+          />
+        </tbody>
+    </table>
+
+    <!--
+    access controls
+  -->
+    <div class="access flex" style="margin-top:5rem">
+        <h5 class="muted vaHack">people @relations</h5>
+
+      <div class="flex">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <img class="ab__userpic"
+        src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg">
+        <a class="ui basic button">+</a>
+        <a class="ui basic button mrgn0" id="accessControlsBtn"
+        onclick="$( '#accessControls' ).toggle();$( '#accessControlsBtn' ).toggleClass( 'active' );">
+          manage</a>
+      </div>
+
+      <div id="accessControls">
+
+      </div>
+    </div>
+
+
+    <!--<div id="logControls" class="ui secondary menu secondary-navigation">
+
+        <h5 class="item muted"><i class="clock outline icon"></i> filter</h5>
+        <a class="item active">sell</a>
+        <a class="item">employment</a>
+
+        <select class="ui dropdown item">
+          <option value="0">all entities</option>
+          <option value="1">GRIN tech</option>
+          <option value="2">Launcher</option>
+        </select>
+
+        <div class="right menu">
+
+          <h5 class="item muted">create</h5>
+          <div class="item" style="padding:0 !important">
+            <a class="ui basic ui button"
+              v-on:click.prevent="$parent.offerType = 'employment'">
+              employment offer</a>
+          </div>
+
+          <div class="item" style="padding:0 !important;margin: 0 !important">
+            <a class="ui basic ui button"
+              v-on:click.prevent="$parent.offerType = 'sell'">
+              + offer</a>
+          </div>
+
+        </div>
+
+    </div>-->
+
+    <offer-type-modal
+      v-bind:offer-type="offerType"
+      @refresh-offers='refreshOffers'
+    />
+</div>
+<div
+  v-else
+  class="offers-wrap"
+>
+    <offer-display
+      v-if="selectedOffer"
+      v-bind:offer="selectedOffer"
+      @accept-offer="acceptOffer"
+    />
+</div>

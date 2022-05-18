@@ -1,0 +1,34 @@
+[
+{
+    "model": "accounts.user",
+    "pk": null,
+    "fields": {
+        "password": "password disabled",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-05-08T08:42:21.621Z",
+        "username": "Pheme",
+        "email": "pheme@holons.me",
+        "name": "",
+        "handle": "pheme",
+        "company_name": "",
+        "phone_number": "disabled_08",
+        "token": "",
+        "phone_confirmation_code": "",
+        "phone_confirmed": false,
+        "userpic": "",
+        "account_status": "",
+        "cors_storage": "",
+        "groups": [],
+        "user_permissions": [],
+        "mailboxes": [],
+        "rays": [],
+        "ray_messages": [],
+        "rays_direct": []
+    }
+}
+]

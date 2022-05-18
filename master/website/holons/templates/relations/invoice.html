@@ -1,0 +1,23 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+{% block content_area %}
+
+
+
+    <div style="max-width:800px; margin: 10vh auto 5vh auto">
+      <div id="invoice-app"></div>
+    </div>
+
+
+
+<script>
+  window.invoiceIsActive = true;
+  window.invoiceData = {{ invoice_data | safe }};
+</script>
+
+
+<style media="screen">
+  .workspaces-template { display: none }
+</style>
+
+{% endblock %}

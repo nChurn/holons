@@ -1,0 +1,221 @@
+<div class="content">
+          <h2 class="title">routing</h2>
+
+          <div class="ui secondary menu secondary-navigation pdng0"
+            style="margin-bottom:2rem !important">
+
+              <a
+                class="item"
+                data-tab="inrays"
+                v-bind:class="{'active': activeScope === 'rays'}"
+                @click.prevent="activeScope = 'rays'"
+              >
+                ray starters
+              </a>
+
+              <a
+                class="item"
+                data-tab="inmail"
+                v-bind:class="{'active': activeScope === 'insider'}"
+                @click.prevent="activeScope = 'insider'"
+              >
+                <i class="asterisk icon"></i> insider rays
+              </a>
+
+              <a class="item disabled">
+                <i class="clock outline icon"></i> in mail</a> <!--
+                  through forms submission to webhooks, huh? -->
+
+              <a class="item">recurring</a>
+
+
+              <div class="right menu">
+                <a
+                  class="item"
+                  data-tab="new"
+                  v-if="activeScope === 'rays'"
+                  @click.prevent="addRayTeplate"
+                >
+                  + new
+                </a>
+                <a class="item" href="" target="_blank">
+                  <i class="square full icon"></i>the why
+                </a>
+                <!--<a
+                  class="item"
+                  data-tab="new"
+                  v-if="activeScope === 'mail'"
+                  @click.prevent="addMailTeplate"
+                >
+                  + new
+                </a>-->
+              </div>
+          </div>
+
+          <!--<div class="tab active" data-tab="existing">
+            <table class="ui hm table">
+              <tr>
+                <td>utility name</td>
+                <td>stats 30\90 days</td>
+                <td>controls</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tab" data-tab="new">
+            single entry: utility name + group + message
+          </div>-->
+
+          <!--
+          ray starters __ add new
+          starts -->
+          <div
+            class="tab"
+            data-tab="new"
+            v-if="activeScope === 'rays' && addNew"
+          >
+            <div class="ui form">
+              <div class="ui field">
+                <input
+                  v-model='templateName'
+                  type="text"
+                >
+              </div>
+              <div class="ui field">
+                <wysiwyg v-model="templateBody" />
+              </div>
+              <div class="ui field">
+                <button
+                  class="ui button"
+                  @click.prevent="cancelCreateTemplate"
+                >
+                Cancel
+                </button>
+                <button
+                  class="ui button"
+                  v-if="!templateId"
+                  @click.prevent="createTemplate"
+                >
+                Create
+                </button>
+                <button
+                  v-if="templateId"
+                  class="ui button"
+                  @click.prevent="editTemplate"
+                >
+                Save
+                </button>
+              </div>
+
+            </div>
+          </div> <!--
+          ray starters __ add new
+          ends -->
+
+          <!--
+          mail add new modal
+          starts -->
+          <div
+            class="tab"
+            data-tab="new"
+            v-if="activeScope === 'mail' && addNew"
+          >
+          <p>No mail routes yet</p>
+
+          </div> <!--
+          mail add new modal
+          ends -->
+
+
+          <!--
+          ray starters list
+          starts -->
+          <table
+            v-if="activeScope === 'rays' && !addNew"
+            class="ui hm table routingTable">
+
+              <thead>
+                <tr>
+                  <td></td> <!-- name -->
+                  <td style="width:100px">
+                    conversations
+                    started over last 90 days</td>
+                  <td style="width:100px">30 days</td>
+                  <td style="width:200px">assigned to</td>
+                </tr>
+              </thead>
+
+              <tr>
+                <td>
+                  <span class="cannedRay--default">
+                    profile default starter route <br>
+                    on <a class="hm link">holons.me/grintender</a> </span>
+                </td>
+                <td><h3>10</h3></td> <!-- TODO thread count -->
+                <td><h3>1</h3></td> <!-- TODO thread count -->
+                <td>[ address book component ]</td>
+                <td></td>
+              </tr>
+
+              <tr v-for="item in cannedRays" v-bind:key="item.id">
+                <td class="cannedRay__name">
+                  <wrench-menu
+                    v-bind:item="item"
+                    v-bind:show-menu="item === activeMenu"
+                  />
+                  <a v-bind:href="'/' + item.slug" target="_blank"
+                  class="hm link">{{ item.title }}</a>
+                </td>
+
+                <td><h3>10</h3></td> <!-- TODO thread count -->
+                <td><h3>1</h3></td> <!-- TODO thread count -->
+                <td>
+                    <div id="gosh" class="ui inline dropdown">
+                      <div class="text">
+                        <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                        class="ui avatar image"> Jenny Hess </div><i class="dropdown icon"></i>
+                        <div class="menu"><div class="item">
+                  <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                  class="ui avatar image"> Jenny Hess </div><div class="item">
+                    <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                    class="ui avatar image"> Elliot Fu </div>
+                    <p class="item muted">It's possible to (assign) people that you have a working relationship with.</p>
+                    <p class="item muted">So, you either hire them, they hire you, or you're connected through some org (e.g. have the same employer)</p></div>
+                  </div></td>
+              </tr>
+
+          </table> <!--
+          ray starters list
+          ends -->
+
+          <!--
+          insider rays list
+          starts -->
+          <div
+            v-if="activeScope === 'insider' && !addNew"
+            class="ui hm table">
+            <table class="ui hm table routingTable">
+              <tr>
+                <td>ping</td>
+                <td><a class="hm link" target="_blank"
+                  href="https://odyssey.holons.me/nodes">node</a></td>
+                <td>assign to</td>
+              </tr>
+
+              <tr>
+                <td>mention</td>
+                <td>workspace</td>
+                <td>Default: self.user</td>
+              </tr>
+            </table>
+          </div><!--
+          insider rays list
+          ends -->
+
+<!--
+          <p>In nutshell, it's a tool to kick start conversations and build lead magnets too. <br>
+            e.g. <a class="hm link"
+            href="https://holons.me/faith/drip-rebuilt/" target="_blank">How we rebuild bloody Drip</a></p>
+-->
+
+        </div>

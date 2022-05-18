@@ -1,0 +1,154 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} Corinth Trade Company {% endblock %}
+
+{% block content_area %}
+
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:2vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+				<a href="/grintender"><h3>bio</h3></a>
+				<span>/</span>
+				<a href="/grintender/deeds"><h3 class="active">deeds</h3></a>
+				<span>/</span>
+				<a href="/grintender/words"><h3>words</h3></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="portfolio-deed">
+		<p id="profileFooter">
+			this is <a href="https://odyssey.holons.me/en/nodes/prudentia-justice/identity">public profile</a>
+			powered by <a href="https://holons.me/">holons.me</a>.
+			<i class="check icon" style="color:#7b8f50"></i>identity, background and track record are
+			<b style="color:#7b8f50">verified</b>.
+		</p>
+	</div>
+
+	</div>
+
+	<article>
+
+			<div class="single-intro" style="margin:0 !important">
+
+			    <div class="deed-content">
+			      <h1 class="one">Corinth Trade Company</h1>
+
+						<p class="refs">
+							Business website built on Tilda
+							by <a href="https://the.gt/" target="_blank">GRIN tech</a> agency</p>
+
+						<!--<p>
+							<b style="text-transform:uppercase">The challenge:</b>
+						parse ~10k SKUs from the biggest EU warehouse store daily, <br>
+						build storefront and marketing</p>-->
+
+						<div class="ui grid">
+
+							<div class="eight wide column">
+								<p class="refs">
+									Art-director: <a href="/grintender">Dmitrii B.</a> <br>
+									Designer: <b>Artem K.</b> <br>
+								</p>
+
+								<h2 style="text-align:right">process</h2>
+
+								<p>
+									For business websites w/o custom features
+									or integrations wwe often use Tilda
+									in order to re-alocate dev budget on design</p>
+
+								<h3>design reference</h3>
+								<p>Duh.</p>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/F242uH2r5z8.jpeg">
+
+								<p>Updated design reference:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/123.jpeg">
+
+								<h3>Home page concepts</h3>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/p62eQ8WyU8.jpeg">
+
+								<h3>MOAR MEAT</h3>
+								<p>As it often happens w/ business websites
+									– client had no idea what content we can add beyond
+									promo video, logotype and lead capture form :D</p>
+
+								<p>Ok, so we wrote some dull texts and redesigned
+									these beauties for each industry present:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/q6HrJ_r8Db0.jpeg">
+
+								<br><br><br><br>
+
+
+							</div> <!-- process column ends -->
+
+							<div class="eight wide column" style="border-left:30px solid #23272B">
+								<h2>result</h2>
+
+								<h3>Final home page 1st screen</h3>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/corinth-hp.jpeg">
+
+								<h3>we did a promo video as well</h3>
+
+								<div class="iframe main-top__frame" id="promoVideoTop">
+									<iframe src="https://www.youtube.com/embed/1yCuLdbo0_w"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+									gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+									<!--<div class="ytLoader"><img class="cover" width="100%"
+										src="https://the.gt/wp-content/themes/the_gt01/images/yt-cover.jpg">
+										<img class="yt-playbtn"
+										src="https://the.gt/wp-content/themes/the_gt01/images/yt-playbtn.png">
+									</div>-->
+								</div>
+
+								<h3>graphics</h3>
+
+								<p>Supply chain example:</p>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/1.png">
+
+								<p>Agriculture</p>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/corinth-agricultural.png">
+
+								<p>Same graphics redesigned for mobile:</p>
+
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/234234.jpeg">
+
+								<h3>footer</h3>
+								<img src="https://holons.me/markets/wp-content/uploads/2021/06/footer.jpeg">
+							</div> <!-- result column ends -->
+						</div> <!-- content grid ends -->
+
+
+			  </div>
+			</div>
+
+	</article>
+
+
+{% include "portfolios/layouts/portfolio-footer.html" %}
+{# include "portfolios/layouts/badge.html" #}
+
+{% endblock %}

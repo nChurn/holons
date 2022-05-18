@@ -1,0 +1,421 @@
+
+#core-account {
+  background: transparent;
+  width: 100%;
+  min-height: 100vw;
+  padding: 5rem;
+  color: #fff;
+  margin-top:25vw
+}
+
+#identity h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem
+}
+
+
+   /* --------------------
+     acccounts
+   -------------------- */
+
+#card .left {
+  position: absolute;
+  left: 0;
+  /*width: 60vw;*/
+  height: 100vh;
+  background-image: linear-gradient(to right, #23272B, #23272B);
+  background: transparent
+}
+#card .right {
+  position: absolute;
+  right: 43%;
+  /*width: 60vw;*/
+  height: 100vh;
+  /*overflow: hidden;*/
+}
+/*#card .right .strip-top {
+  width: calc(50vw + 90px);
+  -webkit-transform: skewX(20deg) translateX(160px);
+          transform: skewX(20deg) translateX(160px);
+}
+#card .right .strip-bottom {
+  width: calc(50vw + 40px);
+  -webkit-transform: skewX(-15deg) translateX(90px);
+          transform: skewX(-15deg) translateX(90px);
+}*/
+#card .center {
+  position: absolute;
+  z-index: 601;
+  top: 13.25vh;
+  left: 5vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#card .card {
+  width: 300px;
+  height: 187.5px;
+}
+#card .flip {
+  width: inherit;
+  height: inherit;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: flip 2.5s ease;
+          animation: flip 2.5s ease;
+}
+#card .front,
+#card .back {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 15px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 10px 1px black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: linear-gradient(to right, #23272B, #23272B);
+  overflow: hidden;
+}
+#card .front {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+#card .strip-bottom,
+#card .strip-top {
+  position: absolute;
+  right: 0;
+  height: inherit;
+  background-image: linear-gradient(to bottom, #7b8f50, #7b8f50);
+  /*background-image: linear-gradient(to bottom, rgba(123,143,80,.05), rgba(123,143,80,.05));*/
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+}
+#card .strip-bottom {
+  width: 200px;
+  -webkit-transform: skewX(-15deg) translateX(50px);
+          transform: skewX(-15deg) translateX(50px);
+}
+#card .strip-top {
+  width: 180px;
+  -webkit-transform: skewX(20deg) translateX(50px);
+          transform: skewX(20deg) translateX(50px);
+}
+#card .logo {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+}
+#card .investor {
+  position: relative;
+  top: 30px;
+  left: 25px;
+  text-transform: uppercase;
+}
+
+#card .card-number {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  margin: 40px 25px 10px;
+  font-size: 23px;
+  font-family: 'cc font', monospace;
+}
+#card .end {
+  margin-left: 25px;
+  text-transform: uppercase;
+  font-family: 'cc font', monospace;
+}
+#card .end .end-text {
+  font-size: 9px;
+  color: rgba(255,255,255,0.8);
+}
+#card .card-holder {
+  margin: 10px 25px;
+  text-transform: uppercase;
+  font-family: 'cc font', monospace;
+  text-align: left;
+}
+
+#card .card {
+  -webkit-perspective: 1000;
+          perspective: 1000;
+}
+
+
+/* CORE */
+
+.noname {
+  margin-top:10%;
+  border: 1px solid #fff;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  width: 300px;
+  height: 187.5px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.noname .front {
+  background-image:none;
+  background: transparent !important;
+}
+
+/* GOLD */
+
+.account-gold .strip-bottom,
+.account-gold .strip-top {
+  background-image: linear-gradient(to bottom, #23272B, #23272B) !important;
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+}
+
+.account-gold .left {
+  position: absolute;
+  left: 0;
+  /*width: 60vw;*/
+  height: 100vh;
+  background-image: linear-gradient(to right, #23272B, #23272B);
+  background: transparent
+}
+
+/*.account-coin .front,
+.account-coin .back {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 10px 1px black;
+  background-image: linear-gradient(to right, #EEEEEE, #EEEEEE) !important;
+}
+.account__soul-col {
+  position: absolute;
+  z-index: 999;
+  height: 100vw;
+  overflow: hidden;
+  background: #23272B;
+  box-shadow: 1px 0px 10px 0px rgba(0,0,0,.5);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 60px !important;
+}*/
+
+/* COIN */
+
+.account-coin .strip-bottom,
+.account-coin .strip-top {
+  background-image: linear-gradient(to bottom, rgba(255,207,74,.99),
+  rgba(255,207,74,.99)) !important;
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+}
+
+.accounts-context {
+  position:absolute;
+  color:rgba(255,255,255,0.8) !important;
+  text-align:left;
+  left:14%;
+  top:23%
+
+}
+
+.accounts-context h3 {
+  padding-bottom: 2.8rem;
+}
+
+.accounts-context p{
+  line-height: 1.9rem !important;
+}
+
+.cta-holder {
+  position: absolute;
+  top: 25vh;
+  transform: skew(-20deg);
+  font-weight: 100;
+  padding-left: 1.5rem;
+}
+.cta-holder span:nth-of-type(1) { padding-left: 15px}
+.cta-holder span:nth-of-type(2) { padding-left: 30px}
+
+.cta-holder a {
+  color: #fff !important;
+  border-bottom: 2px solid #23272B
+}
+
+.cta-holder a:hover { border-bottom: 4px solid #23272B }
+
+#core__billing-holder {
+  padding-left: 2rem;
+  margin-top: 8.5rem;
+  font-weight: bold;
+}
+
+.reason  {
+  background: linear-gradient(to right, #23272B, transparent);
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  height: 60px;
+  display: flex;
+  justify-content: start;
+}
+
+#strip1 { z-index: 100 }
+#strip2 { z-index: 200 }
+#strip3 { z-index: 300 }
+#strip4 { z-index: 420 }
+#strip5 { z-index: 300 }
+#strip6 { z-index: 400 }
+
+#ace-fora {
+  z-index: 410;
+  position: absolute;
+  bottom: 55vh;
+  right: 0;
+  left: 30.5vw;
+  justify-content: space-between;
+  background: linear-gradient(to right,
+    rgba(123,143,80,.3), transparent);
+}
+
+#ace-faith {
+  z-index: 620;
+  position: absolute;
+  bottom: 45vh;
+  right: 0;
+  left: 55vw;
+  justify-content: space-between;
+  background: linear-gradient(to right,
+    #23272B, transparent);
+  background: #23272B;
+}
+
+#ace-faith a.button {
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.45) !important
+}
+
+#ace-faith a.button:hover {
+  color: #23272B !important
+}
+
+
+#ace-justice h3,
+#ace-moneta h3 {
+  color: rgba(255,255,255,.83);
+}
+
+
+#ace-identity h3,
+#ace-faith h3 {
+  color: rgba(255,255,255,.83);
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+#ace-identity {
+  z-index: 460;
+  position: absolute;
+  bottom: 35vh;
+  right: 0;
+  left: 57vw;
+  background: #23272B;
+}
+
+#ace-justice {
+  background: linear-gradient(to right,
+    rgba(123,143,80,.3), transparent);
+  z-index: 350;
+  position: absolute;
+  bottom: 25vh;
+  right: 0;
+  left: 25vw;
+}
+
+#ace-moneta {
+  background: linear-gradient(to right,
+    rgba(123,143,80,.3), transparent);
+  z-index: 350;
+  position: absolute;
+  bottom: 15vh;
+  right: 0;
+  left: 32vw;
+}
+
+#ace-core {
+  z-index: 320;
+  position: absolute;
+  bottom: 5vh;
+  right: 0;
+  left: 0vw;
+  justify-content: start;
+  background: linear-gradient(to right, #F7F8FA , transparent);
+}
+
+#ace-core a {
+  color: #23272B;
+  text-transform: uppercase;
+  border-bottom: 4px solid #23272B;
+  margin: 3px 6px;
+}
+#ace-core a:hover {
+  border-bottom: 3px solid #23272B;
+}
+
+
+#aboutIdentity {
+  margin: 0;
+position: absolute;
+right: 2vw;
+bottom: 2vh;
+z-index: 9999;
+    width: 250px;
+}
+
+.identity-logo {
+  width: 40px;
+}
+
+.identity-menu {
+  height: auto;
+}
+
+.identity-menu .item.active {
+  background: transparent !important;
+  border-radius: 4px 4px 0 0 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+  margin-bottom: 12px !important;
+  border-bottom: 1px solid #23272B !important;
+}
+
+#configFields div {
+  margin-bottom: 10px
+}
+#configFields label {
+  display: inline-block;
+  min-width: 100px;
+  text-transform: uppercase;
+    line-height: 30px;
+    font-weight: 500;
+    color: rgba(0,0,0,.73);
+}
+
+#configFields input {
+  background: none;
+    border: none;
+    border-bottom: 2px solid #23272B;
+    padding: 5px;
+}
+
+
+/* fixing profile pic image resizer */
+
+.cropper-bg {
+  background-image: none;
+  background:#23272B
+}

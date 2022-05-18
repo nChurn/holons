@@ -1,0 +1,118 @@
+#sibarTimer {
+  /*border-top: 1px dashed rgba(255,255,255,.4);
+  border-bottom: 1px dashed rgba(255,255,255,.4);*/
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.ttracker-container {
+    line-height: 1;
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0 auto;
+    top: 0;
+    text-align: center;
+}
+
+.ttracker-status {
+  display: inline-block;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.35);
+  left: 13px;
+}
+
+#ttracker {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.55) !important }
+
+#ttracker-tickets {
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#ttracker-tickets .ttracker-status-text::before {
+  content:"working on...";
+  font-size: 8px !important;
+  width: 100% !important;
+  color: rgba(255,255,255,.55) !important;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+#ttracker-tickets:hover .ttracker-status-text::before  {
+  content:"select";
+  color: rgba(255,255,255,.85) !important;
+}
+
+#ttracker-btn .ttracker-status-text::before {
+  content:"paused";
+  font-size: 8px !important;
+  width: 100% !important;
+  color: rgba(255,255,255,.55) !important;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+#ttracker-btn:hover .ttracker-status-text::before  {
+  content:"or hit t";
+  color: rgba(255,255,255,.85) !important;
+  left:10px;
+}
+
+.ttracker-status-ticket {
+  content:"today";
+  font-size: 8px !important;
+  width: 100% !important;
+  color: rgba(255,255,255,.55) !important;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+#ttracker .ttracker-status-text::before {
+  content:"today";
+  font-size: 8px !important;
+  width: 100% !important;
+  color: rgba(255,255,255,.55) !important;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+#ttracker:hover .ttracker-status-text::before  {
+  content:"details";
+  color: rgba(255,255,255,.85) !important;
+}
+
+
+#trackerEntry {
+  border-bottom: 30px solid #23272B;
+}
+
+#trackerEntry .flex {
+  border-top: 1px dashed rgba(0,0,0,.45);
+  padding: 20px 0;
+  justify-content: start;
+}
+
+#trackerJournal tr {
+  border-bottom: 1px dashed #23272B;
+}
+
+#timeTrackerSubmit { margin-right:70px }
+
+#timeTrackerSubmit:after {
+  content: "– or hit 'K'";
+  font-size: 12px;
+  position: absolute;
+  right:30px;
+  font-family: 'Poppins';
+  color: #23272B;
+  padding-left: 5px;
+  font-weight: 100
+}

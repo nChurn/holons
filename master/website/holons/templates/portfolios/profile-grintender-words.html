@@ -1,0 +1,93 @@
+{% extends "layouts/bare.html" %}
+{% load static %}
+
+{% block title %} Dmitrii B. @grintender | Words {% endblock %}
+
+{% block content_area %}
+
+<div style="padding:4rem">
+
+	<div class="ui grid"  style="margin-bottom:5vh;border-bottom: 30px solid #23272B">
+		<div class="four wide column">
+			<div class="flex">
+					<h3>Dmitrii B.</h3>
+					<!--<div>
+						<a class="ui basic tiny button" style="padding: 6px 12px">ray @grintender</a>
+					</div>-->
+			</div>
+			<!--<p class="p-desc--core">
+				I have founder & product owner experience with hands-on skills in design, code & marketing
+			</p>-->
+		</div>
+		<div class="twelve wide column">
+
+
+      <div class="profile__tabs">
+        <a href="/grintender"><h3>bio</h3></a>
+        <span>/</span>
+        <a href="/grintender/deeds"><h3>deeds</h3></a>
+        <span>/</span>
+        <a href="/grintender/words"><h3 class="active">words</h3></a>
+      </div>
+
+		</div>
+	</div>
+
+
+
+		<div class="ui grid">
+
+
+			<div class="four wide column">
+				<a href="https://the.gt/full-service-digital-agency/"
+				class="s-card magnum">
+
+					<h3 class="s-card__title">
+						can a full service agency
+						build you a business?</h3>
+					<!--<p class="s-card__desc">The biggest Russian tennis store.
+						Coded in <i class="python icon"></i>python
+						and <i class="vuejs icon"></i>vue.js</p>
+					<p class="s-card__desc">Discontinued coz of 13% margin rate</p>-->
+				</a>
+			</div>
+
+			<div class="four wide column">
+				<a href="https://odyssey.holons.me"
+				class="s-card reference">
+					<h3 class="s-card__title">Odyssey contributor</h3>
+				</a>
+			</div>
+
+			<div class="four wide column">
+				<a href="https://the.gt/wordsndeeds"
+				class="s-card archive">
+					<p class="s-card__role">publisher</p>
+					<h3 class="s-card__title">W&D</h3>
+					<p class="s-card__desc">Agency blog</p>
+					<p class="s-card__desc">1000+ pages of content experiments</p>
+					<p class="s-card__desc"><i style="color:crimson"
+					class="fire icon"></i>2k traffic</p>
+
+				</a>
+			</div>
+
+			<!--<div class="four wide column">
+				<a href="https://betches.com/how-to-train-for-your-first-triathlon/"
+				class="s-card">
+					<p class="gold s-card__status">holons gold exclusive</p>
+						<h3 class="s-card__title">milleniums fortune
+							article of some ssort with kinda long title</h3>
+
+				</a>
+			</div>-->
+
+
+		</div> <!-- tile grid endds -->
+
+</div>
+
+{% include "portfolios/layouts/badge.html" %}
+
+
+{% endblock %}

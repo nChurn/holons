@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+
+{% include "layers/sub_menu.html" %}
+
+
+<div class="ui secondary menu secondary-navigation">
+
+    <a class="item disabled"><i class="clock outline icon"></i>job openings</a>
+    <a class="item disabled"><i class="clock outline icon"></i>backlog</a>
+    <a class="item" href="/layers/people">my people</a>
+    <a class="item active">payroll</a>
+
+    <!--<a class="item disabled"><i class="clock outline icon"></i> People</a>
+    <a class="item disabled"><i class="clock outline icon"></i>TODOs</a>
+    <a class="item disabled"><i class="clock outline icon"></i>WIKIs</a>-->
+
+    <div class="right menu">
+      <!--<a class="item disabled">
+        <i class="circle icon gold-dot"></i>Hosting &amp; Asset Management</a>-->
+      <!--<a class="item" target="_blank"
+      href="https://odyssey.holons.me/en/nodes/fairchild-layers/time-tracker">
+      <i class="square full icon"></i>the why</a>-->
+    </div>
+
+</div>
+
+<div style="margin:2rem">
+
+
+
+
+  <div id="layersPeople">
+    <div class="outer">
+      <div class="inner">
+        <table class="ui hm table fixed">
+          <thead>
+            <tr>
+              <td rowspan="2">
+                list of people you have employment contract with <br><br>
+
+                <a class="ui basic button">+ offer</a>
+              </td>
+              <td colspan="2">
+                summary
+              </td>
+              <td rowspan="2" colspan="2">commitment</td>
+              <td rowspan="2">function</td>
+              <td rowspan="2">holons account bill</td>
+            </tr>
+            <tr>
+
+              <td>total due</td>
+              <td>taxes</td>
+              <!-- access controls ends -->
+
+            </tr>
+          </thead>
+            <tr>
+              <th>
+                <img src="https://holons.me/scaled/resize/100x100//usg/usg/soulspics/fNii1u_phsk.jpg"
+                width="40px">
+                Alex B.</th>
+              <td></td>
+              <td></td>
+              <!-- access controls ends -->
+
+              <td>hourly contract #1</td>
+              <td>payroll connected</td>
+
+              <td>dev</td>
+
+              <td>on us</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

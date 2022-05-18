@@ -1,0 +1,283 @@
+@import "global/_addressbook.css";
+@import "global/_clickme.css";
+@import "global/_layout.css";
+@import "global/_modal.css";
+@import "global/_table.css";
+@import "global/_typography.css";
+
+
+.pdng0 { padding: 0 !important }
+.mrgn0 { margin: 0 !important }
+
+.vaHack {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+::selection {
+	background: #23272B;
+	color: #F7F8FA
+}
+
+textarea {
+  background-color: #EFF0F2;
+  border-radius: 2px;
+  display: block;
+  min-height: 50px;
+  padding: 8px 12px;
+  border: none;
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+
+.hm.field.big {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  border: 1px solid #23272B;
+  font-family: 'Rubik Mono One';
+  font-size: 200%;
+}
+
+/*
+::-webkit-scrollbar addresses the background of the bar itself. It is usually covered by the other elements
+::-webkit-scrollbar-button addresses the directional buttons on the scrollbar
+::-webkit-scrollbar-track addresses the empty space “below” the progress bar
+::-webkit-scrollbar-track-piece is the top-most layer of the the progress bar not covered by the draggable scrolling element (thumb)
+::-webkit-scrollbar-thumb addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+::-webkit-scrollbar-corner addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+::-webkit-resizer addresses the draggable resizing handle that appears above the scrollbar-corner at the bottom corner of some elements
+*/
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important; /* make scrollbar transparent */
+}
+
+#holonsHeader {
+  border-radius: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3
+}
+
+#holonsHeader .item {
+  border-radius: 0;
+}
+
+.ui.basic.inverted.button, .ui.basic.inverted.buttons .button {
+      box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset !important;
+}
+
+.global-auth {
+  position: fixed;
+  bottom: 20px;
+  right: 15vw;
+  background: #23272B;
+    padding: 1rem;
+    border: 6px solid #fff;
+    animation: colorchange 20s linear 1s infinite;
+    max-width: 400px;
+}
+
+.global-auth p {
+  color: rgba(255,255,255,.9);
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.main-header span {display: block;
+    letter-spacing: 0.6px;
+    font-weight: 100}
+
+.main-header .item:not(.active) span:not(.faith-cv-link)::first-letter {color:rgba(255,255,255,.55)}
+
+.main-header .item:not(.active) span.faith-cv-link  span {display: inline; color:rgba(255,255,255,.55)}
+
+.version, .version a {
+  color: rgba(255,255,255,.25);
+}
+
+.version a:hover {
+  color: rgba(255,255,255,.35);
+}
+
+.gold-dot {
+  color: #FFCF4A;
+  font-size: 8px !important;
+  position: relative;
+  top: -2px;
+}
+
+
+.hm.secondary.menu { padding: 0}
+.hm.secondary.menu .item:first-of-type {margin-left:0}
+.hm.secondary.menu .item:last-of-type {margin-right:0}
+.ui.secondary.menu .active.item {border-radius: 2px}
+
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.flex.col { flex-direction: column}
+
+
+#odyssey-feature {
+  background: #fff;
+  color: rgba(0,0,0,.91);
+  padding: 30px 15px;
+}
+
+.odyssey-link,
+#odyssey-feature a {
+  color: #23272B;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+.aint-mobile {
+  display: none;
+  background: #23272B;
+  text-align: center;
+  padding:10rem 2rem 0 2rem;
+}
+
+.aint-mobile-svg {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30%;
+}
+
+.aint-mobile  h3 {
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 1025px) {
+
+.aint-mobile {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right:0;
+
+}
+
+}
+
+
+.item.disabled {
+  color: rgba(0,0,0,.4);
+}
+
+.item.soon:before {
+  display: block !important;
+  content:"coming soon";
+  font-size: 8px;
+  position: absolute;
+  top:-20px;
+}
+
+.menu.inverted { background:#23272B }
+.menu.inverted .item { color: #fff }
+.menu.inverted .item:hover { font-weight: bold }
+
+
+.sidebarAlso {
+  color: rgba(255,255,255,.6);
+  font-size: 10px;
+  display: block;
+  padding-left: 10px;
+  border-bottom: 1px dashed rgba(255,255,255,.25)
+}
+
+.sidebarAlso:hover {
+  cursor: pointer;
+  color: rgba(255,255,255,.8);
+}
+
+.sidebarAlso i { font-size: 8px !important }
+
+#generateCodeProgress {
+  min-width: 400px;
+  position: relative;
+  top: 1px;
+}
+#inviteCode {
+  background: none;
+  border: 1px solid #23272B;
+  height: 36px;
+}
+
+#unpaidAccount {
+  border: 2px solid #7b8f50;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin: 2rem;
+}
+
+.ui.selection.active.dropdown .menu { border-color: #23272B }
+.ui.secondary.menu .dropdown.item>.menu, .ui.text.menu .dropdown.item>.menu {
+  border-radius: 2px 2px 0 0;
+  width: 100%;
+}
+
+#logControls {
+  overflow: initial;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+    /* border-top: 1px solid #23272B; */
+    /* border-right: 1px solid #23272B; */
+  min-width: 80%;
+  height: 40px !important;
+  line-height: 40px;
+  box-shadow: 1px -1px 1px 1px rgba(0,0,0,.03);
+  border-radius: 2px 2px 0 0;
+}
+
+.ui.button { border-radius: 2px !important }
+
+.ui.basic.positive.button,
+.ui.basic.positive.buttons .button {
+  color: #7b8f50 !important;
+  box-shadow: 0 0 0 1px #7b8f50 inset!important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ui.basic.positive.button:hover { background: #7b8f50; color: #F7F8FA }
+
+
+.ui.dropdown .menu>p.item {
+  max-width: 200px;
+  white-space: break-spaces;
+  color: rgba(35, 39, 43, 0.73);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.ui.dropdown .menu>p.item:not(:last-of-type) { padding-bottom: 0 !important }
+
+.ui.avatar.image,
+.ui.avatar.image img,
+.ui.avatar.image svg,
+.ui.avatar.images .image,
+.ui.avatar.images img,
+.ui.avatar.images svg { border-radius: 2px }

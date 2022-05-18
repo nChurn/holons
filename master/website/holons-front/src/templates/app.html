@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+      <link rel="stylesheet" href="css/main.css">
+      
+      <link rel="icon" href="img/favicon.ico" sizes="32x32" />
+      <link rel="icon" href="img/favicon.ico" sizes="192x192" />
+      <link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+      
+      <title>Holons</title>
+      
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+
+
+
+
+
+<!--
+soul
+--->
+<div class="account__soul-col" style="position:absolute;width:8%;">
+
+  <img id="userPic" src="img/soul-pic3.jpg"
+  class="identity__img">
+
+  <br><br>
+
+  <a href="account.html" id="userName" style="color: rgba(255,255,255,.35)">
+    Hello, <br>
+    soul #456</a>
+
+  <br><br>
+
+  <a class="account__soul-col--item" id="ttracker" href="time.html"
+  style="border-top: 1px solid rgba(255,255,255,.15);border-bottom: 1px solid rgba(255,255,255,.15);">
+      <span style="font-size: 12px;width:100%;text-align:center;">00:00</span>
+      <span class="ttracker-status-text"></span>
+  </a>
+
+  <a class="account__soul-col--item" id="ttracker-btn"
+  style="border-bottom: 1px solid rgba(255,255,255,.15);">
+    <span class="ttracker-status"></span>
+    <span class="ttracker-status-text"></span>
+  </a>
+
+  <br>
+
+
+
+
+
+
+  <!--<h4 style="padding:100% 0">
+    r <br>
+    e <br>
+    a <br>
+    d <br>
+      <br><br>
+    o <br>
+    n <br>
+    l <br>
+    y <br>
+  </h4>-->
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br>
+
+  <a href="fora.html">
+    <img src="img/fora.svg" id="fora"
+    width="44px;" style="margin-bottom: 3px;">
+  </a>
+  <a href="#">
+    <img src="img/iceberg.svg" id="iceberg"
+    height="44px" style="margin-bottom: 3px;">
+  </a>
+  <a href="#">
+    <img src="img/wnd.svg"
+    height="44px" style="margin-bottom: 3px;">
+  </a>
+  <a href="#">
+    <img src="img/wnd2.svg"
+    height="44px">
+  </a>
+
+
+</div>
+
+
+<div id="userMenu">
+
+  <div class="ui grid" style="margin-bottom:1.5rem;">
+
+    <div class="six wide column">
+      <h1>soul #459</h1>
+    </div>
+
+    <div class="ten wide column">
+      <div class="ui primary button" style="width:100%">
+        Link phone number to finish account setup</div>
+    </div>
+
+  </div>
+
+  <table class="ui celled table">
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>{{ value }}</td>
+        </tr>
+        <tr>
+          <td>public name</td>
+          <td>{{ value }}</td>
+        </tr>
+        <tr>
+          <td>handler</td>
+          <td>{{ value }}</td>
+        </tr>
+        <tr>
+          <td>private handler</td>
+          <td>{{ value }}</td>
+        </tr>
+      </tbody>
+  </table>
+
+  <div class="ui secondary identity-menu menu" style="height:46px;">
+
+    <a class="item" data-tab="notifications">
+      Notifications
+    </a>
+
+    <a class="item active" data-tab="verification">
+      Verification
+    </a>
+
+    <a class="item" data-tab="tos">
+      TOS & Account Status
+    </a>
+
+    <a class="item" data-tab="billing">
+      Users & Billing
+    </a>
+
+  </div>
+
+  <div class="tabs-wrapper identity-tabs-wrapper">
+
+        <div class="ui tab" data-tab="notifications">
+
+          <p></p>
+
+          <table class="ui celled table notifications-table">
+
+            <tr>
+              <td></td>
+              <td>SMS</td>
+              <td>Browser</td>
+              <td>Telegram</td>
+            </tr>
+
+            <tbody>
+              <tr>
+                <td>New messages</td>
+                <td></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ui tab active" data-tab="verification">
+
+          <p>Opload gov issued ID</p>
+          <p>Upload utility bill</p>
+          <p>Upload photo of a bank card with your name on it</p>
+
+        </div>
+
+        <div class="ui tab" data-tab="tos">
+          <p>TOS & account termination info here</p>
+        </div>
+
+        <div class="ui tab" data-tab="billing">
+
+          <p>Pricing module is not yet built, so enjoy the free ride :)</p>
+
+          <p>Later on the pricing will be based on
+            time you used the system. </p>
+
+          <p>That way <a href="https://the.gt/" target="_blank">we are</a>
+            motivated to build an ecosystem with everything
+            in place for uninterrupted work, while not charging you an extra dime.</p>
+        </div>
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<div class="ui menu main-header fixed" style="padding-left: 60px;box-shadow: 3px 0px 10px 0px rgba(0,0,0,1);">
+
+    <a class="item" href="crm.html">Relations</a>
+    <a class="item" href="workspaces.html">Workspaces</a>
+    <a class="item" href="talent.html">Talent</a>
+    <a class="item" href="moneta.html">Moneta</a>
+    <a class="item" href="assets.html">Assets</a>
+    <a class="item" href="faith-vc.html" id="fait">Faith VC</a>
+
+
+
+  <div class="right menu" style="margin-right:10px;">
+      <a class="item">Log in</a>
+      <div class="item">
+        <div class="ui primary button">Finish account setup</div>
+      </div>
+
+
+
+    </div>
+</div>
+
+<!-- containers -->
+
+<div class="page-holder">
+
+
+        <div class="ui grid" style="width:100%">
+           <div class="fifteen wide column main-working">
+
+              <div class="white-block">
+
+<br><br>
+
+<div class="ui grid">
+
+  <div class="one wide column">
+
+  </div>
+    <div class="fifteen wide column main-working">
+  <div id="app">
+    <login-form v-if="showLogin"></login-form>
+    <work-spaces v-if="showWorkspaces"></work-spaces>
+  </div>
+    
+  </div>
+  </div>
+
+
+
+</div>
+</div>
+
+
+<div class="one wide column sidebar">
+
+  <img src="img/mercury-svg-icon.svg" class="main-logo">
+
+    <ul class="tab-vertical">
+
+        <li class="inboxe-tabs"><span class="hot-key">F1</span>
+          <a href="https://teleport.the.gt/">teleport</a></li>
+
+          <li class="inboxe-tabs"><span class="hot-key">F2</span>
+            <a href="#">rays</a></li>
+
+        <li class="inboxe-tabs active" id="email-tab"><span class="hot-key">F3</span>
+          <a href="index.html">email</a></li>
+
+        <li class="inboxe-tabs"><span class="hot-key">F4</span>
+          <div class="notifications-count">99</div>
+          <a href="phone.html">phone</a></li>
+
+        <li class="inboxe-tabs">
+          <a href="#">social</a></li>
+
+        <li class="inboxe-tabs">
+          <a href="#">ads</a></li>
+
+        <li class="inboxe-tabs">
+          <a href="#">offline</a></li>
+
+        <li class="inboxe-tabs">
+          <a href="#">
+            <img src="img/pulse.svg" width="38px">
+          </a>
+        </li>
+
+
+        <li class="sibader-mini-heading">
+
+        </li>
+
+        <li class="todo-tabs"><span class="hot-key">F4</span>
+          <div class="notifications-count">99</div>
+          <a href="workspace.html">
+          <img src="https://sun6-16.userapi.com/pgWPO15QaCJc3InPWL-mijjloVxhM03dh6Z2Qw/X9CpyO02eU8.jpg"
+          height="44px"></a></li>
+
+        <li class="todo-tabs"><span class="hot-key">F5</span>
+          <div class="notifications-count">99</div>
+          <a href="#">
+          <img src="https://sun6-13.userapi.com/MihJPwYxLWHSVTXqhFYFgQstW_RIP1mA8MhjFQ/R0olegXMZTE.jpg"
+          height="44px"></a></li>
+
+        <li class="todo-tabs"><span class="hot-key">F6</span>
+          <div class="notifications-count">99</div>
+          <a href="#">
+          <img src="https://sun6-16.userapi.com/pgWPO15QaCJc3InPWL-mijjloVxhM03dh6Z2Qw/X9CpyO02eU8.jpg"
+          height="44px"></a></li>
+
+          <li class="sibader-mini-heading">
+
+          </li>
+
+
+    </ul>
+
+    <div class="version">v0.01 proof of concept edition</div>
+
+</div>
+</div>
+
+<div class="page-holder__shape">
+<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800"><path d="M -44,-50 C -52.71,28.52 15.86,8.186 184,14.69 383.3,22.39 462.5,12.58 638,14 835.5,15.6 987,6.4 1194,13.86 1661,30.68 1652,-36.74 1582,-140.1 1512,-243.5 15.88,-589.5 -44,-50 Z" pathdata:id="M -44,-50 C -137.1,117.4 67.86,445.5 236,452 435.3,459.7 500.5,242.6 676,244 873.5,245.6 957,522.4 1154,594 1593,753.7 1793,226.3 1582,-126 1371,-478.3 219.8,-524.2 -44,-50 Z"></path></svg>
+</div>
+</div>
+
+
+
+<div class="aint-mobile">
+  <img src="img/mercury-svg-icon.svg" class="aint-mobile-svg">
+  <h1>Holons works on mobile only for Holons.Gold members</h1>
+</div>
+
+</body>
+</html>

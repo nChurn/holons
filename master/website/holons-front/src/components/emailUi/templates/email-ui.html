@@ -1,0 +1,182 @@
+<div id="parent" class="ui grid">
+    <!-- Modals -->
+    <mailbox-add
+        v-if="emailModal"
+        v-bind:selected-mailbox="selectedMailbox"
+        v-bind:show-forwarding-settings="showForwardingSettings"
+        v-bind:show-dns-settings="showDnsSettings"
+        v-bind:show-front-app-settings="showFrontAppSettings"
+    />
+    <mailbox-import
+        v-if="emailImportModal"
+    />
+    <email-settings
+        v-if="emailSettingsModal"
+    />
+    <email-pause-mailbox-modal
+        v-if="emailPauseMailboxModal"
+        v-bind:mailbox="selectedMailbox"
+    />
+    <email-compose-modal
+      v-if="emailComposeModal"
+    />
+    <!-- /Modals -->
+
+
+  <div class="eight wide column pdng0">
+    <div class="ui grid" style="margin-top:0">
+    <!-- Mailboxes controls tabs -->
+    <!-- <div class="thread-previews__controls" style="width: 100%;box-shadow: inset 3px 0px 10px 0px black;">
+      <div class="ui secondary menu thread-previews--filters" style="overflow: hidden">
+        <a class="item active" href="/"> Inboxes </a>
+        <a class="item" href="sequences.html"> Sequences </a>
+        <a class="item" href="forms.html"> Forms </a>
+        <a class="item" href="feeds.html"> Feeds @rays </a>
+      </div>
+    </div> -->
+    <!-- /Mailboxes controls tabs -->
+    <!-- Mailboxes folders  -->
+    <div class="email-inboxes eight wide column" id="email-inboxes">
+
+      <!--<input
+        type="button"
+        value="new message"
+        class="thread-control"
+        style="text-align:center;"
+        v-on:click.prevent="emailComposeModal = true"
+      />-->
+
+      <div>
+        <a id="platosPostCall"
+        v-on:click.prevent="emailComposeModal = true"
+        class="ui basic button">compose</a>
+      </div>
+
+
+        <div class="email-inboxes__item mail" style="border-top: 1px solid #e8eaed">
+          <div class="thread-previews__item--name">
+            assigned to me
+            <span class="notifications-count inverted">-</span> <br>
+          </div>
+        </div>
+
+        <div
+          class="email-inboxes__item mail"
+          @click="selectFolder('all-unread')"
+          v-bind:class="{ active: selectedMailbox.alias == 'all new folder'}"
+        >
+          <div
+            class="thread-previews__item--name"
+          >
+            all new
+            <span class="notifications-count inverted">{{ unreadMessagesCount }}</span> <br>
+          </div>
+        </div>
+
+      <!-- Mailboxes + controls -->
+      <div class="ui accordion">
+        <div class="title pdng0">
+
+          <h4 id="mailboxesTitle">
+            <i class="dropdown icon"></i>
+            mailboxes</h4>
+        </div>
+        <div class="content">
+          <mailboxes-attached
+              v-bind:mailboxes="mailboxes"
+          />
+        </div>
+      </div>
+      <mailboxes-pending
+          v-bind:mailboxes="mailboxes"
+      />
+
+      <div style="text-align:center">
+        <a
+          class="ui basic button"
+          v-on:click.prevent='openEmailModal()'
+        >
+          add new mailbox
+        </a>
+        <a
+          class="ui basic button"
+          v-on:click.prevent='openEmailImportModal()'
+        >
+          import
+        </a>
+      </div>
+      <!-- /Mailboxes + controls -->
+      <div class="email-inboxes__item mail" style="border-top: 1px solid #e8eaed;margin-top: 1rem">
+        <div class="thread-previews__item--name">
+          assigned to __
+          <span class="notifications-count inverted">-</span> <br>
+        </div>
+      </div>
+
+      <div class="email-inboxes__item mail">
+        <div class="thread-previews__item--name">
+          assigned to __
+          <span class="notifications-count inverted">-</span> <br>
+        </div>
+      </div>
+
+
+
+
+      </div>
+    <!-- /Mailboxes folders  -->
+
+
+    <!-- Mailbox threads -->
+    <div class="thread-previews eight wide column" id="thread-previews">
+
+        <mailbox-messages
+            ref="mailboxMessages"
+            v-bind:mailbox='selectedMailbox'
+            v-bind:key="selectedMailbox.id"
+        />
+
+    </div>
+    <!-- /Mailbox threads -->
+
+    </div>
+
+    <div id="rays--search" style="background: #F7F8FA">
+        <!--<div class="three wide column pdng0">
+          <div class="ui basic animated fade button"
+          onclick="$( '#routingSettings' ).addClass('active')"
+           style="box-shadow:none;padding: 6px 14px;margin-top: 1px">
+            <div class="visible content"><i class="hdd outline icon"></i></div>
+            <div class="hidden content button">routing</div>
+          </div>
+        </div>-->
+          <input type="text"
+            name="search"
+            v-model="searchString"
+            placeholder="search people & threads..."
+            v-on:keyup.enter="startSearch"
+          />
+    </div>
+  </div>
+
+  <div class="thread-working-area eight wide column"
+    id="email-thread-content" style="border-left: 1px solid #e8eaed">
+    <br>
+    <!-- Single thread -->
+    <email-thread-display
+        ref="showthreads"
+        v-if="selectedConversation"
+        v-bind:conversation="selectedConversation"
+        v-bind:key="selectedConversation.id"
+    />
+    <!-- /Single thread -->
+
+    <!-- Single email -->
+    <email-display
+        ref="showsinglemessage"
+        v-if="selectedMessage.id != 0"
+        v-bind:message="selectedMessage"
+        v-bind:key="selectedMessage.id"
+    />
+  </div>
+</div>

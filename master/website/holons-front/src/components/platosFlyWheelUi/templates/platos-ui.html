@@ -1,0 +1,105 @@
+<div class="email">
+    <rays-add-message
+        v-if="addMessageModal"
+    />
+    <rays-add
+        v-if="raysModal"
+    />
+    <rays-settings
+        v-if="raysSettingsModal"
+        v-bind:ray="selectedRaySettings"
+    />
+
+
+                          <div v-if="platoAccountIsPaid || (!platoAccountIsPaid && platoBidsCount < 40)"
+                            id="parent" class="ui grid">
+
+                            <div class="seven wide column" style="border-right: 1px solid #e8eaed">
+                             <div class="ui grid">
+
+                               <div
+                               v-if="!platoAccountIsPaid && platoBidsCount > 15"
+                               id="unpaidAccount" style="margin-bottom: 2rem;border-bottom:1px solid #e8eaed">
+                                 <p>pardon the interruption, <br>
+                                   but Plato's Flywheel is not included in Holons Core subscription</p>
+
+                                 <div style="text-align:right">
+                                   <a class="hm link" style="text-transform: uppercase"
+                                   href="/platos-flywheel/subscription">subscribe</a>
+                                 </div>
+
+                               </div>
+
+                                          <div class="email-inboxes eight wide column pdng0" id="email-inboxes">
+
+                                            <!--<div id="customPlatosRay">
+                                              <i class="circle icon gold-dot"></i> h/all
+                                            </div>-->
+
+
+                                            <!--<div style="border-bottom:1px solid #e8eaed">
+                                              <a
+                                              id="platosPostCall"
+                                              onclick="$( '#platosPostingModal' ).addClass('active')"
+                                              class="ui basic button">post</a>
+                                            </div>-->
+
+
+
+
+                                            <platos-rays-attached v-bind:rays="rays" />
+                                            <a class="email-inboxes__add-new" v-on:click.prevent='openRaysModal()'> + </a>
+                                            <br><br><br><br>
+                                            <a class="email-inboxes__add-new settings"><img src="/static/img/holons2.svg" id="holonsIcon"> <span style="position: relative;top: -2px;left: -5px;">settings</span></a>
+                                          </div>
+                                          <!-- email thread previews -->
+                                          <rays-messages
+                                              v-bind:ray='selectedRay'
+                                              v-bind:is-custom='isCustom'
+                                          />
+                             </div>
+                            </div>
+                            <!-- email inboxes -->
+
+
+                            <!-- email thread working area -->
+                            <div class="thread-working-area nine wide column" id="email-thread-content">
+                              <rays-display v-if="selectedMessage" v-bind:message="selectedMessage" />
+                            </div>
+                          </div>
+
+
+                          <div v-if="!platoAccountIsPaid && platoBidsCount >= 5">
+                            <h1>ok, sorry you do need a subscription</h1>
+                            <a onclick="$( '#platosSubscriptionModal' ).addClass('active')"
+                            class="ui basic button" href="/platos-flywheel/subscription">subscribe</a>
+                          </div>
+
+                          <div id="platosPostingModal" class="hm modal">
+                            <div class="content">
+                              <h2 class="title">post to plato's flywheel</h2>
+
+                              <input class="hm input"
+                              type="text" name="" value="" placeholder="title, e.g. looking for...">
+
+                              <br><br>
+
+                              <textarea placeholder="what do you have in mind?"
+                              name="name" rows="16" cols="80"></textarea>
+
+                              <br>
+
+                              <a class="ui basic button">post</a>
+
+                              <br><br>
+
+                              <p class="muted" style="text-align:center">
+                                There is a light hearted moderation in place. <br>
+                                Responses will be routed to <a class="hm link" href="/rays">#rays</a>
+                              </p>
+
+                            </div>
+                          </div>
+
+</div>
+<!-- /HTML-layout -->

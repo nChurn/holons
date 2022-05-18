@@ -1,0 +1,337 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content_area %}
+
+
+{% include "schedule-meet/partials/header.html" %}
+
+<div id="meet-meet-wrapper" style="padding:4rem 2rem">
+  <div class="ui grid">
+
+
+    <div class="six wide column">
+
+        <div class="ui hm secondary menu secondary-navigation">
+
+          <h2 style="padding-left:0"
+          class="item">Journal</h2>
+
+          <div class="menu right">
+            <a class="item active">Open</a>
+            <a class="item disabled soon"><i class="clock outline icon"></i> Archive</a>
+          </div>
+
+        </div>
+
+      <table class="ui table hm">
+        <thead>
+          <tr>
+            <th></th>
+            <th> [event type select filter]</th>
+            <th>[status filter]</th> <!-- meh, make offer, follow up -->
+            <th></th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Andre Palmer</td>
+          <td>white label agency call</td>
+          <td>make offer</td> <!-- statuses:
+
+            1. scheduled
+              > what if it's re-scheduled
+              > what happens to the statuus after the meeting date\time elapsed?
+              >> pending status update
+
+            2.1 I'm not interested
+            2.2 Make offer
+            3.2. Waiting for decision \ feedback
+            4. follow up
+            5.1 success
+            5.2. no luck
+          -->
+          <td>
+            <div class="ui dropdown icon item">
+              <i class="wrench icon"></i>
+              <div class="menu">
+                <div class="item">
+                  upd: I'm not interested
+                </div>
+                <div class="item">
+                  upd: Make offer
+                </div>
+                <div class="item">
+                  upd: waitinng for decision \ feedback
+                </div>
+                <div class="item">
+                  upd: followed up #1
+                </div>
+                <div class="item">
+                  upd: followed up #2
+                </div>
+                <div class="item">
+                  upd: success
+                </div>
+                <div class="item">
+                  upd: no luck
+                </div>
+                <div class="item">
+                  <i class="archive icon"></i> archive
+                </div>
+                <div class="item">
+                  upd: re-scheduled
+                </div>
+
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+    </div> <!-- left col ends-->
+
+    <div class="six wide column">
+
+        <div class="ui hm secondary menu secondary-navigation">
+
+          <a class="item active">Personal</a>
+          <a class="item disabled soon"><i class="clock outline icon"></i> Team</a>
+
+            <div class="right menu">
+              <!--<a onclick="$( '#oneOffEventDummyModal' ).addClass('active')"
+              class="item"><i class="paper plane outline icon"></i>
+              one-off meeting invite</a>-->
+
+              <h2 class="item">types</h2>
+            </div>
+
+        </div>
+
+
+
+        <table class="ui table hm">
+
+          <thead>
+            <tr>
+              <th><a onclick="$( '#addEventTypeDummyModal' ).addClass('active')"
+              class="item ui basic button">+ type</a></th>
+              <th>last 90 days</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>the.gt : discovery call</td>
+              <td>30</td>
+              <td>
+                <div class="ui dropdown icon item">
+                  <i class="wrench icon"></i>
+                  <div class="menu">
+                    <div class="item">
+                      open
+                    </div>
+                    <div class="item">
+                      edit
+                    </div>
+                    <div class="item">
+                      delete
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- TODO delete in production -->
+        <a class="ui basic button"
+        href="/booking-example">
+          book a call dummy screen
+        </a>
+
+    </div><!-- central col ends -->
+
+    <div style="border-left: 1px solid #e8eaed;
+    color: rgba(35,39,43,.71);padding-top:0"
+    class="four wide column">
+
+
+      <div class="meet__mc--item">
+        <h5 style="margin-top:0">your timezone</h5>
+          <span>
+            <i class="circle outline icon"></i>
+            London, UTC+01</span>
+      </div>
+
+      <div class="meet__mc--item">
+        <h5>controls</h5>
+          <span>
+            <i class="circle outline icon"></i>
+            capped to 5 meetings per day</span>
+          <span>
+            <i class="circle outline icon"></i>
+            No meetigns on Monday & Friday</span>
+          <span>
+            <i class="circle outline icon"></i>
+            Calls between 12 AM and 19 PM</span>
+          <span>
+            <i class="circle outline icon"></i>
+            ppl can't schedule the same day</span>
+      </div>
+
+      <div class="meet__mc--item">
+        <h5><i class="clock outline icon"></i> <del>branding</del></h5>
+        <span>//coming soon</span>
+        <!--<span>
+          <i class="check icon"></i>
+          Logo uploaded</span>
+        <span>
+          <i class="check icon"></i>
+          Colors set</span>-->
+      </div>
+
+      <div class="meet__mc--item">
+        <h5>reminders</h5>
+        <span>
+          <i class="circle outline icon"></i>
+          ???</span>
+      </div>
+
+      <br><br><br>
+
+      <button style="width:100%"
+      onclick="$( '#tuneMeetingsDummyModal' ).addClass('active')"
+      class="ui basic icon button">
+        <i class="wrench icon"></i>
+        tune
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<div id="addEventTypeDummyModal" class="hm modal">
+  <div class="content">
+    <h2 class="title">add new event type</h2>
+
+    <div class="ui grid">
+      <div class="ten wide column">
+        <h3>Name</h3>
+        <div class="ui input">
+          <input type="text" placeholder="discovery call">
+        </div>
+        <h3>Duration (minutes)</h3>
+        <div class="ui input">
+          <input type="number" value="30" min="0">
+        </div>
+
+        <!--
+        i.e. scheduling request -> confirmation from host -> event creation
+              VS. i.e. scheduling request -> event creation
+        <h3></h3>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Require confirmation</label>
+          </div>
+        </div>-->
+      </div>
+
+      <div class="six wide column">
+        <h4><i class="clock outline icon"></i> coming soon</h4>
+        <p><i class="circle outline icon"></i> billing</p>
+        <p><i class="circle outline icon"></i> team routing</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="tuneMeetingsDummyModal" class="hm modal">
+  <div class="content">
+    <h2 class="title">tune settings</h2>
+
+    <p>These settings apply to ALL event types you have</p>
+
+    <br><br>
+
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h3>Daily meetings limit</h3>
+        <div class="ui input">
+          <input type="number" value="5" min="0" max="100">
+        </div>
+
+        <h3>timezone</h3>
+        <!-- TODO:
+        1. detect timezone with JS
+        2. keep doinng cchecks on the background
+        3. show promt when change is detected -->
+        detected: (11.12 PM) – (23.12) – (UTC+1:00)
+        <p><a class="hm link">change</a>
+          / if we detect timezone change,
+          we'll ask for change confirmation automatically</p>
+
+
+        <h3>days available</h3>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Monday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Tuesday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Wednesday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Thursday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Friday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Saturday</label>
+          </div>
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Sunday</label>
+          </div>
+        </div>
+      </div>
+      <div class="eight wide column">
+        <h3>uneditable defaults</h3>
+        <p><i class="check icon"></i> ppl can't schedule the same day</p>
+
+        <p>Reminders</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!--<div id="oneOffEventDummyModal" class="hm modal">
+  <div class="content">
+    <h2 class="title">create one-off meeting invite</h2>
+
+
+  </div>
+</div>-->
+
+
+{% endblock %}

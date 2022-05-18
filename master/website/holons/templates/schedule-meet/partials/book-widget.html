@@ -1,0 +1,115 @@
+<script>
+    function avaliable() {
+        return {
+            Mon: [
+                '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'
+            ],
+            Tue: [
+                'a', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'
+            ],
+            Wed: [
+                '0b', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'
+            ],
+            No: [
+                '0c', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'
+            ],
+            Wow: [
+                '09d', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'
+            ],
+            Sat: [ '0e', '10:00', '11:00', '12:00', '23:00' ]
+        }
+    }
+</script>
+
+<div class="ui grid"  wire:ignore wire:model="a"
+     x-data="{ lang: 'en-US', today: new Date(), time: null, day: null, month: null, year: null, avaliable: avaliable() }"
+     x-init="() => { day=today.getDate(); month=today.getMonth(); year=today.getFullYear();  }"
+     x-bind:style="'max-height: ' + $refs.calendarTable.offsetHeight + 'px'"
+>
+    <div class="ten wide column">
+      <table x-ref="calendarTable" class="ui hm table">
+
+              <div class="flex">
+                  <h4 class="subtitle" x-text="Intl.DateTimeFormat(lang, { year: 'numeric', month: 'long' }).format(new Date(year, month, 1, 0, 0, 0, 0))">Loading...</h4>
+                  <div class="inline-flex ml-auto space-x-2">
+                      <button type="button" class="ui icon basic button"
+                              x-bind:disabled="month===today.getMonth() && year===today.getFullYear()"
+                              x-on:click="day=null; month--; if(month<0) { year--; month=11; }"
+                      >
+                          <i class="angle left icon"></i>
+                      </button>
+                      <button type="button"
+                              class="ui icon basic button"
+                              x-on:click="day=null; month++; if(month>11) { year++; month=0; }"
+                      >
+                          <i class="angle right icon"></i>
+                      </button>
+                  </div>
+              </div>
+
+          <thead>
+          <tr>
+              <template x-for="(_,d) in Array.from({ length: 7 })" x-bind:key="d">
+                  <th x-text="new Intl.DateTimeFormat(lang , { weekday: 'short' }).format(new Date(0, 0, d, 0, 0, 0, 0))"></th>
+              </template>
+          </tr>
+          </thead>
+          <tbody>
+          <template x-for="week in Array.from({ length: new Date(year, month, 1).getDay() + new Date(year, month+1, 0).getDate() }).reduce((w, _, i) => { if(i % 7 === 0) w.push([]); w[w.length - 1].push(i - new Date(year, month, 1).getDay() + 1); return w }, [])"
+                    x-bind:key="week"
+          >
+              <tr>
+                  <template x-for="_day in week" x-bind:key="_day">
+                      <td>
+                          <template x-if="_day > 0">
+                              <div >
+                                  <input type="radio" name="day" x-model="day" x-bind:id="_day" x-bind:value="_day" x-on:input.stop="time=null" style="display:none"
+                                         x-bind:disabled="(today.valueOf() >= new Date(year, month, _day+1, 0, 0, 0, 0).valueOf()) || !Object.keys(avaliable).includes(new Intl.DateTimeFormat('en-US' , { weekday: 'short' }).format(new Date(year, month, _day)))"
+                                  />
+                                  <!-- TODO add class ACTIVE on click for open dates -->
+                                  <label x-bind:for="_day" x-text="_day"
+                                         x-bind:class="{
+                                                  'today': ((today.getDate() === _day) && (today.getMonth() === month) && (today.getFullYear() === year)),
+                                                  'open': (today.valueOf() <= new Date(year, month, _day+1, 0, 0, 0, 0).valueOf()) && Object.keys(avaliable).includes(new Intl.DateTimeFormat('en-US' , { weekday: 'short' }).format(new Date(year, month, _day))),
+                                                  'past': today.valueOf() >= new Date(year, month, _day+1, 0, 0, 0, 0).valueOf()
+                                             }"
+                                  ></label>
+                              </div>
+                          </template>
+                      </td>
+                  </template>
+              </tr>
+          </template>
+          </tbody>
+      </table>
+    </div>
+
+    <div class="six wide column" style="border-left: 1px solid rgba(34,36,38,.1)">
+      <template x-if="day">
+          <div class="flex col space-y-2">
+              <h4 class="subtitle" style="margin-bottom:1.75rem; text-align:center"
+              x-text="Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date(year, month, day, 0, 0, 0, 0))">Loading...</h4>
+              <ul x-ref="calendarTimes" class="overflow-y-scroll flex col space-y-2">
+                  <template x-if="avaliable[new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(year, month, day, 0, 0, 0, 0))].map(_time => new Date(year + '/' + (month + 1) + '/' + day + ' ' + _time).getTime()).filter(_time => _time > today).length">
+                      <template x-for="_time in avaliable[new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(year, month, day, 0, 0, 0, 0))].map(_time => new Date(year + '/' + (month + 1) + '/' + day + ' ' + _time).getTime()).filter(_time => _time > today)" x-bind:key="time">
+                          <li class="meet__widget--timeslot">
+                              <input type="radio" name="time" x-model="time" x-bind:value="_time - (today.getTimezoneOffset() * 60 * 1000)" x-bind:id="_time" style="display:none" />
+                              <div class="flex">
+                                  <label x-bind:for="_time" x-text="new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' }).format(new Date(_time))"></label>
+                                  <button class="ui basic button">Confirm</button>
+                              </div>
+                          </li>
+                      </template>
+                  </template>
+                  <template x-if="!avaliable[new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(new Date(year, month, day, 0, 0, 0, 0))].map(_time => new Date(year + '/' + (month + 1) + '/' + day + ' ' + _time).getTime()).filter(_time => _time > today).length">
+                      <div>No Slots Today</div>
+                  </template>
+              </ul>
+          </div>
+      </template>
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>

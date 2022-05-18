@@ -1,0 +1,43 @@
+<div
+    @click="menuToggle"
+    class="ui dropdown icon item muted"
+>
+  <i class="wrench icon"></i>
+  <div
+    class="menu"
+    style="display: block"
+    v-if="showMenu"
+  >
+    <!--<div class="item">
+      Open conversation
+    </div>-->
+    <div
+      class="item button"
+      v-on:click="$emit('create-invoice')"
+    >
+      $ Comb &amp; send invoice
+    </div>
+
+    <!-- by default the status is recieved -->
+    <div class="item">
+      launch
+    </div>
+    <div class="item">
+      Details
+    </div>
+
+    <!--<div class="item">
+      Direct link \ see offer
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="item">
+      Update follow up date
+    </div>
+    <div class="item">
+      Withdraw
+    </div>-->
+
+  </div>
+</div>

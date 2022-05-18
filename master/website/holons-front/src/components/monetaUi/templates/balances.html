@@ -1,0 +1,240 @@
+<div>
+
+  <div id="holderDecoration"></div>
+
+  <div id="balanceHolder" class="flex">
+    <div class="card vaHack">
+      <h5>$100 000 000</h5>
+    </div>
+    <div class="">
+      <div class="ui secondary menu">
+
+            <!--<h3 class="item vip-title" style="padding-left: 0; margin-left: 0">
+              Audits</h3>-->
+
+
+            <div class="right menu">
+
+              <a class="item button"
+              onclick="$( '#modal__send' ).addClass('active')">
+                <i class="circle icon"></i>send</a>
+              <a class="item"
+                onclick="$( '#modal__recieve' ).addClass('active')">
+                <i class="circle icon"></i>recieve</a>
+
+              <a class="item" id="withdraw-modal-open">
+                <i class="circle outline icon"></i>withdraw</a>
+              <a class="item"
+                onclick="$( '#modal__deposit' ).addClass('active')">
+                <i class="circle outline icon"></i>deposit</a>
+
+            </div>
+      </div>
+      <div class="ui secondary menu">
+
+            <div class="right menu">
+              <!--<a class="item"
+                onclick="$( '#modal__linkcard' ).addClass('active')">
+                <i class="circle outline icon"></i>link card</a>-->
+
+                <a class="item disabled"
+                    onclick="$( '#modal__getcard' ).addClass('active')">
+                    <i class="clock outline icon"></i>order physical card</a>
+
+                <a class="item disabled"
+                  onclick="$( '#modal__managecards' ).addClass('active')">
+                    <i class="clock outline icon"></i>manage virtual cards
+                </a>
+
+                <a class="item disabled"
+                  onclick="$( '#modal__managecards' ).addClass('active')">
+                    <i class="clock outline icon"></i>manage corporate cards
+                </a>
+
+            </div>
+      </div>
+    </div>
+  </div>
+
+<div  style="margin: 2rem;margin-right:0">
+  <h2 style="text-align:right">logs</h2>
+
+
+  <div id="moneta-log-controls"
+    class="ui secondary menu secondary-navigation">
+
+        <a class="item active" href="#">
+          all
+        </a>
+        <a class="item" href="#">
+          recieved
+        </a>
+        <a class="item" href="#">
+          sent
+        </a>
+        <a class="item" href="#">
+          upcoming
+        </a>
+        <a class="item" href="#">
+          pending approval (11)
+        </a>
+
+        <div class="right menu">
+
+          <a class="item" href="#">
+            2020
+          </a>
+          <a class="item" href="#">
+            past month
+          </a>
+          <a class="item active" href="#">
+            this month
+          </a>
+          <a class="item" href="#">
+            [ custom date picker ]
+          </a>
+        </div>
+
+  </div>
+
+
+  <table id="moneta-logs-table" class="ui table">
+    <thead>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <h2>+ $900</h2>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>today</td>
+        <td>to @kate</td>
+        <td>- $100</td>
+        <td>payroll</td>
+        <td>commitment №1234</td>
+      </tr>
+      <tr>
+        <td>yesterday</td>
+        <td>from @launcher</td>
+        <td>+ $1000</td>
+        <td>dividends</td>
+        <td>commitment №1234</td>
+      </tr>
+      <tr>
+        <td>20.01.2020</td>
+        <td>from @launcher</td>
+        <td>+ $1000</td>
+        <td>dividends</td>
+        <td>commitment №1234</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+  <!--
+
+  modals
+
+-->
+    <div class="hm modal" id="modal__send">
+      <div class="content">
+        <h2 class="title">Send</h2>
+        <div class="ui grid">
+
+          <div class="eight wide colum">
+            <h3>inside holons.me</h3>
+            commission: 0% <br>
+            [ recent x 10] <br>
+            [ search bar:
+            0. address book
+            1. handler \ phone number ]
+          </div>
+
+          <div class="eight wide column">
+            <h3>outside holons</h3>
+            [ card 2 card ] <br>
+
+            <p>Note,
+              you can also hook into PayPal
+              by adding your card there as payment method</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /modal -->
+
+    <!-- modal -->
+    <div class="hm modal" id="modal__recieve">
+      <h2 class="title">Recieve</h2>
+      <div class="ui grid">
+        <div class="eight wide column">
+          <h2>Everywhere</h2>
+          1. comb a quick link <br>
+          2. comb invoice <br>
+          3. request from address book: <br>
+          [ recent x 10] + search bar
+        </div>
+        <div class="eight wide column">
+          <h2>inside holons</h2>
+          1. handler \ phone \ address book
+          2. [ recent x 10] <br>
+          [ search bar:
+          0. address book
+          1. handler \ phone number ]
+        </div>
+
+      </div>
+
+    </div>
+    <!-- modal -->
+      <WithdrawModal></WithdrawModal>
+    <!-- /modal -->
+    <div class="hm modal" id="modal__deposit">
+      <h2>Deposit</h2>
+    </div>
+    <!-- /modal -->
+
+    <!-- /modal -->
+    <div class="hm modal" id="modal__managecards">
+      <h2>manage cards</h2>
+
+      <div class="ui grid">
+        <div class="eight wide column">
+          <h2>Linked cards</h2>
+          <p>No cards linked yet</p>
+          <a class="ui basic button" style="width:100%">
+            link card</a>
+        </div>
+        <div class="eight wide column">
+          <h2>Issued cards</h2>
+          <p>No cards created yet</p>
+          <a class="ui basic button">
+            + physical card</a>
+          <a class="ui basic button">
+            + virtual card</a>
+        </div>
+      </div>
+    </div>
+    <!-- /modal -->
+    <!-- /modal -->
+    <div class="hm modal" id="modal__managecard">
+      <h2>manage cards</h2>
+    </div>
+    <!-- /modal -->
+
+    <div class="hm modal" id="addNewBalanceModal" >
+      <h2>Add new balance</h2>
+
+      sigh
+    </div>
+
+
+</div>

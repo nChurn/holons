@@ -1,0 +1,50 @@
+<div class="ui modal" id="raysWriteMessageModal">
+  <div class="wrapper">
+    <div class="ui grid">
+      <div class="row">
+        <div class="twelwe wide column">
+        <h2>
+          Write new messsage to:
+        </h2>
+        <address-book v-on:input="id => { addressSelected = id}"></address-book>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelwe wide column">
+        <div class="ui field input fluid">
+          <input
+            type="text"
+            val=""
+            placeholder="Subject"
+            v-model="messageSubject"
+           />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelwe wide column">
+        <div class="ui field input fluid">
+          <textarea
+            id="rayMessageBody"
+            name="rayMessageBody"
+            v-model="messageBody"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelwe wide column">
+          <button
+            class="ui button"
+            v-bind:disabled="messageBody == '' || messageSubject == '' || !addressSelected"
+            v-on:click.prevent="sendRaysMessage"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

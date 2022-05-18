@@ -1,0 +1,32 @@
+<div id="profileEdit" class="profile-edit">
+
+    <div
+      v-if="!edit"
+      class="bio" v-html="profileBio">
+    </div>
+    <wysiwyg
+      v-if="edit"
+      v-model="profileBio"
+    />
+    <a
+      style="width:100%"
+      class="ui basic button"
+      v-if="!edit"
+      @click.prevent="edit = !edit"
+    >
+      edit description
+    </a>
+    <div
+      v-if="maxLengthError"
+      class="ui error maxlength"
+    >Maximum bio length exceeded. Brevity is virtue...</div>
+    <a
+      style="width:100%"
+      class="ui basic button"
+      v-bind:class="{disabled: maxLengthError}"
+      v-if="edit"
+      @click.prevent="saveProfile"
+    >
+      save description
+    </a>
+</div>

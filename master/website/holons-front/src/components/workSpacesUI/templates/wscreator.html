@@ -1,0 +1,138 @@
+<div>
+  <!-- TABS HEADER -->
+  <div class="ui secondary menu secondary-navigation">
+
+    <span
+      v-for="item in menuItems"
+      v-bind:key="item.id"
+    >
+    <a
+      class="item"
+      v-if="item.menu == 'left'"
+      v-bind:class="{
+        'active': menuActive.parentId === item.id,
+        'disabled': item.disabled === 'disabled',
+      }"
+      v-on:click.prevent="activateMenuItem(item)"
+      v-bind:href="item.url"
+      v-html="item.name"
+    >
+    </a>
+    </span>
+
+    <div class="right menu">
+      <span
+        v-for="item in menuItems"
+        v-bind:key="item.id"
+      >
+        <a
+          class="item"
+          v-if="item.menu == 'right' && !item.url.startsWith('https://')"
+          v-bind:class="{
+            'active': menuActive.parentId === item.id,
+            'disabled': item.disabled === 'disabled',
+          }"
+          v-on:click.prevent="activateMenuItem(item)"
+          v-bind:href="item.url"
+          v-html="item.name"
+        >
+        </a>
+        <a
+          class="item"
+          v-if="item.menu == 'right' && item.url.startsWith('https://')"
+          v-bind:class="{
+            'active': menuActive.parentId === item.id,
+            'disabled': item.disabled === 'disabled',
+          }"
+          v-bind:href="item.url"
+          v-html="item.name"
+          target="_blank"
+        >
+        </a>
+      </span>
+    </div>
+
+  </div>
+<!-- /TABS HEADER -->
+
+
+
+
+  <div class="ui grid">
+    <div class="sixteen wide column moneta-items">
+      <div class="ui grid" v-if="defaultSelected"> </div>
+      <div class="pipelines" v-if="pipelinesSelected">
+        <div class="ws-actions" v-if="!wsIsOpen">
+          <button
+            class="ui right floated button"
+            v-if="wsPrefixLive && !wsIsOpen && relationsActive != 'commitments' && relationsActive != 'offers' && relationsActive != 'invoices'"
+            v-on:click.prevent="openCreatePrefixedBoardModal"
+          >
+            {{ wsTitleLive }}
+          </button>
+        </div>
+
+        <relations-ui
+          v-if="relationsActive == 'offers'"
+          v-bind:relationsType="relationsActive"
+          v-bind:activateOffer="activateOffer"
+        />
+        <prospecting-component
+          v-if="relationsActive == 'prospecting'"
+        />
+        <inbound-component
+          v-if="relationsActive == 'inbound'"
+        />
+        <meetings-component
+          v-if="relationsActive == 'meetings'"
+        />
+        <commitments-component
+          v-if="relationsActive == 'commitments'"
+        />
+        <invoices-component
+          v-if="relationsActive == 'invoices'"
+        />
+        <work-spaces
+          v-if="wsPrefixLive"
+          ref="workspaces"
+          :key="wsPrefixLive"
+         />
+      </div>
+    </div>
+    <div id="openCreatePrefixedBoardModal" class="ui modal">
+      <i class="close icon"></i>
+      <div class="header"> {{ wsTitle }} </div>
+      <div class="content">
+        <div class="description">
+          <div class="ui header"></div>
+          <form id="login-form">
+          <div class="form-field">
+            <label>
+            Enter workspace name
+            </label>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+            <input
+            type="text"
+            name="workspace_name"
+            v-model="workspaceName"
+            />
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button"> Cancel </div>
+        <div
+          class="ui positive right labeled icon button"
+          v-on:click.prevent="createPrefixedWorkspace"
+          >
+          Create workspace
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
